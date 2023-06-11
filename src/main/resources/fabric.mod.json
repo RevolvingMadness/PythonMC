@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "pythonmc",
+  "version": "${version}",
+  "name": "PythonMC",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "CC0-1.0",
+  "icon": " ",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.revolvingmadness.pythonmc.Mod"
+    ]
+  },
+  "mixins": [
+    "pythonmc.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "minecraft": "~1.19.4",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
