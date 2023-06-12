@@ -10,7 +10,7 @@ import java.util.Objects;
 
 public class PyEnchantment {
 	final Enchantment enchantment;
-	int level;
+	public final int level;
 	public final PyEnchantmentRarity rarity;
 
 	public PyEnchantment(Enchantment enchantment, Number level) {

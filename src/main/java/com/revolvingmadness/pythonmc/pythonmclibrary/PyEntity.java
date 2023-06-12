@@ -5,7 +5,6 @@ import net.minecraft.text.Text;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class PyEntity {
 	final Entity entity;
@@ -320,7 +319,8 @@ public class PyEntity {
 
 	public String getCustomName() {
 		if (this.entity.hasCustomName()) {
-			return Objects.requireNonNull(this.entity.getCustomName()).getString();
+			// noinspection DataFlowIssue
+			return this.entity.getCustomName().getString();
 		}
 		return null;
 	}

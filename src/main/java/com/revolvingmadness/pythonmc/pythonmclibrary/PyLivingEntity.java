@@ -54,7 +54,7 @@ public class PyLivingEntity extends PyEntity {
     public void damageShield(Number amount) {
         this.livingEntity.damageShield(amount.floatValue());
     }
-
+    
     public void eatFood(PyItemStack stack) {
         this.livingEntity.eatFood(this.livingEntity.getWorld(), stack.itemStack);
     }

@@ -7,10 +7,13 @@
 [![MIT License][license-shield]][license-url]
 
 
+<!--suppress ALL -->
+
 <br />
 <div align="center">
   <a href="https://github.com/RevolvingMadness/PythonMC">
-    <img src="images/logo.png" alt="PythonMC Logo" width="80" height="80">
+    <!--suppress CheckImageSize, CheckImageSize -->
+<img src="images/logo.png" alt="PythonMC Logo" width="80" height="80">
   </a>
 
 <h3 align="center">PythonMC</h3>

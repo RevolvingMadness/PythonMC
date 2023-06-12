@@ -23,6 +23,7 @@ public class RunPython {
 		dispatcher.register(CommandManager.literal("runpython").then(CommandManager.literal("code").then(CommandManager.argument("code", MessageArgumentType.message()).executes(RunPython::runCode))));
 	}
 	
+	@SuppressWarnings("SameReturnValue")
 	private static int runCode(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
 		String code = MessageArgumentType.getMessage(context, "code").getString();
 		

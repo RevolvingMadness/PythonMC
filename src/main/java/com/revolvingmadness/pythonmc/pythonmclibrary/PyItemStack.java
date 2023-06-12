@@ -21,22 +21,22 @@ public class PyItemStack {
 		this.item = itemStack.getItem();
 	}
 
-	public PyItemStack(PyItems itemStack, int count, Map<String, Object> nbt) {
-		this.itemStack = new ItemStack(itemStack.toItem(), count);
+	public PyItemStack(PyItems item, int count, Map<String, Object> nbt) {
+		this.itemStack = new ItemStack(item.toItem(), count);
 		this.itemStack.setNbt(NbtCompoundUtil.fromMap(nbt));
 		this.item = this.itemStack.getItem();
 	}
 
-	public PyItemStack(PyItems itemStack, Map<String, Object> nbt) {
-		this(itemStack, 1, nbt);
+	public PyItemStack(PyItems item, Map<String, Object> nbt) {
+		this(item, 1, nbt);
 	}
 
-	public PyItemStack(PyItems itemStack, int count) {
-		this(itemStack, count, new HashMap<>());
+	public PyItemStack(PyItems item, int count) {
+		this(item, count, new HashMap<>());
 	}
 
-	public PyItemStack(PyItems itemStack) {
-		this(itemStack, 1);
+	public PyItemStack(PyItems item) {
+		this(item, 1);
 	}
 
 	public void decrement(Number amount) {
