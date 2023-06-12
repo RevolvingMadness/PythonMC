@@ -4,7 +4,7 @@ import net.minecraft.world.GameMode;
 
 public class PyGameMode {
     final GameMode gameMode;
-    public final Integer id;
+    public final int id;
     public final String name;
     public static PyGameMode SURVIVAL = new PyGameMode(GameMode.SURVIVAL);
     public static PyGameMode CREATIVE = new PyGameMode(GameMode.CREATIVE);

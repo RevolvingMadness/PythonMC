@@ -30,7 +30,7 @@ public class PyServer {
         return this.server.getServerMotd();
     }
 
-    public Integer getServerPort() {
+    public int getServerPort() {
         return this.server.getServerPort();
     }
 
@@ -46,19 +46,19 @@ public class PyServer {
         return new PyGameMode(forcedGameMode);
     }
 
-    public Integer getMaxPlayerCount() {
+    public int getMaxPlayerCount() {
         return this.server.getMaxPlayerCount();
     }
 
-    public Integer getMaxWorldBorderRadius() {
+    public int getMaxWorldBorderRadius() {
         return this.server.getMaxWorldBorderRadius();
     }
 
-    public Integer getSpawnProtectionRadius() {
+    public int getSpawnProtectionRadius() {
         return this.server.getSpawnProtectionRadius();
     }
 
-    public Integer getSpawnRadius(PyWorlds world) {
+    public int getSpawnRadius(PyWorlds world) {
         return this.server.getSpawnRadius(this.server.getWorld(world.toWorldRegistryKey()));
     }
 
@@ -66,27 +66,27 @@ public class PyServer {
         return this.server.getVersion();
     }
 
-    public Boolean isFlightEnabled() {
+    public boolean isFlightEnabled() {
         return this.server.isFlightEnabled();
     }
 
-    public Boolean isHardcore() {
+    public boolean isHardcore() {
         return this.server.isHardcore();
     }
 
-    public Boolean isMonsterSpawningEnabled() {
+    public boolean isMonsterSpawningEnabled() {
         return this.server.isMonsterSpawningEnabled();
     }
 
-    public Boolean isNetherAllowed() {
+    public boolean isNetherAllowed() {
         return this.server.isNetherAllowed();
     }
 
-    public Boolean isPVPEnabled() {
+    public boolean isPVPEnabled() {
         return this.server.isPvpEnabled();
     }
 
-    public Boolean isSingleplayer() {
+    public boolean isSingleplayer() {
         return this.server.isSingleplayer();
     }
 

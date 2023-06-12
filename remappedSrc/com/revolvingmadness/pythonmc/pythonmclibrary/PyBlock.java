@@ -7,10 +7,10 @@ public class PyBlock {
     final Block block;
     public final PyItem item;
     public final String name;
-    public final Float blastResistance;
-    public final Float velocityMultiplier;
-    public final Float jumpVelocityMultiplier;
-    public final Float slipperiness;
+    public final float blastResistance;
+    public final float velocityMultiplier;
+    public final float jumpVelocityMultiplier;
+    public final float slipperiness;
 
     public PyBlock(Block block) {
         this.block = block;

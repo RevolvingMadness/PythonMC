@@ -12,7 +12,7 @@ public class PyExecutor {
     public final PyPlayerEntity player;
     public final PyWorld world;
     public final PyEntity entity;
-    public final Boolean isExecutedByPlayer;
+    public final boolean isExecutedByPlayer;
     public final Vec2f rotation;
 
     public PyExecutor(ServerCommandSource source) {

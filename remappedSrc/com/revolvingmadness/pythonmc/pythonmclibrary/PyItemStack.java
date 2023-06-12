@@ -30,11 +30,11 @@ public class PyItemStack {
         this.itemStack.addHideFlag(hideFlag.toHideFlag());
     }
 
-    public Integer getCount() {
+    public int getCount() {
         return this.itemStack.getCount();
     }
 
-    public Integer getDamage() {
+    public int getDamage() {
         return this.itemStack.getDamage();
     }
 
