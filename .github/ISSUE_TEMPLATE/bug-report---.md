@@ -1,7 +1,9 @@
 ---
 name: "Bug report \U0001F41E"
 about: Create a bug report
-labels: bug
+title: ''
+labels: bug, enhancement
+assignees: ''
 
 ---
 
@@ -15,7 +17,7 @@ Steps to reproduce the behavior.
 A clear and concise description of what you expected to happen.
 
 ### Environment
- - OS: [e.g. Arch Linux]
+ - OS: [e.g. Windows]
  - Other details that you think may affect.
 
 ### Additional context
