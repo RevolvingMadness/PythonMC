@@ -40,15 +40,15 @@ public class PyLivingEntity extends PyEntity {
     }
 
     public void damage(PyDamageSources source, Number amount) {
-        this.livingEntity.damage(source.toDamageSource(this.livingEntity.getWorld()), amount.floatValue());
+        this.livingEntity.damage(source.toDamageSource(this.livingEntity.world), amount.floatValue());
     }
 
     public void damageArmor(PyDamageSources source, Number amount) {
-        this.livingEntity.damageArmor(source.toDamageSource(this.livingEntity.getWorld()), amount.floatValue());
+        this.livingEntity.damageArmor(source.toDamageSource(this.livingEntity.world), amount.floatValue());
     }
 
     public void damageHelmet(PyDamageSources source, Number amount) {
-        this.livingEntity.damageHelmet(source.toDamageSource(this.livingEntity.getWorld()), amount.floatValue());
+        this.livingEntity.damageHelmet(source.toDamageSource(this.livingEntity.world), amount.floatValue());
     }
 
     public void damageShield(Number amount) {
@@ -56,7 +56,7 @@ public class PyLivingEntity extends PyEntity {
     }
 
     public void eatFood(PyItemStack stack) {
-        this.livingEntity.eatFood(this.livingEntity.getWorld(), stack.itemStack);
+        this.livingEntity.eatFood(this.livingEntity.world, stack.itemStack);
     }
 
     public float getAbsorptionAmount() {

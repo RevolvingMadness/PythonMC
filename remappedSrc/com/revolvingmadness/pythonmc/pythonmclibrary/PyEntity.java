@@ -127,7 +127,7 @@ public class PyEntity {
     }
 
     public void damage(PyDamageSources source, Number amount) {
-        this.entity.damage(source.toDamageSource(this.entity.getWorld()), amount.floatValue());
+        this.entity.damage(source.toDamageSource(this.entity.world), amount.floatValue());
     }
 
     public void setCustomName(String customName) {
