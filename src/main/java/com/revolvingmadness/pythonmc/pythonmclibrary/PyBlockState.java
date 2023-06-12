@@ -22,6 +22,6 @@ public class PyBlockState {
 
     @Override
     public String toString() {
-        return this.block.toString();
+        return this.block.name;
     }
 }

@@ -2,6 +2,7 @@ package com.revolvingmadness.pythonmc.pythonmclibrary;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 
 public class PyItem {
     final Item item;
@@ -11,13 +12,13 @@ public class PyItem {
     public PyItem(Item item) {
         this.item = item;
         this.itemStack = item.getDefaultStack();
-        this.name = item.getName().getString();
+        this.name = Text.translatable(item.getTranslationKey()).getString();
     }
 
     public PyItem(PyItems item) {
         this.item = item.toItem();
         this.itemStack = this.item.getDefaultStack();
-        this.name = this.item.getName().getString();
+        this.name = Text.translatable(this.item.getTranslationKey()).getString();
     }
 
     @Override

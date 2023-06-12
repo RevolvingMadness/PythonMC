@@ -2,14 +2,39 @@
 
 ## v1.0.0
 
-### Added or Changed
-- Added this changelog :)
-- Fixed typos in both templates
-- Back to top links
-- Added more "Built With" frameworks/libraries
-- Changed table of contents to start collapsed
-- Added checkboxes for major features on roadmap
+The initial release of **PythonMC**!
 
-### Removed
+### Added
 
-- Some packages/libraries from acknowledgements I no longer use
+- PyArm
+- PyBlock
+- PyBlockPos
+- PyBlocks
+- PyBlockState
+- PyDamageSources
+- PyDifficulties
+- PyDifficulty
+- PyEnchantments
+- PyEnderChestInventory
+- PyEntities
+- PyEntity
+- PyExecutor
+- PyGameModes
+- PyHand
+- PyHungerManager
+- PyItem
+- PyItems
+- PyItemStack
+- PyLivingEntity
+- PyNbtCompound
+- PyPlayerEntity
+- PyPlayerInventory
+- PyRemovalReasons
+- PyServer
+- PyStatusEffectInstance
+- PyStatusEffects
+- PyTime
+- PyVec2f
+- PyVec3d
+- PyWeather
+- PyWorld

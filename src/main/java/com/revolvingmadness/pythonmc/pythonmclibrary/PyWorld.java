@@ -1,5 +1,6 @@
 package com.revolvingmadness.pythonmc.pythonmclibrary;
 
+import com.revolvingmadness.pythonmc.util.NbtCompoundUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.NbtCompound;
@@ -57,7 +58,7 @@ public class PyWorld {
     }
 
     public void spawnEntity(PyEntities entity, PyBlockPos pos, Map<String, Object> nbtMap) {
-        NbtCompound nbt = PyNbtCompound.fromMap(nbtMap);
+        NbtCompound nbt = NbtCompoundUtil.fromMap(nbtMap);
         nbt.putString("id", Registries.ENTITY_TYPE.getId(entity.toEntityType()).toString());
         Entity entity2 = EntityType.loadEntityWithPassengers(nbt, this.world, entity1 -> {
             entity1.setPosition(pos.x, pos.y, pos.z);

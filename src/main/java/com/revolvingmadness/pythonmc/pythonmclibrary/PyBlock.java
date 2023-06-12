@@ -1,6 +1,7 @@
 package com.revolvingmadness.pythonmc.pythonmclibrary;
 
 import net.minecraft.block.Block;
+import net.minecraft.text.Text;
 
 public class PyBlock {
     final Block block;
@@ -14,7 +15,7 @@ public class PyBlock {
     public PyBlock(Block block) {
         this.block = block;
         this.item = new PyItem(block.asItem());
-        this.name = block.getName().getString();
+        this.name = Text.translatable(block.getTranslationKey()).getString();
         this.blastResistance = block.getBlastResistance();
         this.velocityMultiplier = block.getVelocityMultiplier();
         this.jumpVelocityMultiplier = block.getJumpVelocityMultiplier();

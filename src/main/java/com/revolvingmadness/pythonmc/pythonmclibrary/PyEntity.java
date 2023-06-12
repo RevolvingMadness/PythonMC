@@ -326,7 +326,7 @@ public class PyEntity {
     }
 
     public String getName() {
-        return this.entity.getName().getString();
+        return Text.translatable(this.entity.getType().getTranslationKey()).getString();
     }
 
     public void setSneaking(boolean sneaking) {

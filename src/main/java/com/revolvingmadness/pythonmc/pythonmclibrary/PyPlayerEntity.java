@@ -1,5 +1,7 @@
 package com.revolvingmadness.pythonmc.pythonmclibrary;
 
+import com.revolvingmadness.pythonmc.util.NbtCompoundUtil;
+import com.revolvingmadness.pythonmc.util.NbtElementUtil;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
 
@@ -45,12 +47,14 @@ public class PyPlayerEntity extends PyLivingEntity {
         return this.playerEntity.isCreative();
     }
 
-    public PyNbtCompound getShoulderEntityLeft() {
-        return new PyNbtCompound(this.playerEntity.getShoulderEntityLeft());
+    public Map<String, Object> getShoulderEntityLeft() {
+        // noinspection unchecked
+        return (Map<String, Object>) NbtElementUtil.toObject(this.playerEntity.getShoulderEntityLeft());
     }
 
-    public PyNbtCompound getShoulderEntityRight() {
-        return new PyNbtCompound(this.playerEntity.getShoulderEntityRight());
+    public Map<String, Object> getShoulderEntityRight() {
+        // noinspection unchecked
+        return (Map<String, Object>) NbtElementUtil.toObject(this.playerEntity.getShoulderEntityRight());
     }
 
     public PyEnderChestInventory getEnderChestInventory() {
@@ -58,7 +62,7 @@ public class PyPlayerEntity extends PyLivingEntity {
     }
 
     public void addShoulderEntity(Map<String, Object> entityNbt) {
-        this.playerEntity.addShoulderEntity(PyNbtCompound.fromMap(entityNbt));
+        this.playerEntity.addShoulderEntity(NbtCompoundUtil.fromMap(entityNbt));
     }
 
     public void addExperience(Number experience) {
