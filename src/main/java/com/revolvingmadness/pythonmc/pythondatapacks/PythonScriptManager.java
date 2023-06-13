@@ -1,7 +1,7 @@
-package com.revolvingmadness.pythonmc.pythondp;
+package com.revolvingmadness.pythonmc.pythondatapacks;
 
 import com.revolvingmadness.pythonmc.Mod;
-import com.revolvingmadness.pythonmc.PythonExecutor;
+import com.revolvingmadness.pythonmc.pythonrunner.PythonExecutor;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.Identifier;
@@ -45,22 +45,15 @@ public class PythonScriptManager {
 		return this.loader.getTagOrEmpty(id);
 	}
 
-	public Iterable<Identifier> getAllFunctions() {
-		return this.loader.getScripts().keySet();
-	}
-
 	public void setScripts(PythonScriptLoader loader) {
 		this.loader = loader;
 		this.load(loader);
 	}
 
-	public Iterable<Identifier> getFunctionTags() {
-		return this.loader.getTags();
-	}
-
 	public void tick() {
 		if (this.justLoaded) {
 			this.justLoaded = false;
+			PythonExecutor.init();
 			Collection<PythonScript> loadScripts = this.loader.getTagOrEmpty(LOAD_TAG_ID);
 			this.executeAll(loadScripts, LOAD_TAG_ID);
 		}

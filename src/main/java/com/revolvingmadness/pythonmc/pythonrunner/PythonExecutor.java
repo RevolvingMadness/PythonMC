@@ -1,17 +1,26 @@
-package com.revolvingmadness.pythonmc;
+package com.revolvingmadness.pythonmc.pythonrunner;
 
 import com.revolvingmadness.pythonmc.pythonmclibrary.*;
-import jep.Interpreter;
 import jep.JepException;
-import jep.SharedInterpreter;
+import jep.SubInterpreter;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 
 public class PythonExecutor {
-	static Interpreter interpreter = new SharedInterpreter();
+	public static PythonInterpreterThread interpreterThread;
+	private static boolean initialized;
+	private static SubInterpreter interpreter;
+
+	public static void init() {
+		interpreter = interpreterThread.interpreter;
+		initialized = true;
+	}
 
 	public static void execute(ServerCommandSource source, String code) {
+		if (!initialized) {
+			init();
+		}
 		try {
 			ServerWorld world = source.getWorld();
 			interpreter.set("Arm", PyArm.class);

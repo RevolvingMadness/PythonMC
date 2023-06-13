@@ -2,7 +2,7 @@ package com.revolvingmadness.pythonmc.mixin;
 
 import com.mojang.datafixers.DataFixer;
 import com.revolvingmadness.pythonmc.accessor.DatapackContentsAccessor;
-import com.revolvingmadness.pythonmc.pythondp.PythonScriptManager;
+import com.revolvingmadness.pythonmc.pythondatapacks.PythonScriptManager;
 import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.SaveLoader;

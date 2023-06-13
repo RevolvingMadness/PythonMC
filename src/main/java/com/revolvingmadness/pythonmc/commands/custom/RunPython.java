@@ -3,7 +3,7 @@ package com.revolvingmadness.pythonmc.commands.custom;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.revolvingmadness.pythonmc.PythonExecutor;
+import com.revolvingmadness.pythonmc.pythonrunner.PythonExecutor;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.command.argument.MessageArgumentType;
 import net.minecraft.server.command.CommandManager;

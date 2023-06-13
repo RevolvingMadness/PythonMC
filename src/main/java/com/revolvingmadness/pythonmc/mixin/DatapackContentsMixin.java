@@ -1,7 +1,7 @@
 package com.revolvingmadness.pythonmc.mixin;
 
 import com.revolvingmadness.pythonmc.accessor.DatapackContentsAccessor;
-import com.revolvingmadness.pythonmc.pythondp.PythonScriptLoader;
+import com.revolvingmadness.pythonmc.pythondatapacks.PythonScriptLoader;
 import net.minecraft.loot.LootManager;
 import net.minecraft.recipe.RecipeManager;
 import net.minecraft.registry.DynamicRegistryManager;

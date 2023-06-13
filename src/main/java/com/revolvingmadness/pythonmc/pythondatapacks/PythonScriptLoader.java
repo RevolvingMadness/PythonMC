@@ -1,4 +1,4 @@
-package com.revolvingmadness.pythonmc.pythondp;
+package com.revolvingmadness.pythonmc.pythondatapacks;
 
 import com.google.common.collect.ImmutableMap;
 import com.revolvingmadness.pythonmc.Mod;

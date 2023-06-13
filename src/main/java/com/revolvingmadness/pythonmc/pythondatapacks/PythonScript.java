@@ -1,4 +1,4 @@
-package com.revolvingmadness.pythonmc.pythondp;
+package com.revolvingmadness.pythonmc.pythondatapacks;
 
 import net.minecraft.resource.Resource;
 import net.minecraft.util.Identifier;

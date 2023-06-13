@@ -1,6 +1,6 @@
 package com.revolvingmadness.pythonmc.accessor;
 
-import com.revolvingmadness.pythonmc.pythondp.PythonScriptLoader;
+import com.revolvingmadness.pythonmc.pythondatapacks.PythonScriptLoader;
 
 public interface DatapackContentsAccessor {
 	PythonScriptLoader getPythonScriptLoader();
