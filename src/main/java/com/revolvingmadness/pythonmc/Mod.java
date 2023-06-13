@@ -23,10 +23,6 @@ public class Mod implements ModInitializer {
 		pythonMCVersion = major + "." + minor + "." + patch;
 
 		ServerLifecycleEvents.SERVER_STARTING.register(server -> {
-			if (PythonExecutor.interpreterThread != null) {
-				PythonExecutor.interpreterThread.interrupt();
-			}
-
 			PythonExecutor.interpreterThread = new PythonInterpreterThread();
 			PythonExecutor.interpreterThread.start();
 		});

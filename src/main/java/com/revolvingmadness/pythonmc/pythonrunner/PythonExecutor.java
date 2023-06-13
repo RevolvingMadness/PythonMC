@@ -1,16 +1,23 @@
 package com.revolvingmadness.pythonmc.pythonrunner;
 
+import com.revolvingmadness.pythonmc.Mod;
 import com.revolvingmadness.pythonmc.pythonmclibrary.*;
 import jep.JepException;
 import jep.SubInterpreter;
+import net.minecraft.server.PlayerManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
+
+import java.io.ByteArrayOutputStream;
 
 public class PythonExecutor {
 	public static PythonInterpreterThread interpreterThread;
 	private static boolean initialized;
 	private static SubInterpreter interpreter;
+	public static ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+	public static ByteArrayOutputStream errorOutputStream = new ByteArrayOutputStream();
 
 	public static void init() {
 		interpreter = interpreterThread.interpreter;
@@ -63,10 +70,29 @@ public class PythonExecutor {
 			interpreter.set("server", new PyServer(source.getServer()));
 			interpreter.set("world", new PyWorld(world));
 			interpreter.set("executor", new PyExecutor(source));
+			interpreter.set("pythonMCVersion", Mod.pythonMCVersion);
+			interpreter.set("pythonMCMajor", Mod.major);
+			interpreter.set("pythonMCMinor", Mod.minor);
+			interpreter.set("pythonMCPatch", Mod.patch);
 
 			interpreter.exec(code);
+
+			String output = outputStream.toString().trim();
+			String errorOutput = errorOutputStream.toString().trim();
+			PlayerManager playerManager = source.getServer().getPlayerManager();
+
+			if (!output.equals("")) {
+				playerManager.broadcast(Text.of(output), false);
+			}
+			if (!errorOutput.equals("")) {
+				playerManager.broadcast(Text.of(errorOutput), false);
+			}
+
+			outputStream.reset();
+			errorOutputStream.reset();
+
 		} catch (JepException e) {
-			source.sendError(Text.of(e.getMessage()));
+			source.getServer().getPlayerManager().broadcast(Text.empty().append(e.getMessage()).formatted(Formatting.RED), false);
 		}
 	}
 }
