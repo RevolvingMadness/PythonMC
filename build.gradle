@@ -32,6 +32,10 @@ processResources {
     }
 }
 
+loom {
+    accessWidenerPath = file("src/main/resources/pythonmc.accesswidener")
+}
+
 tasks.withType(JavaCompile).configureEach {
     //noinspection GroovyAssignabilityCheck
     it.options.release = 17

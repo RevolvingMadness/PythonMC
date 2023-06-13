@@ -1,4 +1,5 @@
 {
+   "accessWidener": "pythonmc.accesswidener",
    "schemaVersion": 1,
    "id": "pythonmc",
    "version": "${version}",
