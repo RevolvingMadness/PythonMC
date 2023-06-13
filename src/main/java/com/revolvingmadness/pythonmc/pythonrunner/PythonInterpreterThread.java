@@ -11,7 +11,7 @@ public class PythonInterpreterThread extends Thread {
 
 	public PythonInterpreterThread() {
 		JepConfig config = new JepConfig();
-		config.addIncludePaths("C:/Users/andya/IntelliJProjects/PythonMC/run");
+		config.addIncludePaths("C:/Users/USERNAME/IntelliJProjects/PythonMC/run");
 		config.redirectStdout(new PrintStream(PythonExecutor.outputStream));
 		config.redirectStdErr(new PrintStream(PythonExecutor.errorOutputStream));
 		Mod.LOGGER.info("Starting interpreter PythonMC version " + Mod.pythonMCVersion);
