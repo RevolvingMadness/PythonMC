@@ -129,8 +129,12 @@ public class PyEntity {
 		this.entity.damage(source.toDamageSource(this.entity.getWorld()), amount.floatValue());
 	}
 
-	public void setCustomName(String customName) {
-		this.entity.setCustomName(Text.of(customName));
+	public void setCustomName(Object customName) {
+		this.entity.setCustomName(Text.of(String.valueOf(customName)));
+	}
+
+	public void setCustomName(PyText text) {
+		this.entity.setCustomName(text.text);
 	}
 
 	public boolean canUsePortals() {

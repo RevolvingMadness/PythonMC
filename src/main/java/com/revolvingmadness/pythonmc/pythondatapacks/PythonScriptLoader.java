@@ -50,7 +50,7 @@ public class PythonScriptLoader implements ResourceReloader {
 				Identifier identifier2 = FINDER.toResourceId(identifier);
 				map.put(identifier2, CompletableFuture.supplyAsync(() -> {
 					String content = PythonScript.readFromResource(entry.getValue());
-					return new PythonScript(identifier2, content);
+					return new PythonScript(identifier2, content, identifier2.getNamespace(), null);
 				}, prepareExecutor));
 			}
 			CompletableFuture<Void> allFutures = CompletableFuture.allOf(map.values().toArray(new CompletableFuture[0]));

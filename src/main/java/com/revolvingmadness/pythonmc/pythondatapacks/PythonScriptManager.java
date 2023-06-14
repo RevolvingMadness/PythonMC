@@ -69,6 +69,6 @@ public class PythonScriptManager {
 	}
 
 	public void execute(PythonScript script) {
-		PythonExecutor.execute(this.source, script.content);
+		PythonExecutor.execute(this.source, script.namespace, script.path, script.content);
 	}
 }

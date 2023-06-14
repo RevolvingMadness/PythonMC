@@ -24,7 +24,7 @@ public class PythonExecutor {
 		initialized = true;
 	}
 
-	public static void execute(ServerCommandSource source, String code) {
+	public static void execute(ServerCommandSource source, String namespace, String path, String code) {
 		if (!initialized) {
 			init();
 		}
@@ -45,6 +45,7 @@ public class PythonExecutor {
 			interpreter.set("Entities", PyEntities.class);
 			interpreter.set("Entity", PyEntity.class);
 			interpreter.set("Executor", PyExecutor.class);
+			interpreter.set("Formatting", PyFormatting.class);
 			interpreter.set("GameMode", PyGameMode.class);
 			interpreter.set("GameModes", PyGameModes.class);
 			interpreter.set("Hand", PyHand.class);
@@ -56,10 +57,12 @@ public class PythonExecutor {
 			interpreter.set("LivingEntity", PyLivingEntity.class);
 			interpreter.set("PlayerEntity", PyPlayerEntity.class);
 			interpreter.set("PlayerInventory", PyPlayerInventory.class);
+			interpreter.set("PlayerManager", PyPlayerManager.class);
 			interpreter.set("RemovalReasons", PyRemovalReasons.class);
 			interpreter.set("Server", PyServer.class);
 			interpreter.set("StatusEffectInstance", PyStatusEffectInstance.class);
 			interpreter.set("StatusEffects", PyStatusEffects.class);
+			interpreter.set("Text", PyText.class);
 			interpreter.set("Time", PyTime.class);
 			interpreter.set("Vec2f", PyVec2f.class);
 			interpreter.set("Vec3d", PyVec3d.class);
@@ -74,6 +77,8 @@ public class PythonExecutor {
 			interpreter.set("pythonMCMajor", Mod.major);
 			interpreter.set("pythonMCMinor", Mod.minor);
 			interpreter.set("pythonMCPatch", Mod.patch);
+			interpreter.set("namespace", namespace);
+			interpreter.set("path", path);
 
 			interpreter.exec(code);
 
@@ -82,10 +87,10 @@ public class PythonExecutor {
 			PlayerManager playerManager = source.getServer().getPlayerManager();
 
 			if (!output.equals("")) {
-				playerManager.broadcast(Text.of(output), false);
+				playerManager.broadcast(Text.empty().append(output).formatted(Formatting.GRAY), false);
 			}
 			if (!errorOutput.equals("")) {
-				playerManager.broadcast(Text.of(errorOutput), false);
+				playerManager.broadcast(Text.empty().append(errorOutput).formatted(Formatting.RED), false);
 			}
 
 			outputStream.reset();

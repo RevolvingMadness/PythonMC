@@ -152,6 +152,10 @@ public class PyItemStack {
 		this.itemStack.setCustomName(Text.of(name));
 	}
 
+	public void setCustomName(PyText text) {
+		this.itemStack.setCustomName(text.text);
+	}
+
 	public void setDamage(int damage) {
 		this.itemStack.setDamage(damage);
 	}

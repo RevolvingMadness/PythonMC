@@ -10,10 +10,14 @@ import java.util.Scanner;
 public class PythonScript {
 	Identifier id;
 	String content;
+	String namespace;
+	String path;
 
-	public PythonScript(Identifier id, String content) {
+	public PythonScript(Identifier id, String content, String namespace, String path) {
 		this.id = id;
 		this.content = content;
+		this.namespace = namespace;
+		this.path = path;
 	}
 
 	public static String readFromResource(Resource resource) {

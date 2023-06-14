@@ -4,93 +4,97 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.GameMode;
 
 public class PyServer {
-    final MinecraftServer server;
+	final MinecraftServer server;
 
-    public PyServer(MinecraftServer server) {
-        this.server = server;
-    }
+	public PyServer(MinecraftServer server) {
+		this.server = server;
+	}
 
-    public void setDifficulty(PyDifficulties difficulty) {
-        this.server.setDifficulty(difficulty.toDifficulty().difficulty, true);
-    }
+	public PyPlayerManager getPlayerManager() {
+		return new PyPlayerManager(this.server.getPlayerManager());
+	}
 
-    public void setDefaultGameMode(PyGameModes mode) {
-        this.server.setDefaultGameMode(mode.toGameMode());
-    }
+	public void setDifficulty(PyDifficulties difficulty) {
+		this.server.setDifficulty(difficulty.toDifficulty().difficulty, true);
+	}
 
-    public void setDifficultyLocked(boolean locked) {
-        this.server.setDifficultyLocked(locked);
-    }
+	public void setDefaultGameMode(PyGameModes mode) {
+		this.server.setDefaultGameMode(mode.toGameMode());
+	}
 
-    public String getServerIP() {
-        return this.server.getServerIp();
-    }
+	public void setDifficultyLocked(boolean locked) {
+		this.server.setDifficultyLocked(locked);
+	}
 
-    public String getServerMOTD() {
-        return this.server.getServerMotd();
-    }
+	public String getServerIP() {
+		return this.server.getServerIp();
+	}
 
-    public int getServerPort() {
-        return this.server.getServerPort();
-    }
+	public String getServerMOTD() {
+		return this.server.getServerMotd();
+	}
 
-    public PyGameMode getDefaultGameMode() {
-        return new PyGameMode(this.server.getDefaultGameMode());
-    }
+	public int getServerPort() {
+		return this.server.getServerPort();
+	}
 
-    public PyGameMode getForcedGameMode() {
-        GameMode forcedGameMode = this.server.getForcedGameMode();
-        if (forcedGameMode == null) {
-            return null;
-        }
-        return new PyGameMode(forcedGameMode);
-    }
+	public PyGameMode getDefaultGameMode() {
+		return new PyGameMode(this.server.getDefaultGameMode());
+	}
 
-    public int getMaxPlayerCount() {
-        return this.server.getMaxPlayerCount();
-    }
+	public PyGameMode getForcedGameMode() {
+		GameMode forcedGameMode = this.server.getForcedGameMode();
+		if (forcedGameMode == null) {
+			return null;
+		}
+		return new PyGameMode(forcedGameMode);
+	}
 
-    public int getMaxWorldBorderRadius() {
-        return this.server.getMaxWorldBorderRadius();
-    }
+	public int getMaxPlayerCount() {
+		return this.server.getMaxPlayerCount();
+	}
 
-    public int getSpawnProtectionRadius() {
-        return this.server.getSpawnProtectionRadius();
-    }
+	public int getMaxWorldBorderRadius() {
+		return this.server.getMaxWorldBorderRadius();
+	}
 
-    public int getSpawnRadius(PyWorlds world) {
-        return this.server.getSpawnRadius(this.server.getWorld(world.toWorldRegistryKey()));
-    }
+	public int getSpawnProtectionRadius() {
+		return this.server.getSpawnProtectionRadius();
+	}
 
-    public String getVersion() {
-        return this.server.getVersion();
-    }
+	public int getSpawnRadius(PyWorlds world) {
+		return this.server.getSpawnRadius(this.server.getWorld(world.toWorldRegistryKey()));
+	}
 
-    public boolean isFlightEnabled() {
-        return this.server.isFlightEnabled();
-    }
+	public String getVersion() {
+		return this.server.getVersion();
+	}
 
-    public boolean isHardcore() {
-        return this.server.isHardcore();
-    }
+	public boolean isFlightEnabled() {
+		return this.server.isFlightEnabled();
+	}
 
-    public boolean isMonsterSpawningEnabled() {
-        return this.server.isMonsterSpawningEnabled();
-    }
+	public boolean isHardcore() {
+		return this.server.isHardcore();
+	}
 
-    public boolean isNetherAllowed() {
-        return this.server.isNetherAllowed();
-    }
+	public boolean isMonsterSpawningEnabled() {
+		return this.server.isMonsterSpawningEnabled();
+	}
 
-    public boolean isPVPEnabled() {
-        return this.server.isPvpEnabled();
-    }
+	public boolean isNetherAllowed() {
+		return this.server.isNetherAllowed();
+	}
 
-    public boolean isSingleplayer() {
-        return this.server.isSingleplayer();
-    }
+	public boolean isPVPEnabled() {
+		return this.server.isPvpEnabled();
+	}
 
-    public void openToLAN(PyGameModes gameMode, boolean cheatsAllowed, Number port) {
-        this.server.openToLan(gameMode.toGameMode(), cheatsAllowed, port.intValue());
-    }
+	public boolean isSingleplayer() {
+		return this.server.isSingleplayer();
+	}
+
+	public void openToLAN(PyGameModes gameMode, boolean cheatsAllowed, Number port) {
+		this.server.openToLan(gameMode.toGameMode(), cheatsAllowed, port.intValue());
+	}
 }

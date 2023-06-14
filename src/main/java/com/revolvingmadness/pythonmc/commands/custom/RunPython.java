@@ -18,7 +18,7 @@ public class RunPython {
 	private static int runCode(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
 		String code = MessageArgumentType.getMessage(context, "code").getString();
 
-		PythonExecutor.execute(context.getSource(), code);
+		PythonExecutor.execute(context.getSource(), null, null, code);
 
 		return 1;
 	}

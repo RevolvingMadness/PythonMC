@@ -109,6 +109,9 @@ public class PyPlayerEntity extends PyLivingEntity {
 		this.playerEntity.sendMessage(Text.of(String.valueOf(message)));
 	}
 
+	public void sendMessage(PyText text) {
+		this.playerEntity.sendMessage(text.text);
+	}
 
 	public void setMainArm(PyArm arm) {
 		this.playerEntity.setMainArm(arm.toArm());
