@@ -1,7 +1,7 @@
 package com.revolvingmadness.pythonmc.pythondatapacks;
 
 import com.revolvingmadness.pythonmc.Mod;
-import com.revolvingmadness.pythonmc.pythonrunner.PythonExecutor;
+import com.revolvingmadness.pythonmc.pythonrunner.PythonExecutorThread;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.Identifier;
@@ -53,7 +53,6 @@ public class PythonScriptManager {
 	public void tick() {
 		if (this.justLoaded) {
 			this.justLoaded = false;
-			PythonExecutor.init();
 			Collection<PythonScript> loadScripts = this.loader.getTagOrEmpty(LOAD_TAG_ID);
 			this.executeAll(loadScripts, LOAD_TAG_ID);
 		}
@@ -69,6 +68,7 @@ public class PythonScriptManager {
 	}
 
 	public void execute(PythonScript script) {
-		PythonExecutor.execute(this.source, script.namespace, script.path, script.content);
+		PythonExecutorThread executorThread = new PythonExecutorThread(this.source, script.namespace, script.path, script.content);
+		executorThread.start();
 	}
 }

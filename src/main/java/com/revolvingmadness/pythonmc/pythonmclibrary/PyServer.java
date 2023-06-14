@@ -50,10 +50,6 @@ public class PyServer {
 		return new PyGameMode(forcedGameMode);
 	}
 
-	public int getMaxPlayerCount() {
-		return this.server.getMaxPlayerCount();
-	}
-
 	public int getMaxWorldBorderRadius() {
 		return this.server.getMaxWorldBorderRadius();
 	}

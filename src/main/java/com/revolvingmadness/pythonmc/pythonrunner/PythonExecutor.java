@@ -2,8 +2,8 @@ package com.revolvingmadness.pythonmc.pythonrunner;
 
 import com.revolvingmadness.pythonmc.Mod;
 import com.revolvingmadness.pythonmc.pythonmclibrary.*;
+import jep.Interpreter;
 import jep.JepException;
-import jep.SubInterpreter;
 import net.minecraft.server.PlayerManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.world.ServerWorld;
@@ -13,21 +13,11 @@ import net.minecraft.util.Formatting;
 import java.io.ByteArrayOutputStream;
 
 public class PythonExecutor {
-	public static PythonInterpreterThread interpreterThread;
 	private static boolean initialized;
-	private static SubInterpreter interpreter;
 	public static ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 	public static ByteArrayOutputStream errorOutputStream = new ByteArrayOutputStream();
 
-	public static void init() {
-		interpreter = interpreterThread.interpreter;
-		initialized = true;
-	}
-
-	public static void execute(ServerCommandSource source, String namespace, String path, String code) {
-		if (!initialized) {
-			init();
-		}
+	public static void execute(ServerCommandSource source, String namespace, String path, String code, Interpreter interpreter) {
 		try {
 			ServerWorld world = source.getWorld();
 			interpreter.set("Arm", PyArm.class);
@@ -87,7 +77,14 @@ public class PythonExecutor {
 			PlayerManager playerManager = source.getServer().getPlayerManager();
 
 			if (!output.equals("")) {
-				playerManager.broadcast(Text.empty().append(output).formatted(Formatting.GRAY), false);
+				StringBuilder outputBuilder = new StringBuilder();
+				for (String line : output.split("\n")) {
+					outputBuilder.append("[PythonMC] ");
+					outputBuilder.append(line);
+					outputBuilder.append("\n");
+				}
+				String actualOutput = outputBuilder.toString().trim();
+				playerManager.broadcast(Text.empty().append(actualOutput), false);
 			}
 			if (!errorOutput.equals("")) {
 				playerManager.broadcast(Text.empty().append(errorOutput).formatted(Formatting.RED), false);
@@ -99,5 +96,10 @@ public class PythonExecutor {
 		} catch (JepException e) {
 			source.getServer().getPlayerManager().broadcast(Text.empty().append(e.getMessage()).formatted(Formatting.RED), false);
 		}
+	}
+
+	public static void executeOnThread(ServerCommandSource source, String namespace, String path, String content) {
+		PythonExecutorThread thread = new PythonExecutorThread(source, namespace, path, content);
+		thread.start();
 	}
 }
