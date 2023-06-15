@@ -76,12 +76,12 @@ public class PyPlayerManager {
 		this.playerManager.setCheatsAllowed(cheatsAllowed);
 	}
 
-	public void setSimulationDistance(int simulationDistance) {
-		this.playerManager.setSimulationDistance(simulationDistance);
+	public void setSimulationDistance(Number simulationDistance) {
+		this.playerManager.setSimulationDistance(simulationDistance.intValue());
 	}
 
-	public void setViewDistance(int viewDistance) {
-		this.playerManager.setViewDistance(viewDistance);
+	public void setViewDistance(Number viewDistance) {
+		this.playerManager.setViewDistance(viewDistance.intValue());
 	}
 
 	public void setWhitelistEnabled(boolean whitelistEnabled) {

@@ -1,7 +1,7 @@
 package com.revolvingmadness.pythonmc.pythondatapacks;
 
 import com.revolvingmadness.pythonmc.Mod;
-import com.revolvingmadness.pythonmc.pythonrunner.PythonExecutorThread;
+import com.revolvingmadness.pythonmc.pythonrunner.PythonExecutor;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.Identifier;
@@ -68,7 +68,8 @@ public class PythonScriptManager {
 	}
 
 	public void execute(PythonScript script) {
-		PythonExecutorThread executorThread = new PythonExecutorThread(this.source, script.namespace, script.path, script.content);
-		executorThread.start();
+		PythonExecutor.execute(this.source, script.namespace, script.path, script.content, PythonExecutor.interpreter);
+		//		executorThread.setParameters(this.source, script.namespace, script.path, script.content);
+		//		executorThread.start();
 	}
 }

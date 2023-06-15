@@ -21,8 +21,8 @@ public class PyItemStack {
 		this.item = itemStack.getItem();
 	}
 
-	public PyItemStack(PyItems item, int count, Map<String, Object> nbt) {
-		this.itemStack = new ItemStack(item.toItem(), count);
+	public PyItemStack(PyItems item, Number count, Map<String, Object> nbt) {
+		this.itemStack = new ItemStack(item.toItem(), count.intValue());
 		this.itemStack.setNbt(NbtCompoundUtil.fromMap(nbt));
 		this.item = this.itemStack.getItem();
 	}
@@ -31,8 +31,8 @@ public class PyItemStack {
 		this(item, 1, nbt);
 	}
 
-	public PyItemStack(PyItems item, int count) {
-		this(item, count, new HashMap<>());
+	public PyItemStack(PyItems item, Number count) {
+		this(item, count.intValue(), new HashMap<>());
 	}
 
 	public PyItemStack(PyItems item) {
@@ -112,8 +112,8 @@ public class PyItemStack {
 		return this.itemStack.hasNbt();
 	}
 
-	public void increment(int amount) {
-		this.itemStack.increment(amount);
+	public void increment(Number amount) {
+		this.itemStack.increment(amount.intValue());
 	}
 
 	public boolean isDamageable() {
@@ -144,8 +144,8 @@ public class PyItemStack {
 		this.itemStack.removeCustomName();
 	}
 
-	public void setCount(int count) {
-		this.itemStack.setCount(count);
+	public void setCount(Number count) {
+		this.itemStack.setCount(count.intValue());
 	}
 
 	public void setCustomName(String name) {
@@ -156,12 +156,12 @@ public class PyItemStack {
 		this.itemStack.setCustomName(text.text);
 	}
 
-	public void setDamage(int damage) {
-		this.itemStack.setDamage(damage);
+	public void setDamage(Number damage) {
+		this.itemStack.setDamage(damage.intValue());
 	}
 
-	public void setRepairCost(int repairCost) {
-		this.itemStack.setRepairCost(repairCost);
+	public void setRepairCost(Number repairCost) {
+		this.itemStack.setRepairCost(repairCost.intValue());
 	}
 
 

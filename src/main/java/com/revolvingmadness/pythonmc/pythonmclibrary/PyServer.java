@@ -30,6 +30,10 @@ public class PyServer {
 		return this.server.getServerIp();
 	}
 
+	public PyWorld getWorld(PyWorlds world) {
+		return new PyWorld(this.server.getWorld(world.toWorldRegistryKey()));
+	}
+
 	public String getServerMOTD() {
 		return this.server.getServerMotd();
 	}

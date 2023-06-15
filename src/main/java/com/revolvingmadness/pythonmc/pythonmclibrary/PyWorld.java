@@ -63,6 +63,10 @@ public class PyWorld {
 		this.spawnEntity(entity, new PyBlockPos(x, y, z), nbtMap);
 	}
 
+	public void spawnParticle(PyParticles particle, Number x, Number y, Number z, Number count, Number deltaX, Number deltaY, Number deltaZ, Number speed) {
+		this.world.spawnParticles(particle.toParticle(), x.doubleValue(), y.doubleValue(), z.doubleValue(), count.intValue(), deltaX.doubleValue(), deltaY.doubleValue(), deltaZ.doubleValue(), speed.doubleValue());
+	}
+
 	public void setTime(PyTime time) {
 		this.world.setTimeOfDay(time.toTimeLong());
 	}
@@ -83,11 +87,11 @@ public class PyWorld {
 		this.setSpawnPos(new PyBlockPos(x, y, z), 0.0);
 	}
 
-	private int processDuration(int duration, IntProvider provider) {
-		if (duration == -1) {
+	private int processDuration(Number duration, IntProvider provider) {
+		if (duration.intValue() == -1) {
 			return provider.get(this.world.getRandom());
 		}
-		return duration;
+		return duration.intValue();
 	}
 
 	public void setWeather(PyWeather weather, Number duration) {
