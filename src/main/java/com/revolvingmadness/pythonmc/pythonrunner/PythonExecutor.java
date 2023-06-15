@@ -3,10 +3,8 @@ package com.revolvingmadness.pythonmc.pythonrunner;
 import com.revolvingmadness.pythonmc.Mod;
 import com.revolvingmadness.pythonmc.pythonmclibrary.*;
 import jep.Interpreter;
-import jep.JepConfig;
 import jep.JepException;
 import jep.SubInterpreter;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.server.PlayerManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.world.ServerWorld;
@@ -19,7 +17,7 @@ public class PythonExecutor {
 	private static boolean initialized;
 	public static ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 	public static ByteArrayOutputStream errorOutputStream = new ByteArrayOutputStream();
-	public static SubInterpreter interpreter = new SubInterpreter(new JepConfig().redirectStdErr(outputStream).redirectStdErr(errorOutputStream).addIncludePaths(FabricLoader.getInstance().getModContainer(Mod.MOD_ID).get().getRootPaths().get(0).toString() + "/pythonmclibrary"));
+	public static SubInterpreter interpreter;
 
 	public static void execute(ServerCommandSource source, String namespace, String path, String code, Interpreter interpreter) {
 		try {
