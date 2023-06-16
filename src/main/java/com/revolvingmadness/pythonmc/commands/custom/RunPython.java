@@ -10,7 +10,7 @@ import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 
 public class RunPython {
-	public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess access, CommandManager.RegistrationEnvironment environment) {
+	public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess ignoredAccess, CommandManager.RegistrationEnvironment ignoredEnvironment) {
 		dispatcher.register(CommandManager.literal("runpython").then(CommandManager.literal("code").then(CommandManager.argument("code", MessageArgumentType.message()).executes(RunPython::runCode))));
 	}
 
