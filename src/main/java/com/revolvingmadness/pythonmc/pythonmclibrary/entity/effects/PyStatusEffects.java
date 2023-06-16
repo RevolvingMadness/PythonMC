@@ -1,4 +1,4 @@
-package com.revolvingmadness.pythonmc.pythonmclibrary.server.effects;
+package com.revolvingmadness.pythonmc.pythonmclibrary.entity.effects;
 
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;

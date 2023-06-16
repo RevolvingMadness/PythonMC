@@ -7,6 +7,8 @@ import com.revolvingmadness.pythonmc.pythonmclibrary.block.PyBlockPos;
 import com.revolvingmadness.pythonmc.pythonmclibrary.block.PyBlockState;
 import com.revolvingmadness.pythonmc.pythonmclibrary.block.PyBlocks;
 import com.revolvingmadness.pythonmc.pythonmclibrary.entity.*;
+import com.revolvingmadness.pythonmc.pythonmclibrary.entity.effects.PyStatusEffectInstance;
+import com.revolvingmadness.pythonmc.pythonmclibrary.entity.effects.PyStatusEffects;
 import com.revolvingmadness.pythonmc.pythonmclibrary.item.PyHideFlags;
 import com.revolvingmadness.pythonmc.pythonmclibrary.item.PyItem;
 import com.revolvingmadness.pythonmc.pythonmclibrary.item.PyItemStack;
@@ -18,8 +20,6 @@ import com.revolvingmadness.pythonmc.pythonmclibrary.player.*;
 import com.revolvingmadness.pythonmc.pythonmclibrary.server.PyServer;
 import com.revolvingmadness.pythonmc.pythonmclibrary.server.difficulty.PyDifficulties;
 import com.revolvingmadness.pythonmc.pythonmclibrary.server.difficulty.PyDifficulty;
-import com.revolvingmadness.pythonmc.pythonmclibrary.server.effects.PyStatusEffectInstance;
-import com.revolvingmadness.pythonmc.pythonmclibrary.server.effects.PyStatusEffects;
 import com.revolvingmadness.pythonmc.pythonmclibrary.server.gamemode.PyGameMode;
 import com.revolvingmadness.pythonmc.pythonmclibrary.server.gamemode.PyGameModes;
 import com.revolvingmadness.pythonmc.pythonmclibrary.server.text.PyFormatting;
@@ -39,10 +39,10 @@ import net.minecraft.util.Formatting;
 import java.io.ByteArrayOutputStream;
 
 public class PythonExecutor {
-	private static boolean initialized;
 	public static ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 	public static ByteArrayOutputStream errorOutputStream = new ByteArrayOutputStream();
 	public static SubInterpreter interpreter;
+	private static boolean initialized;
 
 	public static void execute(ServerCommandSource source, String namespace, String path, String code, Interpreter interpreter) {
 		try {

@@ -3,26 +3,43 @@ from __future__ import annotations
 from numbers import Number
 from typing import overload
 
-from com.revolvingmadness.pythonmc.pythonmclibrary import (
-    PyWorlds,
-    PyScoreboardCriterions,
-    PyBlocks,
-    PyDamageSources,
-    PyDifficulty,
-    PyCollisionRules,
-    PyEnchantments,
-    PyEntities,
-    PyItems,
-    PyGameMode,
-    PyHand,
-    PyItemStack,
-    PyRarity,
-    PyEntity,
-    PyStatusEffects,
-    PyFormatting,
+from com.revolvingmadness.pythonmc.pythonmclibrary.block import PyBlocks
+from com.revolvingmadness.pythonmc.pythonmclibrary.entity import (
     PyArm,
-    PyVisibilityRule,
+    PyEntities,
+)
+from com.revolvingmadness.pythonmc.pythonmclibrary.entity import (
+    PyDamageSources,
+    PyRemovalReasons,
+    PyHand,
+)
+from com.revolvingmadness.pythonmc.pythonmclibrary.entity.effects import (
+    PyStatusEffects,
+)
+from com.revolvingmadness.pythonmc.pythonmclibrary.item import (
+    PyItems,
+    PyHideFlags,
+    PyItemRarity,
+)
+from com.revolvingmadness.pythonmc.pythonmclibrary.item.enchantment import (
+    PyEnchantments,
+    PyEnchantmentRarity,
+)
+from com.revolvingmadness.pythonmc.pythonmclibrary.scoreboard import (
     PyRenderTypes,
+    PyScoreboardCriterions,
+)
+from com.revolvingmadness.pythonmc.pythonmclibrary.scoreboard.rules import (
+    PyCollisionRules,
+    PyVisibilityRules,
+)
+from com.revolvingmadness.pythonmc.pythonmclibrary.server.difficulty import (
+    PyDifficulties,
+)
+from com.revolvingmadness.pythonmc.pythonmclibrary.server.gamemode import PyGameModes
+from com.revolvingmadness.pythonmc.pythonmclibrary.server.text import PyFormatting
+from com.revolvingmadness.pythonmc.pythonmclibrary.world import (
+    PyWorlds,
 )
 
 
@@ -1073,36 +1090,36 @@ class CollisionRules:
 
 
 class DamageSources:
-    IN_FIRE = PyDamageSources.inFire
-    LIGHTNING_BOLT = PyDamageSources.lightningBolt
-    ON_FIRE = PyDamageSources.onFire
-    LAVA = PyDamageSources.lava
-    HOT_FLOOR = PyDamageSources.hotFloor
-    IN_WALL = PyDamageSources.inWall
-    CRAMMING = PyDamageSources.cramming
-    DROWN = PyDamageSources.drown
-    STARVE = PyDamageSources.starve
-    CACTUS = PyDamageSources.cactus
-    FALL = PyDamageSources.fall
-    FLY_INTO_WALL = PyDamageSources.flyIntoWall
-    OUT_OF_WORLD = PyDamageSources.outOfWorld
-    GENERIC = PyDamageSources.generic
-    MAGIC = PyDamageSources.magic
-    WITHER = PyDamageSources.wither
-    DRAGON_BREATH = PyDamageSources.dragonBreath
-    DRY_OUT = PyDamageSources.dryOut
-    SWEET_BERRY_BUSH = PyDamageSources.sweetBerryBush
-    FREEZE = PyDamageSources.freeze
-    STALAGMITE = PyDamageSources.stalagmite
-    OUTSIDE_BORDER = PyDamageSources.outsideBorder
-    GENERIC_KILL = PyDamageSources.genericKill
+    IN_FIRE = PyDamageSources.IN_FIRE
+    LIGHTNING_BOLT = PyDamageSources.LIGHTNING_BOLT
+    ON_FIRE = PyDamageSources.ON_FIRE
+    LAVA = PyDamageSources.LAVA
+    HOT_FLOOR = PyDamageSources.HOT_FLOOR
+    IN_WALL = PyDamageSources.IN_WALL
+    CRAMMING = PyDamageSources.CRAMMING
+    DROWN = PyDamageSources.DROWN
+    STARVE = PyDamageSources.STARVE
+    CACTUS = PyDamageSources.CACTUS
+    FALL = PyDamageSources.FALL
+    FLY_INTO_WALL = PyDamageSources.FLY_INTO_WALL
+    OUT_OF_WORLD = PyDamageSources.OUT_OF_WORLD
+    GENERIC = PyDamageSources.GENERIC
+    MAGIC = PyDamageSources.MAGIC
+    WITHER = PyDamageSources.WITHER
+    DRAGON_BREATH = PyDamageSources.DRAGON_BREATH
+    DRY_OUT = PyDamageSources.DRY_OUT
+    SWEET_BERRY_BUSH = PyDamageSources.SWEET_BERRY_BUSH
+    FREEZE = PyDamageSources.FREEZE
+    STALAGMITE = PyDamageSources.STALAGMITE
+    OUTSIDE_BORDER = PyDamageSources.OUTSIDE_BORDER
+    GENERIC_KILL = PyDamageSources.GENERIC_KILL
 
 
 class Difficulties:
-    EASY = PyDifficulty.EASY
-    HARD = PyDifficulty.HARD
-    NORMAL = PyDifficulty.NORMAL
-    PEACEFUL = PyDifficulty.PEACEFUL
+    EASY = PyDifficulties.EASY
+    HARD = PyDifficulties.HARD
+    NORMAL = PyDifficulties.NORMAL
+    PEACEFUL = PyDifficulties.PEACEFUL
 
 
 class Difficulty:
@@ -1117,10 +1134,10 @@ class Enchantment:
 
 
 class EnchantmentRarity:
-    COMMON = PyEnchantments.Rarity.COMMON
-    UNCOMMON = PyEnchantments.Rarity.UNCOMMON
-    RARE = PyEnchantments.Rarity.RARE
-    VERY_RARE = PyEnchantments.Rarity.VERY_RARE
+    COMMON = PyEnchantmentRarity.COMMON
+    UNCOMMON = PyEnchantmentRarity.UNCOMMON
+    RARE = PyEnchantmentRarity.RARE
+    VERY_RARE = PyEnchantmentRarity.VERY_RARE
 
 
 class Enchantments:
@@ -1580,10 +1597,10 @@ class GameMode:
 
 
 class GameModes:
-    SURVIVAL = PyGameMode.SURVIVAL
-    CREATIVE = PyGameMode.CREATIVE
-    ADVENTURE = PyGameMode.ADVENTURE
-    SPECTATOR = PyGameMode.SPECTATOR
+    SURVIVAL = PyGameModes.SURVIVAL
+    CREATIVE = PyGameModes.CREATIVE
+    ADVENTURE = PyGameModes.ADVENTURE
+    SPECTATOR = PyGameModes.SPECTATOR
 
 
 class Hand:
@@ -1592,14 +1609,14 @@ class Hand:
 
 
 class HideFlags:
-    ENCHANTMENTS = PyItemStack.TooltipSection.ENCHANTMENTS
-    MODIFIERS = PyItemStack.TooltipSection.MODIFIERS
-    UNBREAKABLE = PyItemStack.TooltipSection.UNBREAKABLE
-    CAN_DESTROY = PyItemStack.TooltipSection.CAN_DESTROY
-    CAN_PLACE = PyItemStack.TooltipSection.CAN_PLACE
-    ADDITIONAL = PyItemStack.TooltipSection.ADDITIONAL
-    DYE = PyItemStack.TooltipSection.DYE
-    UPGRADES = PyItemStack.TooltipSection.UPGRADES
+    ENCHANTMENTS = PyHideFlags.ENCHANTMENTS
+    MODIFIERS = PyHideFlags.MODIFIERS
+    UNBREAKABLE = PyHideFlags.UNBREAKABLE
+    CAN_DESTROY = PyHideFlags.CAN_DESTROY
+    CAN_PLACE = PyHideFlags.CAN_PLACE
+    ADDITIONAL = PyHideFlags.ADDITIONAL
+    DYE = PyHideFlags.DYE
+    UPGRADES = PyHideFlags.UPGRADES
 
 
 class HungerManager:
@@ -1616,10 +1633,10 @@ class Item:
 
 
 class ItemRarity:
-    COMMON = PyRarity.COMMON
-    UNCOMMON = PyRarity.UNCOMMON
-    RARE = PyRarity.RARE
-    EPIC = PyRarity.EPIC
+    COMMON = PyItemRarity.COMMON
+    UNCOMMON = PyItemRarity.UNCOMMON
+    RARE = PyItemRarity.RARE
+    EPIC = PyItemRarity.EPIC
 
 
 class Items:
@@ -2516,7 +2533,7 @@ class Items:
     BUNDLE = PyItems.BUNDLE
     FISHING_ROD = PyItems.FISHING_ROD
     CLOCK = PyItems.CLOCK
-    SGLASS = PyItems.SGLASS
+    SPYGLASS = PyItems.SPYGLASS
     GLOWSTONE_DUST = PyItems.GLOWSTONE_DUST
     COD = PyItems.COD
     SALMON = PyItems.SALMON
@@ -3314,11 +3331,11 @@ class PlayerInventory:
 
 
 class RemovalReasons:
-    KILLED = PyEntity.RemovalReason.KILLED
-    DISCARDED = PyEntity.RemovalReason.DISCARDED
-    UNLOADED_TO_CHUNK = PyEntity.RemovalReason.UNLOADED_TO_CHUNK
-    UNLOADED_WITH_PLAYER = PyEntity.RemovalReason.UNLOADED_WITH_PLAYER
-    CHANGED_DIMENSION = PyEntity.RemovalReason.CHANGED_DIMENSION
+    KILLED = PyRemovalReasons.KILLED
+    DISCARDED = PyRemovalReasons.DISCARDED
+    UNLOADED_TO_CHUNK = PyRemovalReasons.UNLOADED_TO_CHUNK
+    UNLOADED_WITH_PLAYER = PyRemovalReasons.UNLOADED_WITH_PLAYER
+    CHANGED_DIMENSION = PyRemovalReasons.CHANGED_DIMENSION
 
 
 class RenderTypes:
@@ -3611,7 +3628,7 @@ class Team:
     def shouldShowFriendlyInvisibles(self) -> bool:
         ...
 
-    def setNameTagVisibilityRule(self, nameTagVisibilityRule: VisibilityRule) -> None:
+    def setNameTagVisibilityRule(self, nameTagVisibilityRule: VisibilityRules) -> None:
         ...
 
     def setFriendlyFireAllowed(self, friendlyFireAllowed: bool) -> None:
@@ -3621,7 +3638,7 @@ class Team:
         ...
 
     def setDeathMessageVisibilityRule(
-            self, deathMessageVisibilityRule: VisibilityRule
+            self, deathMessageVisibilityRule: VisibilityRules
     ) -> None:
         ...
 
@@ -3643,7 +3660,7 @@ class Team:
     def getPrefix(self) -> Text:
         ...
 
-    def getNameTagVisibilityRule(self) -> VisibilityRule:
+    def getNameTagVisibilityRule(self) -> VisibilityRules:
         ...
 
     def getName(self) -> str:
@@ -3652,7 +3669,7 @@ class Team:
     def getDisplayName(self) -> Text:
         ...
 
-    def getDeathMessageVisibilityRule(self) -> VisibilityRule:
+    def getDeathMessageVisibilityRule(self) -> VisibilityRules:
         ...
 
     def getColor(self) -> Formatting:
@@ -3663,10 +3680,10 @@ class Team:
 
 
 class Time:
-    DAY: int = 1000
-    MIDNIGHT: int = 18000
-    NIGHT: int = 13000
-    NOON: int = 6000
+    DAY = 1000
+    MIDNIGHT = 18000
+    NIGHT = 13000
+    NOON = 6000
 
 
 class Vec2f:
@@ -3686,11 +3703,11 @@ class Vec3d:
         ...
 
 
-class VisibilityRule:
-    ALWAYS = PyVisibilityRule.ALWAYS
-    NEVER = PyVisibilityRule.NEVER
-    HIDE_FOR_OTHER_TEAMS = PyVisibilityRule.HIDE_FOR_OTHER_TEAMS
-    HIDE_FOR_OWN_TEAM = PyVisibilityRule.HIDE_FOR_OWN_TEAM
+class VisibilityRules:
+    ALWAYS = PyVisibilityRules.ALWAYS
+    NEVER = PyVisibilityRules.NEVER
+    HIDE_FOR_OTHER_TEAMS = PyVisibilityRules.HIDE_FOR_OTHER_TEAMS
+    HIDE_FOR_OWN_TEAM = PyVisibilityRules.HIDE_FOR_OWN_TEAM
 
 
 class Weather:

@@ -25,10 +25,6 @@ public class PyServer {
 		this.server.setDifficulty(difficulty.toDifficulty().difficulty, true);
 	}
 
-	public void setDefaultGameMode(PyGameModes mode) {
-		this.server.setDefaultGameMode(mode.toGameMode());
-	}
-
 	public void setDifficultyLocked(boolean locked) {
 		this.server.setDifficultyLocked(locked);
 	}
@@ -51,6 +47,10 @@ public class PyServer {
 
 	public PyGameMode getDefaultGameMode() {
 		return new PyGameMode(this.server.getDefaultGameMode());
+	}
+
+	public void setDefaultGameMode(PyGameModes mode) {
+		this.server.setDefaultGameMode(mode.toGameMode());
 	}
 
 	public PyGameMode getForcedGameMode() {

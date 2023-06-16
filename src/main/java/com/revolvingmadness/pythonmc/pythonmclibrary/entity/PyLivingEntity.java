@@ -1,10 +1,10 @@
 package com.revolvingmadness.pythonmc.pythonmclibrary.entity;
 
+import com.revolvingmadness.pythonmc.pythonmclibrary.entity.effects.PyStatusEffectInstance;
+import com.revolvingmadness.pythonmc.pythonmclibrary.entity.effects.PyStatusEffects;
 import com.revolvingmadness.pythonmc.pythonmclibrary.item.PyItem;
 import com.revolvingmadness.pythonmc.pythonmclibrary.item.PyItemStack;
 import com.revolvingmadness.pythonmc.pythonmclibrary.player.PyPlayerEntity;
-import com.revolvingmadness.pythonmc.pythonmclibrary.server.effects.PyStatusEffectInstance;
-import com.revolvingmadness.pythonmc.pythonmclibrary.server.effects.PyStatusEffects;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.util.math.Vec3d;
@@ -44,10 +44,6 @@ public class PyLivingEntity extends PyEntity {
 		this.livingEntity.clearStatusEffects();
 	}
 
-	public void damage(PyDamageSources source, Number amount) {
-		this.livingEntity.damage(source.toDamageSource(this.livingEntity.getWorld()), amount.floatValue());
-	}
-
 	public void damageArmor(PyDamageSources source, Number amount) {
 		this.livingEntity.damageArmor(source.toDamageSource(this.livingEntity.getWorld()), amount.floatValue());
 	}
@@ -68,6 +64,10 @@ public class PyLivingEntity extends PyEntity {
 		return this.livingEntity.getAbsorptionAmount();
 	}
 
+	public void setAbsorptionAmount(Number amount) {
+		this.livingEntity.setAbsorptionAmount(amount.floatValue());
+	}
+
 	public PyHand getActiveHand() {
 		return PyHand.fromHand(this.livingEntity.getActiveHand());
 	}
@@ -82,6 +82,14 @@ public class PyLivingEntity extends PyEntity {
 		return result;
 	}
 
+	public void remove(PyRemovalReasons reason) {
+		this.livingEntity.remove(reason.toRemovalReason());
+	}
+
+	public void damage(PyDamageSources source, Number amount) {
+		this.livingEntity.damage(source.toDamageSource(this.livingEntity.getWorld()), amount.floatValue());
+	}
+
 	public float getArmor() {
 		return this.livingEntity.getArmor();
 	}
@@ -90,12 +98,24 @@ public class PyLivingEntity extends PyEntity {
 		return new PyLivingEntity(this.livingEntity.getAttacking());
 	}
 
+	public void setAttacking(PyPlayerEntity attacking) {
+		this.livingEntity.setAttacking(attacking.playerEntity);
+	}
+
 	public PyLivingEntity getAttacker() {
 		return new PyLivingEntity(this.livingEntity.getAttacker());
 	}
 
+	public void setAttacker(PyLivingEntity attacker) {
+		this.livingEntity.setAttacker(attacker.livingEntity);
+	}
+
 	public float getHealth() {
 		return this.livingEntity.getHealth();
+	}
+
+	public void setHealth(Number health) {
+		this.livingEntity.setHealth(health.floatValue());
 	}
 
 	public PyArm getMainArm() {
@@ -112,6 +132,10 @@ public class PyLivingEntity extends PyEntity {
 
 	public float getMovementSpeed() {
 		return this.livingEntity.getMovementSpeed();
+	}
+
+	public void setMovementSpeed(Number movementSpeed) {
+		this.livingEntity.setMovementSpeed(movementSpeed.floatValue());
 	}
 
 	public float getScaleFactor() {
@@ -138,6 +162,10 @@ public class PyLivingEntity extends PyEntity {
 
 	public float getStuckArrowCount() {
 		return this.livingEntity.getStuckArrowCount();
+	}
+
+	public void setStuckArrowCount(Number stuckArrowCount) {
+		this.livingEntity.setStuckArrowCount(stuckArrowCount.intValue());
 	}
 
 	public boolean hasStatusEffect(PyStatusEffects effect) {
@@ -204,32 +232,12 @@ public class PyLivingEntity extends PyEntity {
 		return this.livingEntity.isUsingRiptide();
 	}
 
-	public void remove(PyRemovalReasons reason) {
-		this.livingEntity.remove(reason.toRemovalReason());
-	}
-
 	public void removeStatusEffect(PyStatusEffects effect) {
 		this.livingEntity.removeStatusEffect(effect.toStatusEffect());
 	}
 
-	public void setAbsorptionAmount(Number amount) {
-		this.livingEntity.setAbsorptionAmount(amount.floatValue());
-	}
-
-	public void setAttacking(PyPlayerEntity attacking) {
-		this.livingEntity.setAttacking(attacking.playerEntity);
-	}
-
-	public void setAttacker(PyLivingEntity attacker) {
-		this.livingEntity.setAttacker(attacker.livingEntity);
-	}
-
 	public void setCurrentHand(PyHand hand) {
 		this.livingEntity.setCurrentHand(hand.toHand());
-	}
-
-	public void setHealth(Number health) {
-		this.livingEntity.setHealth(health.floatValue());
 	}
 
 	public void setJumping(boolean jumping) {
@@ -242,10 +250,6 @@ public class PyLivingEntity extends PyEntity {
 
 	public void setStingerCount(Number stingerCount) {
 		this.livingEntity.setStingerCount(stingerCount.intValue());
-	}
-
-	public void setStuckArrowCount(Number stuckArrowCount) {
-		this.livingEntity.setStuckArrowCount(stuckArrowCount.intValue());
 	}
 
 	public boolean shouldDisplaySoulSpeedEffects() {
@@ -270,9 +274,5 @@ public class PyLivingEntity extends PyEntity {
 
 	public void tiltScreen(Number deltaX, Number deltaY) {
 		this.livingEntity.tiltScreen(deltaX.doubleValue(), deltaY.doubleValue());
-	}
-
-	public void setMovementSpeed(Number movementSpeed) {
-		this.livingEntity.setMovementSpeed(movementSpeed.floatValue());
 	}
 }
