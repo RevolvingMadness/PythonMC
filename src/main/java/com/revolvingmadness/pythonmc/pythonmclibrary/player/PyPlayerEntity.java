@@ -14,7 +14,7 @@ import net.minecraft.text.Text;
 import java.util.Map;
 
 public class PyPlayerEntity extends PyLivingEntity {
-	final PlayerEntity playerEntity;
+	public final PlayerEntity playerEntity;
 
 	public PyPlayerEntity(PlayerEntity playerEntity) {
 		super(playerEntity);

@@ -3,7 +3,7 @@ package com.revolvingmadness.pythonmc.pythonmclibrary.block;
 import net.minecraft.util.math.BlockPos;
 
 public class PyBlockPos {
-	final BlockPos blockPos;
+	public final BlockPos blockPos;
 	public final int x;
 	public final int y;
 	public final int z;

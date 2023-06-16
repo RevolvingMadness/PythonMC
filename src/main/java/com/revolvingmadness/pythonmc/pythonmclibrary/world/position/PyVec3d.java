@@ -3,7 +3,7 @@ package com.revolvingmadness.pythonmc.pythonmclibrary.world.position;
 import net.minecraft.util.math.Vec3d;
 
 public class PyVec3d {
-	final Vec3d vec;
+	public final Vec3d vec;
 	public final double x;
 	public final double y;
 	public final double z;

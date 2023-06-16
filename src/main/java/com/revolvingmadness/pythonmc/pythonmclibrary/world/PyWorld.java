@@ -16,7 +16,7 @@ import net.minecraft.util.math.intprovider.IntProvider;
 import java.util.Map;
 
 public class PyWorld {
-	final ServerWorld world;
+	public final ServerWorld world;
 
 	public PyWorld(ServerWorld world) {
 		this.world = world;

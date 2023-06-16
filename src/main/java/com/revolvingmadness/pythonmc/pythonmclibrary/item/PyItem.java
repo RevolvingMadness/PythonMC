@@ -5,9 +5,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 
 public class PyItem {
-	final Item item;
-	final ItemStack itemStack;
+	public final Item item;
 	public final String name;
+	final ItemStack itemStack;
 
 	public PyItem(Item item) {
 		this.item = item;

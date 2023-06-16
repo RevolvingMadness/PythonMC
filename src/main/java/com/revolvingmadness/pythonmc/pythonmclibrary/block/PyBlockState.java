@@ -3,7 +3,7 @@ package com.revolvingmadness.pythonmc.pythonmclibrary.block;
 import net.minecraft.block.BlockState;
 
 public class PyBlockState {
-	final BlockState blockState;
+	public final BlockState blockState;
 	public final PyBlock block;
 
 	public PyBlockState(BlockState blockState) {

@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 public class PyItemStack {
-	final ItemStack itemStack;
+	public final ItemStack itemStack;
 	final Item item;
 
 	public PyItemStack(ItemStack itemStack) {
@@ -58,8 +58,16 @@ public class PyItemStack {
 		return this.itemStack.getCount();
 	}
 
+	public void setCount(Number count) {
+		this.itemStack.setCount(count.intValue());
+	}
+
 	public int getDamage() {
 		return this.itemStack.getDamage();
+	}
+
+	public void setDamage(Number damage) {
+		this.itemStack.setDamage(damage.intValue());
 	}
 
 	public List<PyEnchantment> getEnchantments() {
@@ -97,6 +105,10 @@ public class PyItemStack {
 
 	public int getRepairCost() {
 		return this.itemStack.getRepairCost();
+	}
+
+	public void setRepairCost(Number repairCost) {
+		this.itemStack.setRepairCost(repairCost.intValue());
 	}
 
 	public boolean hasCustomName() {
@@ -147,10 +159,6 @@ public class PyItemStack {
 		this.itemStack.removeCustomName();
 	}
 
-	public void setCount(Number count) {
-		this.itemStack.setCount(count.intValue());
-	}
-
 	public void setCustomName(String name) {
 		this.itemStack.setCustomName(Text.of(name));
 	}
@@ -158,15 +166,6 @@ public class PyItemStack {
 	public void setCustomName(PyText text) {
 		this.itemStack.setCustomName(text.text);
 	}
-
-	public void setDamage(Number damage) {
-		this.itemStack.setDamage(damage.intValue());
-	}
-
-	public void setRepairCost(Number repairCost) {
-		this.itemStack.setRepairCost(repairCost.intValue());
-	}
-
 
 	@Override
 	public String toString() {

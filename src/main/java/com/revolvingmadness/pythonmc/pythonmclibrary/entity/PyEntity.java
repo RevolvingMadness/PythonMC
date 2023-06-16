@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PyEntity {
-	final Entity entity;
+	public final Entity entity;
 
 	public PyEntity(Entity entity) {
 		this.entity = entity;
@@ -22,16 +22,16 @@ public class PyEntity {
 		this.entity = entity.toEntityType().create(world.world);
 	}
 
-	public void setVelocity(PyVec3d velocity) {
-		this.entity.setVelocity(velocity.vec);
-	}
-
 	public void addVelocity(PyVec3d velocity) {
 		this.entity.addVelocity(velocity.vec);
 	}
 
 	public PyVec3d getVelocity() {
 		return new PyVec3d(this.entity.getVelocity());
+	}
+
+	public void setVelocity(PyVec3d velocity) {
+		this.entity.setVelocity(velocity.vec);
 	}
 
 	public boolean isWet() {
@@ -50,10 +50,6 @@ public class PyEntity {
 
 	public boolean isAlive() {
 		return this.entity.isAlive();
-	}
-
-	public void setInvisible(boolean invisible) {
-		this.entity.setInvisible(invisible);
 	}
 
 	public void teleport(PyVec3d position) {
@@ -92,14 +88,6 @@ public class PyEntity {
 		return this.entity.isInsideWaterOrBubbleColumn();
 	}
 
-	public void setOnFire(boolean onFire) {
-		this.entity.setOnFire(onFire);
-	}
-
-	public void setGlowing(boolean glowing) {
-		this.entity.setGlowing(glowing);
-	}
-
 	public void extinguishWithSound() {
 		this.entity.extinguishWithSound();
 	}
@@ -134,20 +122,8 @@ public class PyEntity {
 		this.entity.damage(source.toDamageSource(this.entity.getWorld()), amount.floatValue());
 	}
 
-	public void setCustomName(Object customName) {
-		this.entity.setCustomName(Text.of(String.valueOf(customName)));
-	}
-
-	public void setCustomName(PyText text) {
-		this.entity.setCustomName(text.text);
-	}
-
 	public boolean canUsePortals() {
 		return this.entity.canUsePortals();
-	}
-
-	public void setPosition(PyVec3d position) {
-		this.entity.setPosition(position.vec);
 	}
 
 	public boolean hasCustomName() {
@@ -166,6 +142,10 @@ public class PyEntity {
 		return this.entity.isSprinting();
 	}
 
+	public void setSprinting(boolean sprinting) {
+		this.entity.setSprinting(sprinting);
+	}
+
 	public boolean isTouchingWater() {
 		return this.entity.isTouchingWater();
 	}
@@ -176,6 +156,10 @@ public class PyEntity {
 
 	public PyVec3d getPosition() {
 		return new PyVec3d(this.entity.getPos());
+	}
+
+	public void setPosition(PyVec3d position) {
+		this.entity.setPosition(position.vec);
 	}
 
 	public void stopRiding() {
@@ -198,12 +182,12 @@ public class PyEntity {
 		return this.entity.shouldRenderName();
 	}
 
-	public void setSilent(boolean silent) {
-		this.entity.setSilent(silent);
-	}
-
 	public boolean isSneaking() {
 		return this.entity.isSneaking();
+	}
+
+	public void setSneaking(boolean sneaking) {
+		this.entity.setSneaking(sneaking);
 	}
 
 	public boolean isTouchingWaterOrRain() {
@@ -230,8 +214,16 @@ public class PyEntity {
 		return this.entity.isOnGround();
 	}
 
+	public void setOnGround(boolean onGround) {
+		this.entity.setOnGround(onGround);
+	}
+
 	public boolean isCustomNameVisible() {
 		return this.entity.isCustomNameVisible();
+	}
+
+	public void setCustomNameVisible(boolean customNameVisible) {
+		this.entity.setCustomNameVisible(customNameVisible);
 	}
 
 	public boolean isFireImmune() {
@@ -244,14 +236,6 @@ public class PyEntity {
 
 	public boolean isSwimming() {
 		return this.entity.isSwimming();
-	}
-
-	public void setOnGround(boolean onGround) {
-		this.entity.setOnGround(onGround);
-	}
-
-	public void setSprinting(boolean sprinting) {
-		this.entity.setSprinting(sprinting);
 	}
 
 	public boolean isLiving() {
@@ -290,12 +274,12 @@ public class PyEntity {
 		return this.entity.getDisplayName().getString();
 	}
 
-	public void setCustomNameVisible(boolean customNameVisible) {
-		this.entity.setCustomNameVisible(customNameVisible);
-	}
-
 	public boolean isSilent() {
 		return this.entity.isSilent();
+	}
+
+	public void setSilent(boolean silent) {
+		this.entity.setSilent(silent);
 	}
 
 	public boolean shouldDismountUnderwater() {
@@ -306,12 +290,24 @@ public class PyEntity {
 		return this.entity.isGlowing();
 	}
 
+	public void setGlowing(boolean glowing) {
+		this.entity.setGlowing(glowing);
+	}
+
 	public boolean isOnFire() {
 		return this.entity.isOnFire();
 	}
 
+	public void setOnFire(boolean onFire) {
+		this.entity.setOnFire(onFire);
+	}
+
 	public boolean isInvisible() {
 		return this.entity.isInvisible();
+	}
+
+	public void setInvisible(boolean invisible) {
+		this.entity.setInvisible(invisible);
 	}
 
 	public void setInPowderSnow(boolean inPowderSnow) {
@@ -334,12 +330,16 @@ public class PyEntity {
 		return null;
 	}
 
-	public String getName() {
-		return Text.translatable(this.entity.getType().getTranslationKey()).getString();
+	public void setCustomName(Object customName) {
+		this.entity.setCustomName(Text.of(String.valueOf(customName)));
 	}
 
-	public void setSneaking(boolean sneaking) {
-		this.entity.setSneaking(sneaking);
+	public void setCustomName(PyText text) {
+		this.entity.setCustomName(text.text);
+	}
+
+	public String getName() {
+		return Text.translatable(this.entity.getType().getTranslationKey()).getString();
 	}
 
 	public boolean isCollidable() {
