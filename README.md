@@ -19,7 +19,7 @@
 <h3 align="center">PythonMC</h3>
 
   <p align="center">
-    PythonMC is a wrapper for Minecraft datapacks that allows them to be written in Python. Minecraft datapacks require a deep knowledge of commands, but with PythonMC you only need to know Python and how PythonMC works.
+    PythonMC is a Fabric mod that allows datapacks to be written in Python. Minecraft datapacks have some big limitations but, PythonMC has very little. Like for loops, functions, if statements, and modules. 
     <br />
     <a href="https://RevolvingMadness.github.io/PythonMC"><strong>Explore the docs »</strong></a>
     <br />
