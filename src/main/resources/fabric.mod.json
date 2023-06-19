@@ -4,16 +4,16 @@
    "id": "pythonmc",
    "version": "${version}",
    "name": "PythonMC",
-   "description": "This is an example description! Tell everyone what your mod is about!",
+   "description": "This mod allows for datapacks to be written in the programming language Python",
    "authors": [
-      "Me!"
+      "RevolvingMadness!"
    ],
    "contact": {
-      "homepage": "https://fabricmc.net/",
-      "sources": "https://github.com/FabricMC/fabric-example-mod"
+      "homepage": "",
+      "sources": "https://github.com/RevolvingMadness/PythonMC"
    },
-   "license": "CC0-1.0",
-   "icon": " ",
+   "license": "MIT",
+   "icon": "",
    "environment": "*",
    "entrypoints": {
       "main": [
@@ -25,7 +25,7 @@
    ],
    "depends": {
       "fabricloader": ">=0.14.21",
-      "minecraft": "~1.20",
+      "minecraft": "~1.20.1",
       "java": ">=17",
       "fabric-api": "*"
    },
