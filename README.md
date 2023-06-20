@@ -33,6 +33,39 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+## Getting Started
+
+### Prerequisites
+
+You need Python to use PythonMC, You can get it [here](https://www.python.org).  
+**MAKE SURE TO CHECK THIS BOX OTHERWISE PYTHONMC WON'T WORK:**  
+![](https://raw.githubusercontent.com/RevolvingMadness/PythonMC/master/images/addtoenvironmentvariables.png)
+
+### Installation
+
+1. Install Python packages
+   ```sh
+   pip install jep pythonmc
+   ```
+    - We need `jep` because that is how the mod interacts with Python.
+    - We need `pythonmc` because that provides syntax highlighting.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Usage
 
 If you want to know how to use PythonMC refer to the [documentation](https://RevolvingMadness.github.io/PythonMC)
