@@ -5,13 +5,17 @@ import net.minecraft.block.Block;
 import net.minecraft.text.Text;
 
 public class PyBlock {
-	final Block block;
 	public final PyItem item;
 	public final String name;
 	public final float blastResistance;
 	public final float velocityMultiplier;
 	public final float jumpVelocityMultiplier;
 	public final float slipperiness;
+	final Block block;
+
+	public PyBlock(PyBlocks block) {
+		this(block.toBlock());
+	}
 
 	public PyBlock(Block block) {
 		this.block = block;

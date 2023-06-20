@@ -1,3 +1,17 @@
+Metadata-Version: 2.1
+Name: pythonmc
+Version: 1.0.2
+Summary: The python library for PythonMC
+Home-page: https://github.com/RevolvingMadness/PythonMC
+Author: RevolvingMadness
+Author-email: revolvingmad@gmail.com
+Project-URL: Bug Tracker, https://github.com/RevolvingMadness/PythonMC/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
 <a name="readme-top"></a>
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -13,7 +27,7 @@
 <div align="center">
   <a href="https://github.com/RevolvingMadness/PythonMC">
     <!--suppress CheckImageSize, CheckImageSize -->
-<img src="https://raw.githubusercontent.com/RevolvingMadness/PythonMC/master/images/logo.png" alt="PythonMC Logo" width="80" height="80">
+<img src="images/logo.png" alt="PythonMC Logo" width="80" height="80">
   </a>
 
 <h3 align="center">PythonMC</h3>

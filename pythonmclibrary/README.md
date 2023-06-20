@@ -108,8 +108,6 @@ Project Link: **[https://github.com/RevolvingMadness/PythonMC](https://github.co
 
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 
-[product-screenshot]: images/screenshot.png
-
 [fabricmc.net]: https://img.shields.io/badge/Fabric%20-1.19.4%20-blue?style=for-the-badge
 
 [Fabric-url]: https://fabricmc.net

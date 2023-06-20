@@ -6,13 +6,17 @@ public class PyBlockState {
 	public final BlockState blockState;
 	public final PyBlock block;
 
+	public PyBlockState(PyBlocks block) {
+		this(block.toBlock().getDefaultState());
+	}
+
 	public PyBlockState(BlockState blockState) {
 		this.block = new PyBlock(blockState.getBlock());
 		this.blockState = blockState;
 	}
 
-	public PyBlockState(PyBlocks block) {
-		this(block.toBlock().getDefaultState());
+	public boolean isOf(PyBlocks block) {
+		return this.isOf(new PyBlock(block.toBlock()));
 	}
 
 	public boolean isOf(PyBlock block) {
