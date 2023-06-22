@@ -3,11 +3,13 @@ from __future__ import annotations
 from numbers import Number
 from typing import overload
 
-
 class Arm:
+    """
+    Represents the arm of a player.
+    """
+
     LEFT: object
     RIGHT: object
-
 
 class Block:
     item: Item
@@ -18,18 +20,48 @@ class Block:
     slipperiness: float
 
     def __init__(self, block: Blocks) -> None:
-        ...
+        """
+        Initializes a new Block object.
 
+        Args:
+            block (Blocks): The block object representing the block.
+
+        Returns:
+            None
+        """
 
 class BlockPos:
+    """
+    Represents a position in the world.
+
+    Attributes:
+        x (int): The x-coordinate of the position.
+        y (int): The y-coordinate of the position.
+        z (int): The z-coordinate of the position.
+    """
+
     x: int
     y: int
     z: int
 
-    def __init__(self, x: Number, y: Number, z: Number) -> None: ...
+    def __init__(self, x: Number, y: Number, z: Number) -> None:
+        """
+        Initializes a new BlockPos object.
 
+        Args:
+            x (Number): The x-coordinate of the position.
+            y (Number): The y-coordinate of the position.
+            z (Number): The z-coordinate of the position.
+
+        Returns:
+            None
+        """
 
 class Blocks:
+    """
+    The Blocks class represents a collection of block objects in Minecraft game.
+    """
+
     AIR: object
     STONE: object
     GRANITE: object
@@ -1034,23 +1066,35 @@ class Blocks:
     REINFORCED_DEEPSLATE: object
     DECORATED_POT: object
 
-
 class BlockState:
+    """
+    The BlockState class represents the state of a block in Minecraft.
+
+    Attributes:
+        block (Block): The block associated with this state.
+    """
+
     block: Block
 
     def __init__(self, block: Blocks) -> None: ...
-
+    @staticmethod
     def isOf(block: Block) -> bool: ...
 
-
 class CollisionRules:
+    """
+    The CollisionRules class represents the collision rules for entities in Minecraft.
+    """
+
     ALWAYS: object
     NEVER: object
     PUSH_OTHER_TEAMS: object
     PUSH_OWN_TEAM: object
 
-
 class DamageSources:
+    """
+    The DamageSources class represents the various sources of damage in Minecraft.
+    """
+
     IN_FIRE: object
     LIGHTNING_BOLT: object
     ON_FIRE: object
@@ -1075,33 +1119,57 @@ class DamageSources:
     OUTSIDE_BORDER: object
     GENERIC_KILL: object
 
-
 class Difficulties:
+    """
+    The Difficulties class represents the difficulty levels in Minecraft.
+    """
+
     EASY: object
     HARD: object
     NORMAL: object
     PEACEFUL: object
 
-
 class Difficulty:
+    """
+    The Difficulty class represents a difficulty level in Minecraft.
+
+    Attributes:
+        name (str): The name of the difficulty level.
+        id (int): The unique identifier of the difficulty level.
+        info (str): Additional information or description about the difficulty level.
+    """
+
     name: str
     id: int
     info: str
 
-
 class Enchantment:
+    """
+    The Enchantment class represents an enchantment applied to an item in Minecraft.
+
+    Attributes:
+        level (int): The level or magnitude of the enchantment.
+        rarity (EnchantmentRarity): The rarity level of the enchantment.
+    """
+
     level: int
     rarity: EnchantmentRarity
 
-
 class EnchantmentRarity:
+    """
+    The EnchantmentRarity class represents the rarity levels of enchantments in Minecraft.
+    """
+
     COMMON: object
     UNCOMMON: object
     RARE: object
     VERY_RARE: object
 
-
 class Enchantments:
+    """
+    The Enchantments class represents a collection of available enchantments in Minecraft.
+    """
+
     PROTECTION: object
     FIRE_PROTECTION: object
     FEATHER_FALLING: object
@@ -1142,12 +1210,21 @@ class Enchantments:
     MENDING: object
     VANISHING_CURSE: object
 
-
 class EnderChestInventory:
+    """
+    The EnderChestInventory class represents the inventory of an Ender Chest in Minecraft.
+
+    Attributes:
+        stacks (list[ItemStack]): A list of ItemStack objects representing the items stored in the Ender Chest.
+    """
+
     stacks: list[ItemStack]
 
-
 class Entities:
+    """
+    The Entities class represents different types of entities in Minecraft.
+    """
+
     ALLAY: object
     AREA_EFFECT_CLOUD: object
     ARMOR_STAND: object
@@ -1273,174 +1350,458 @@ class Entities:
     PLAYER: object
     FISHING_BOBBER: object
 
-
 class Entity:
-    def __init__(self, entity: Entities, world: World) -> None: ...
-
-    def addVelocity(self, velocity: Vec3d) -> None: ...
-
-    def canFreeze(self) -> bool: ...
-
-    def canUsePortals(self) -> bool: ...
-
-    def collidesWith(self, entity: Entity) -> bool: ...
-
-    def damage(self, damageSource: DamageSources, amount: Number) -> None: ...
-
-    def dismountVehicle(self) -> None: ...
-
-    def distanceTo(self, entity: Entity) -> float: ...
-
-    def extinguish(self) -> None: ...
-
-    def extinguishWithSound(self) -> None: ...
-
-    def getArmorItems(self) -> list[ItemStack]: ...
-
-    def getBlockPos(self) -> BlockPos: ...
-
-    def getCommandTags(self) -> list[str]: ...
-
-    def getCustomName(self) -> str: ...
-
-    def getDisplayName(self) -> str: ...
-
-    def getHandItems(self) -> list[ItemStack]: ...
-
-    def getName(self) -> str: ...
-
-    def getPosition(self) -> Vec3d: ...
-
-    def getVehicle(self) -> Entity: ...
-
-    def getVelocity(self) -> Vec3d: ...
-
-    def getX(self) -> float: ...
-
-    def getY(self) -> float: ...
-
-    def getZ(self) -> float: ...
-
-    def hasCustomName(self) -> bool: ...
-
-    def hasNoGravity(self) -> bool: ...
-
-    def hasPassenger(self, entity: Entity) -> bool: ...
-
-    def hasPassengers(self) -> bool: ...
-
-    def hasPermissionLevel(self, level: Number) -> bool: ...
-
-    def hasPortalCooldown(self) -> bool: ...
-
-    def hasVehicle(self) -> bool: ...
-
-    def isAlive(self) -> bool: ...
-
-    def isCollidable(self) -> bool: ...
-
-    def isCrawling(self) -> bool: ...
-
-    def isCustomNameVisible(self) -> bool: ...
-
-    def isDescending(self) -> bool: ...
-
-    def isFireImmune(self) -> bool: ...
-
-    def isGlowing(self) -> bool: ...
-
-    def isInLava(self) -> bool: ...
-
-    def isInRange(self, entity: Entity, range: Number) -> bool: ...
-
-    def isInsideWall(self) -> bool: ...
-
-    def isInsideWaterOrBubbleColumn(self) -> bool: ...
-
-    def isInvisible(self) -> bool: ...
-
-    def isLiving(self) -> bool: ...
-
-    def isOnFire(self) -> bool: ...
-
-    def isOnGround(self) -> bool: ...
-
-    def isPlayer(self) -> bool: ...
-
-    def isPushable(self) -> bool: ...
-
-    def isSilent(self) -> bool: ...
-
-    def isSneaking(self) -> bool: ...
-
-    def isSpectator(self) -> bool: ...
-
-    def isSprinting(self) -> bool: ...
-
-    def isSubmergedInWater(self) -> bool: ...
-
-    def isSwimming(self) -> bool: ...
-
-    def isTouchingWater(self) -> bool: ...
-
-    def isTouchingWaterOrRain(self) -> bool: ...
-
-    def isWet(self) -> bool: ...
-
-    def kill(self) -> None: ...
-
-    def remove(self, reason: RemovalReasons) -> None: ...
-
-    def removeAllPassengers(self) -> None: ...
-
-    @overload
-    def setCustomName(self, customName: str) -> None: ...
-
-    @overload
-    def setCustomName(self, text: Text) -> None: ...
-
-    def setCustomNameVisible(self, customNameVisible: bool) -> None: ...
-
-    def setFireTicks(self, fireTicks: Number) -> None: ...
-
-    def setGlowing(self, glowing: bool) -> None: ...
-
-    def setInPowderSnow(self, inPowderSnow: bool) -> None: ...
-
-    def setInvisible(self, invisible: bool) -> None: ...
-
-    def setNoGravity(self, noGravity: bool) -> None: ...
-
-    def setOnFire(self, onFire: bool) -> None: ...
-
-    def setOnFireFor(self, seconds: Number) -> None: ...
-
-    def setOnFireFromLava(self) -> None: ...
-
-    def setOnGround(self, onGround: bool) -> None: ...
-
-    def setPosition(self, position: Vec3d) -> None: ...
-
-    def setSilent(self, silent: bool) -> None: ...
-
-    def setSneaking(self, sneaking: bool) -> None: ...
-
-    def setSprinting(self, sprinting: bool) -> None: ...
-
-    def setVelocity(self, velocity: Vec3d) -> None: ...
-
-    def shouldDismountUnderwater(self) -> bool: ...
-
-    def shouldRenderName(self) -> bool: ...
-
-    def startRiding(self, entity: Entity) -> None: ...
-
-    def stopRiding(self) -> None: ...
-
-    def teleport(self, position: Vec3d) -> None: ...
-
+    def __init__(self, entity: Entities, world: World) -> None:
+        """
+        Initializes a new entity with the specified entity type and world.
+
+        Args:
+            entity: The type of entity.
+            world: The world the entity belongs to.
+        """
+    def addVelocity(self, velocity: Vec3d) -> None:
+        """
+        Adds velocity to the entity.
+
+        Args:
+            velocity: The velocity to add to the entity.
+        """
+    def canFreeze(self) -> bool:
+        """
+        Checks if the entity can freeze.
+
+        Returns:
+            True if the entity can freeze, False otherwise.
+        """
+    def canUsePortals(self) -> bool:
+        """
+        Checks if the entity can use portals.
+
+        Returns:
+            True if the entity can use portals, False otherwise.
+        """
+    def collidesWith(self, entity: Entity) -> bool:
+        """
+        Checks if the entity collides with another entity.
+
+        Args:
+            entity: The entity to check collision with.
+
+        Returns:
+            True if the entity collides with the specified entity, False otherwise.
+        """
+    def damage(self, damageSource: DamageSources, amount: Number) -> None:
+        """
+        Damages the entity by the specified amount using the given damage source.
+
+        Args:
+            damageSource: The source of the damage.
+            amount: The amount of damage to inflict.
+        """
+    def dismountVehicle(self) -> None:
+        """
+        Dismounts the entity from its current vehicle.
+        """
+    def distanceTo(self, entity: Entity) -> float:
+        """
+        Calculates the distance to another entity.
+
+        Args:
+            entity: The entity to calculate the distance to.
+
+        Returns:
+            The distance to the specified entity.
+        """
+    def extinguish(self) -> None:
+        """
+        Extinguishes the entity.
+        """
+    def extinguishWithSound(self) -> None:
+        """
+        Extinguishes the entity with a sound effect.
+        """
+    def getArmorItems(self) -> list[ItemStack]:
+        """
+        Returns a list of armor items worn by the entity.
+
+        Returns:
+            A list of ItemStack objects representing the armor items.
+        """
+    def getBlockPos(self) -> BlockPos:
+        """
+        Returns the block position of the entity.
+
+        Returns:
+            The BlockPos object representing the block position.
+        """
+    def getCommandTags(self) -> list[str]:
+        """
+        Returns a list of command tags associated with the entity.
+
+        Returns:
+            A list of strings representing the command tags.
+        """
+    def getCustomName(self) -> str:
+        """
+        Returns the custom name of the entity.
+
+        Returns:
+            The custom name of the entity as a string.
+        """
+    def getDisplayName(self) -> str:
+        """
+        Returns the display name of the entity.
+
+        Returns:
+            The display name of the entity as a string.
+        """
+    def getHandItems(self) -> list[ItemStack]:
+        """
+        Returns a list of items held in the entity's hands.
+
+        Returns:
+            A list of ItemStack objects representing the held items.
+        """
+    def getName(self) -> str:
+        """
+        Returns the name of the entity.
+
+        Returns:
+            The name of the entity as a string.
+        """
+    def getPosition(self) -> Vec3d:
+        """
+        Returns the position of the entity.
+
+        Returns:
+            The position of the entity as a Vec3d object.
+        """
+    def getVehicle(self) -> Entity:
+        """
+        Returns the vehicle that the entity is riding.
+
+        Returns:
+            The vehicle entity that the entity is riding, or None if not riding any vehicle.
+        """
+    def getVelocity(self) -> Vec3d:
+        """
+        Returns the velocity of the entity.
+
+        Returns:
+            The velocity of the entity as a Vec3d object.
+        """
+    def getX(self) -> float:
+        """
+        Returns the X-coordinate of the entity's position.
+
+        Returns:
+            The X-coordinate of the entity's position as a float.
+        """
+    def getY(self) -> float:
+        """
+        Returns the Y-coordinate of the entity's position.
+
+        Returns:
+            The Y-coordinate of the entity's position as a float.
+        """
+    def getZ(self) -> float:
+        """
+        Returns the Z-coordinate of the entity's position.
+
+        Returns:
+            The Z-coordinate of the entity's position as a float.
+        """
+    def hasCustomName(self) -> bool:
+        """
+        Checks if the entity has a custom name.
+
+        Returns:
+            True if the entity has a custom name, False otherwise.
+        """
+    def hasNoGravity(self) -> bool:
+        """
+        Checks if the entity has no gravity.
+
+        Returns:
+            True if the entity has no gravity, False otherwise.
+        """
+    def hasPassenger(self, entity: Entity) -> bool:
+        """
+        Checks if the entity has the specified entity as a passenger.
+
+        Args:
+            entity: The entity to check for as a passenger.
+
+        Returns:
+            True if the entity has the specified entity as a passenger, False otherwise.
+        """
+    def hasPassengers(self) -> bool:
+        """
+        Checks if the entity has any passengers.
+
+        Returns:
+            True if the entity has passengers, False otherwise.
+        """
+    def hasPermissionLevel(self, level: Number) -> bool:
+        """
+        Checks if the entity has the specified permission level.
+
+        Args:
+            level: The permission level to check.
+
+        Returns:
+            True if the entity has the specified permission level, False otherwise.
+        """
+    def hasPortalCooldown(self) -> bool:
+        """
+        Checks if the entity has a portal cooldown.
+
+        Returns:
+            True if the entity has a portal cooldown, False otherwise.
+        """
+    def hasVehicle(self) -> bool:
+        """
+        Checks if the entity is riding a vehicle.
+
+        Returns:
+            True if the entity is riding a vehicle, False otherwise.
+        """
+    def isAlive(self) -> bool:
+        """
+        Checks if the entity is alive.
+
+        Returns:
+            True if the entity is alive, False otherwise.
+        """
+    def isCollidable(self) -> bool:
+        """
+        Checks if the entity is collidable.
+
+        Returns:
+            True if the entity is collidable, False otherwise.
+        """
+    def isCrawling(self) -> bool:
+        """
+        Checks if the entity is crawling.
+
+        Returns:
+            True if the entity is crawling, False otherwise.
+        """
+    def isCustomNameVisible(self) -> bool:
+        """
+        Checks if the entity's custom name is visible.
+
+        Returns:
+            True if the entity's custom name is visible, False otherwise.
+        """
+    def isDead(self) -> bool:
+        """
+        Checks if the entity is dead.
+
+        Returns:
+            True if the entity is dead, False otherwise.
+        """
+    def isInLava(self) -> bool:
+        """
+        Checks if the entity is in lava.
+
+        Returns:
+            True if the entity is in lava, False otherwise.
+        """
+    def isInRain(self) -> bool:
+        """
+        Checks if the entity is in rain.
+
+        Returns:
+            True if the entity is in rain, False otherwise.
+        """
+    def isInsidePortal(self) -> bool:
+        """
+        Checks if the entity is inside a portal.
+
+        Returns:
+            True if the entity is inside a portal, False otherwise.
+        """
+    def isInsideWater(self) -> bool:
+        """
+        Checks if the entity is inside water.
+
+        Returns:
+            True if the entity is inside water, False otherwise.
+        """
+    def isOnGround(self) -> bool:
+        """
+        Checks if the entity is on the ground.
+
+        Returns:
+            True if the entity is on the ground, False otherwise.
+        """
+    def isSpectator(self) -> bool:
+        """
+        Checks if the entity is a spectator.
+
+        Returns:
+            True if the entity is a spectator, False otherwise.
+        """
+    def isSubmergedInWater(self) -> bool:
+        """
+        Checks if the entity is submerged in water.
+
+        Returns:
+            True if the entity is submerged in water, False otherwise.
+        """
+    def isVisible(self) -> bool:
+        """
+        Checks if the entity is visible.
+
+        Returns:
+            True if the entity is visible, False otherwise.
+        """
+    def lookAt(self, x: float, y: float, z: float) -> None:
+        """
+        Sets the entity's rotation to face the specified position.
+
+        Args:
+            x: The X-coordinate of the target position.
+            y: The Y-coordinate of the target position.
+            z: The Z-coordinate of the target position.
+        """
+    def removeAllPassengers(self) -> None:
+        """
+        Removes all passengers from the entity.
+        """
+    def removePassenger(self, entity: Entity) -> None:
+        """
+        Removes the specified entity from the entity's passengers.
+
+        Args:
+            entity: The entity to remove as a passenger.
+        """
+    def removePermissionLevel(self, level: Number) -> None:
+        """
+        Removes the specified permission level from the entity.
+
+        Args:
+            level: The permission level to remove.
+        """
+    def ride(self, entity: Entity) -> None:
+        """
+        Rides the specified entity.
+
+        Args:
+            entity: The entity to ride.
+        """
+    def setPosition(self, x: float, y: float, z: float) -> None:
+        """
+        Sets the position of the entity.
+
+        Args:
+            x: The X-coordinate of the new position.
+            y: The Y-coordinate of the new position.
+            z: The Z-coordinate of the new position.
+        """
+    def setCustomName(self, customName: str) -> None:
+        """
+        Sets the custom name of the entity using a string.
+
+        Args:
+            customName: The custom name to set.
+        """
+    def setCustomNameVisible(self, visible: bool) -> None:
+        """
+        Sets whether the custom name of the entity is visible.
+
+        Args:
+            visible: True to make the custom name visible, False to hide it.
+        """
+    def setGlowing(self, glowing: bool) -> None:
+        """
+        Sets whether the entity is glowing.
+
+        Args:
+            glowing: True to make the entity glow, False otherwise.
+        """
+    def setInvisible(self, invisible: bool) -> None:
+        """
+        Sets whether the entity is invisible.
+
+        Args:
+            invisible: True to make the entity invisible, False otherwise.
+        """
+    def setInvulnerable(self, invulnerable: bool) -> None:
+        """
+        Sets whether the entity is invulnerable.
+
+        Args:
+            invulnerable: True to make the entity invulnerable, False otherwise.
+        """
+    def setMotion(self, motion: Vec3d) -> None:
+        """
+        Sets the motion of the entity.
+
+        Args:
+            motion: The new motion to set for the entity.
+        """
+    def setNoGravity(self, noGravity: bool) -> None:
+        """
+        Sets whether the entity has gravity.
+
+        Args:
+            noGravity: True to disable gravity for the entity, False otherwise.
+        """
+    def setSilent(self, silent: bool) -> None:
+        """
+        Sets whether the entity is silent.
+
+        Args:
+            silent: True to make the entity silent, False otherwise.
+        """
+    def setSneaking(self, sneaking: bool) -> None:
+        """
+        Sets whether the entity is sneaking.
+
+        Args:
+            sneaking: True to make the entity sneak, False otherwise.
+        """
+    def setSprinting(self, sprinting: bool) -> None:
+        """
+        Sets whether the entity is sprinting.
+
+        Args:
+            sprinting: True to make the entity sprint, False otherwise.
+        """
+    def startRiding(self, entity: Entity) -> None:
+        """
+        Starts riding the specified entity.
+
+        Args:
+            entity: The entity to start riding.
+        """
+    def stopRiding(self) -> None:
+        """
+        Stops riding any entity the entity is currently riding.
+        """
+    def teleport(self, position: Vec3d) -> None:
+        """
+        Teleports the entity to the specified position.
+
+        Args:
+            position: The position to teleport the entity to.
+        """
 
 class Executor:
+    """
+    Attributes:
+        name (str): The name of the executor.
+        displayName (str): The display name of the executor.
+        position (Vec3d): The position of the executor.
+        player (PlayerEntity): The player entity associated with the executor.
+        world (World): The world in which the executor exists.
+        entity (Entity): The entity associated with the executor.
+        isExecutedByPlayer (bool): Indicates if the executor is executed by a player.
+        rotation (Vec2f): The rotation of the executor.
+    """
+
     name: str
     displayName: str
     position: Vec3d
@@ -1450,20 +1811,40 @@ class Executor:
     isExecutedByPlayer: bool
     rotation: Vec2f
 
-    @overload
-    def sendMessage(message) -> None: ...
+    def sendMessage(self, message) -> None:
+        """
+        Sends a message to the executor.
 
-    @overload
-    def sendMessage(text: Text) -> None: ...
+        Args:
+            message: The message to send.
+        """
+    def sendError(self, error) -> None:
+        """
+        Sends an error message to the executor.
 
-    @overload
-    def sendError(error) -> None: ...
+        Args:
+            error: The error message to send.
+        """
+    def sendMessage(self, text: Text) -> None:
+        """
+        Sends a text message to the executor.
 
-    @overload
-    def sendError(text: Text) -> None: ...
+        Args:
+            text (Text): The text message to send.
+        """
+    def sendError(self, text: Text) -> None:
+        """
+        Sends an error text message to the executor.
 
+        Args:
+            text (Text): The error text message to send.
+        """
 
 class GameMode:
+    """
+    Represents Minecraft mode.
+    """
+
     id: int
     name: str
     SURVIVAL: GameMode
@@ -1471,20 +1852,29 @@ class GameMode:
     ADVENTURE: GameMode
     SPECTATOR: GameMode
 
-
 class GameModes:
+    """
+    Represents a collection of game modes.
+    """
+
     SURVIVAL: object
     CREATIVE: object
     ADVENTURE: object
     SPECTATOR: object
 
-
 class Hand:
+    """
+    Represents the hand used by a player.
+    """
+
     MAIN_HAND: object
     OFF_HAND: object
 
-
 class HideFlags:
+    """
+    Represents various hide flags for an item.
+    """
+
     ENCHANTMENTS: object
     MODIFIERS: object
     UNBREAKABLE: object
@@ -1494,27 +1884,47 @@ class HideFlags:
     DYE: object
     UPGRADES: object
 
-
 class HungerManager:
+    """
+    Represents the hunger manager for a player.
+
+    Attributes:
+        exhaustion (float): The exhaustion level of the player.
+        foodLevel (int): The current food level of the player.
+        saturationLevel (float): The saturation level of the player.
+    """
+
     exhaustion: float
     foodLevel: int
     saturationLevel: float
 
-
 class Item:
+    """
+    Represents an item in the game.
+
+    Attributes:
+        name (str): The name of the item.
+    """
+
     name: str
 
     def __init__(self, item: Items) -> None: ...
 
-
 class ItemRarity:
+    """
+    Represents the rarity of an item.
+    """
+
     COMMON: object
     UNCOMMON: object
     RARE: object
     EPIC: object
 
-
 class Items:
+    """
+    Represents various items in the game.
+    """
+
     AIR: object
     STONE: object
     GRANITE: object
@@ -2771,258 +3181,1003 @@ class Items:
     SKULL_POTTERY_SHERD: object
     SNORT_POTTERY_SHERD: object
 
-
 class ItemStack:
-    @overload
-    def __init__(self, item: Items, count: Number, nbt: dict[str, object]) -> None: ...
+    """
+    Represents an item stack in Minecraft.
+    """
 
     @overload
-    def __init__(self, item: Items, nbt: dict[str, object]) -> None: ...
+    def __init__(self, item: Items, count: Number, nbt: dict[str, object]) -> None:
+        """
+        Initializes an ItemStack with the specified item, count, and NBT data.
 
+        Args:
+            item (Items): The item type.
+            count (Number): The number of items in the stack.
+            nbt (dict[str, object]): The NBT data associated with the item.
+
+        Returns:
+            None
+        """
     @overload
-    def __init__(self, item: Items, count: Number) -> None: ...
+    def __init__(self, item: Items, nbt: dict[str, object]) -> None:
+        """
+        Initializes an ItemStack with the specified item and NBT data.
 
+        Args:
+            item (Items): The item type.
+            nbt (dict[str, object]): The NBT data associated with the item.
+
+        Returns:
+            None
+        """
     @overload
-    def __init__(self, item: Items) -> None: ...
+    def __init__(self, item: Items, count: Number) -> None:
+        """
+        Initializes an ItemStack with the specified item and count.
 
-    def addEnchantment(self, enchantment: Enchantments, level: Number) -> None: ...
+        Args:
+            item (Items): The item type.
+            count (Number): The number of items in the stack.
 
-    def addHideFlag(self, hideFlag: HideFlags) -> None: ...
-
-    def decrement(self, amount: Number) -> None: ...
-
-    def getCount(self) -> int: ...
-
-    def getDamage(self) -> int: ...
-
-    def getEnchantments(self) -> list[Enchantment]: ...
-
-    def getMaxCount(self) -> int: ...
-
-    def getMaxDamage(self) -> int: ...
-
-    def getName(self) -> str: ...
-
-    def getNbt(self) -> dict[str, object]: ...
-
-    def getRarity(self) -> ItemRarity: ...
-
-    def getRepairCost(self) -> int: ...
-
-    def hasCustomName(self) -> bool: ...
-
-    def hasEnchantments(self) -> bool: ...
-
-    def hasGlint(self) -> bool: ...
-
-    def hasNbt(self) -> bool: ...
-
-    def increment(self, amount: Number) -> None: ...
-
-    def isDamageable(self) -> bool: ...
-
-    def isDamaged(self) -> bool: ...
-
-    def isEnchantable(self) -> bool: ...
-
-    def isFood(self) -> bool: ...
-
-    def isItemBarVisible(self) -> bool: ...
-
-    def isStackable(self) -> bool: ...
-
-    def removeCustomName(self) -> None: ...
-
-    def setCount(self, count: Number) -> None: ...
-
+        Returns:
+            None
+        """
     @overload
-    def setCustomName(self, customName: str) -> None: ...
+    def __init__(self, item: Items) -> None:
+        """
+        Initializes an ItemStack with the specified item.
 
+        Args:
+            item (Items): The item type.
+
+        Returns:
+            None
+        """
+    def addEnchantment(self, enchantment: Enchantments, level: Number) -> None:
+        """
+        Adds an enchantment to the item stack.
+
+        Args:
+            enchantment (Enchantments): The enchantment to add.
+            level (Number): The level of enchantment.
+
+        Returns:
+            None
+        """
+    def addHideFlag(self, hideFlag: HideFlags) -> None:
+        """
+        Adds a hide flag to the item stack.
+
+        Args:
+            hideFlag (HideFlags): The hide flag to add.
+
+        Returns:
+            None
+        """
+    def decrement(self, amount: Number) -> None:
+        """
+        Decrements the count of items in the stack by the specified amount.
+
+        Args:
+            amount (Number): The amount to decrement.
+
+        Returns:
+            None
+        """
+    def getCount(self) -> int:
+        """
+        Returns the number of items in the stack.
+
+        Returns:
+            int: The count of items.
+        """
+    def getDamage(self) -> int:
+        """
+        Returns the damage value of the item stack.
+
+        Returns:
+            int: The damage value.
+        """
+    def getEnchantments(self) -> list[Enchantment]:
+        """
+        Returns a list of enchantments applied to the item stack.
+
+        Returns:
+            list[Enchantment]: The list of enchantments.
+        """
+    def getMaxCount(self) -> int:
+        """
+        Returns the maximum count of items allowed in the stack.
+
+        Returns:
+            int: The maximum count.
+        """
+    def getMaxDamage(self) -> int:
+        """
+        Returns the maximum damage value of the item stack.
+
+        Returns:
+            int: The maximum damage value.
+        """
+    def getName(self) -> str:
+        """
+        Returns the name of the item.
+
+        Returns:
+            str: The item name.
+        """
+    def getNbt(self) -> dict[str, object]:
+        """
+        Returns the NBT data associated with the item stack.
+
+        Returns:
+            dict[str, object]: The NBT data.
+        """
+    def getRarity(self) -> ItemRarity:
+        """
+        Returns the rarity of the item.
+
+        Returns:
+            ItemRarity: The item rarity.
+        """
+    def getRepairCost(self) -> int:
+        """
+        Returns the repair cost of the item.
+
+        Returns:
+            int: The repair cost.
+        """
+    def hasCustomName(self) -> bool:
+        """
+        Checks if the item has a custom name.
+
+        Returns:
+            bool: True if the item has a custom name, False otherwise.
+        """
+    def hasEnchantments(self) -> bool:
+        """
+        Checks if the item has any enchantments.
+
+        Returns:
+            bool: True if the item has enchantments, False otherwise.
+        """
+    def hasGlint(self) -> bool:
+        """
+        Checks if the item has a glint effect.
+
+        Returns:
+            bool: True if the item has a glint effect, False otherwise.
+        """
+    def hasNbt(self) -> bool:
+        """
+        Checks if the item has NBT data.
+
+        Returns:
+            bool: True if the item has NBT data, False otherwise.
+        """
+    def increment(self, amount: Number) -> None:
+        """
+        Increments the count of items in the stack by the specified amount.
+
+        Args:
+            amount (Number): The amount to increment.
+
+        Returns:
+            None
+        """
+    def isDamageable(self) -> bool:
+        """
+        Checks if the item is damageable.
+
+        Returns:
+            bool: True if the item is damageable, False otherwise.
+        """
+    def isDamaged(self) -> bool:
+        """
+        Checks if the item is damaged.
+
+        Returns:
+            bool: True if the item is damaged, False otherwise.
+        """
+    def isEnchantable(self) -> bool:
+        """
+        Checks if the item is enchantable.
+
+        Returns:
+            bool: True if the item is enchantable, False otherwise.
+        """
+    def isFood(self) -> bool:
+        """
+        Checks if the item is a food item.
+
+        Returns:
+            bool: True if the item is a food item, False otherwise.
+        """
+    def isItemBarVisible(self) -> bool:
+        """
+        Checks if the item bar is visible.
+
+        Returns:
+            bool: True if the item bar is visible, False otherwise.
+        """
+    def isStackable(self) -> bool:
+        """
+        Checks if the item is stackable.
+
+        Returns:
+            bool: True if the item is stackable, False otherwise.
+        """
+    def removeCustomName(self) -> None:
+        """
+        Removes the custom name of the item.
+
+        Returns:
+            None
+        """
+    def setCount(self, count: Number) -> None:
+        """
+        Sets the count of items in the stack.
+
+        Args:
+            count (Number): The count of items.
+
+        Returns:
+            None
+        """
     @overload
-    def setCustomName(self, text: Text) -> None: ...
+    def setCustomName(self, customName: str) -> None:
+        """
+        Sets the custom name of the item.
 
-    def setDamage(self, damage: Number) -> None: ...
+        Args:
+            customName (str): The custom name.
 
-    def setRepairCost(self, repairCost: Number) -> None: ...
+        Returns:
+            None
+        """
+    @overload
+    def setCustomName(self, text: Text) -> None:
+        """
+        Sets the custom name of the item using a text object.
 
+        Args:
+            text (Text): The text object representing the custom name.
+
+        Returns:
+            None
+        """
+    def setDamage(self, damage: Number) -> None:
+        """
+        Sets the damage value of the item stack.
+
+        Args:
+            damage (Number): The damage value.
+
+        Returns:
+            None
+        """
+    def setRepairCost(self, repairCost: Number) -> None:
+        """
+        Sets the repair cost of the item.
+
+        Args:
+            repairCost (Number): The repair cost.
+
+        Returns:
+            None
+        """
 
 class LivingEntity(Entity):
+    """
+    Represents a living entity in the game.
+    Inherits from Entity.
+    """
+
     def addStatusEffect(
-            self, effect: StatusEffects, duration: Number, amplifier: Number, visible: bool
-    ) -> None: ...
+        self, effect: StatusEffects, duration: Number, amplifier: Number, visible: bool
+    ) -> None:
+        """
+        Adds a status effect to the living entity.
 
-    def canBreatheInWater(self) -> bool: ...
+        Args:
+            effect (StatusEffects): The status effect to add.
+            duration (Number): The duration of the effect.
+            amplifier (Number): The amplifier level of the effect.
+            visible (bool): Whether the effect is visible.
 
-    def canHaveStatusEffect(self, effect: StatusEffects) -> bool: ...
+        Returns:
+            None
+        """
+    def canBreatheInWater(self) -> bool:
+        """
+        Checks if the living entity can breathe underwater.
 
-    def canSee(self, entity: Entity) -> bool: ...
+        Returns:
+            bool: True if the entity can breathe in water, False otherwise.
+        """
+    def canHaveStatusEffect(self, effect: StatusEffects) -> bool:
+        """
+        Checks if the living entity can have the specified status effect.
 
-    def canTakeDamage(self) -> bool: ...
+        Args:
+            effect (StatusEffects): The status effect to check.
 
-    def clearStatusEffects(self) -> None: ...
+        Returns:
+            bool: True if the entity can have the effect, False otherwise.
+        """
+    def canSee(self, entity: Entity) -> bool:
+        """
+        Checks if the living entity can see the specified entity.
 
-    def damageArmor(self, damageSource: DamageSources, amount: Number) -> None: ...
+        Args:
+            entity (Entity): The entity to check visibility.
 
-    def damageHelmet(self, damageSource: DamageSources, amount: Number) -> None: ...
+        Returns:
+            bool: True if the entity can see the other entity, False otherwise.
+        """
+    def canTakeDamage(self) -> bool:
+        """
+        Checks if the living entity can take damage.
 
-    def damageShield(self, amount: Number) -> None: ...
+        Returns:
+            bool: True if the entity can take damage, False otherwise.
+        """
+    def clearStatusEffects(self) -> None:
+        """
+        Clears all status effects from the living entity.
 
-    def eatFood(self, stack: ItemStack) -> None: ...
+        Returns:
+            None
+        """
+    def damageArmor(self, damageSource: DamageSources, amount: Number) -> None:
+        """
+        Damages the entity's armor by the specified amount.
 
-    def getAbsorptionAmount(self) -> float: ...
+        Args:
+            damageSource (DamageSources): The source of the damage.
+            amount (Number): The amount of damage to apply.
 
-    def getActiveHand(self) -> Hand: ...
+        Returns:
+            None
+        """
+    def damageHelmet(self, damageSource: DamageSources, amount: Number) -> None:
+        """
+        Damages the entity's helmet by the specified amount.
 
-    def getActiveItem(self) -> ItemStack: ...
+        Args:
+            damageSource (DamageSources): The source of the damage.
+            amount (Number): The amount of damage to apply.
 
-    def getArmor(self) -> float: ...
+        Returns:
+            None
+        """
+    def damageShield(self, amount: Number) -> None:
+        """
+        Damages the entity's shield by the specified amount.
 
-    def getAttacker(self) -> LivingEntity: ...
+        Args:
+            amount (Number): The amount of damage to apply.
 
-    def getAttacking(self) -> LivingEntity: ...
+        Returns:
+            None
+        """
+    def eatFood(self, stack: ItemStack) -> None:
+        """
+        Makes the living entity eat the specified food item stack.
 
-    def getMainArm(self) -> Arm: ...
+        Args:
+            stack (ItemStack): The food item stack to eat.
 
-    def getMainHandStack(self) -> ItemStack: ...
+        Returns:
+            None
+        """
+    def getAbsorptionAmount(self) -> float:
+        """
+        Returns the absorption amount of the living entity.
 
-    def getMaxHealth(self) -> float: ...
+        Returns:
+            float: The absorption amount.
+        """
+    def getActiveHand(self) -> Hand:
+        """
+        Returns the active hand of the living entity.
 
-    def getMovementSpeed(self) -> float: ...
+        Returns:
+            Hand: The active hand.
+        """
+    def getActiveItem(self) -> ItemStack:
+        """
+        Returns the item stack in the entity's active hand.
 
-    def getScaleFactor(self) -> float: ...
+        Returns:
+            ItemStack: The active item stack.
+        """
+    def getArmor(self) -> float:
+        """
+        Returns the armor value of the living entity.
 
-    def getStackInHand(self, hand: Hand) -> ItemStack: ...
+        Returns:
+            float: The armor value.
+        """
+    def getAttacker(self) -> LivingEntity:
+        """
+        Returns the entity that attacked this living entity.
 
-    def getStatusEffect(self, effect: StatusEffects) -> StatusEffectInstance: ...
+        Returns:
+            LivingEntity: The attacking entity.
+        """
+    def getAttacking(self) -> LivingEntity:
+        """
+        Returns the entity that this living entity is currently attacking.
 
-    def getStatusEffects(self) -> list[StatusEffectInstance]: ...
+        Returns:
+            LivingEntity: The attacking entity.
+        """
+    def getMainArm(self) -> Arm:
+        """
+        Returns the main arm of the living entity.
 
-    def getStuckArrowCount(self) -> float: ...
+        Returns:
+            Arm: The main arm.
+        """
+    def getMainHandStack(self) -> ItemStack:
+        """
+        Returns the item stack in the entity's main hand.
 
-    def hasStatusEffect(self, effect: StatusEffects) -> bool: ...
+        Returns:
+            ItemStack: The main hand item stack.
+        """
+    def getMaxHealth(self) -> float:
+        """
+        Returns the maximum health of the living entity.
 
-    def heal(self, amount: Number) -> None: ...
+        Returns:
+            float: The maximum health.
+        """
+    def getMovementSpeed(self) -> float:
+        """
+        Returns the movement speed of the living entity.
 
-    def getHealth(self) -> float: ...
+        Returns:
+            float: The movement speed.
+        """
+    def getScaleFactor(self) -> float:
+        """
+        Returns the scale factor of the living entity.
 
-    def isAffectedBySplashPotions(self) -> bool: ...
+        Returns:
+            float: The scale factor.
+        """
+    def getStackInHand(self, hand: Hand) -> ItemStack:
+        """
+        Returns the item stack in the specified hand.
 
-    def isBaby(self) -> bool: ...
+        Args:
+            hand (Hand): The hand to get the item stack from.
 
-    def isBlocking(self) -> bool: ...
+        Returns:
+            ItemStack: The item stack in the hand.
+        """
+    def getStatusEffect(self, effect: StatusEffects) -> StatusEffectInstance:
+        """
+        Returns the status effect instance of the specified effect.
 
-    def isClimbing(self) -> bool: ...
+        Args:
+            effect (StatusEffects): The status effect to retrieve.
 
-    def isDead(self) -> bool: ...
+        Returns:
+            StatusEffectInstance: The status effect instance.
+        """
+    def getStatusEffects(self) -> list[StatusEffectInstance]:
+        """
+        Returns a list of all status effects applied to the living entity.
 
-    def isFallFlying(self) -> bool: ...
+        Returns:
+            list[StatusEffectInstance]: The list of status effect instances.
+        """
+    def getStuckArrowCount(self) -> float:
+        """
+        Returns the number of arrows stuck in the living entity.
 
-    def isHolding(self, item: Item) -> bool: ...
+        Returns:
+            float: The stuck arrow count.
+        """
+    def hasStatusEffect(self, effect: StatusEffects) -> bool:
+        """
+        Checks if the living entity has the specified status effect.
 
-    def isHoldingOntoLadder(self) -> bool: ...
+        Args:
+            effect (StatusEffects): The status effect to check.
 
-    def isHurtByWater(self) -> bool: ...
+        Returns:
+            bool: True if the entity has the effect, False otherwise.
+        """
+    def heal(self, amount: Number) -> None:
+        """
+        Heals the living entity by the specified amount.
 
-    def isMobOrPlayer(self) -> bool: ...
+        Args:
+            amount (Number): The amount to heal.
 
-    def isSleeping(self) -> bool: ...
+        Returns:
+            None
+        """
+    def getHealth(self) -> float:
+        """
+        Returns the current health of the living entity.
 
-    def isUndead(self) -> bool: ...
+        Returns:
+            float: The current health.
+        """
+    def isAffectedBySplashPotions(self) -> bool:
+        """
+        Checks if the living entity is affected by splash potions.
 
-    def isUsingItem(self) -> bool: ...
+        Returns:
+            bool: True if the entity is affected, False otherwise.
+        """
+    def isBaby(self) -> bool:
+        """
+        Checks if the living entity is a baby.
 
-    def isUsingRiptide(self) -> bool: ...
+        Returns:
+            bool: True if the entity is a baby, False otherwise.
+        """
+    def isBlocking(self) -> bool:
+        """
+        Checks if the living entity is currently blocking.
 
-    def removeStatusEffect(self, effect: StatusEffects) -> None: ...
+        Returns:
+            bool: True if the entity is blocking, False otherwise.
+        """
+    def isClimbing(self) -> bool:
+        """
+        Checks if the living entity is currently climbing.
 
-    def setAbsorptionAmount(self, amount: Number) -> None: ...
+        Returns:
+            bool: True if the entity is climbing, False otherwise.
+        """
+    def isDead(self) -> bool:
+        """
+        Checks if the living entity is dead.
 
-    def setAttacker(self, entity: LivingEntity) -> None: ...
+        Returns:
+            bool: True if the entity is dead, False otherwise.
+        """
+    def isFallFlying(self) -> bool:
+        """
+        Checks if the living entity is currently fall flying.
 
-    def setAttacking(self, entity: LivingEntity) -> None: ...
+        Returns:
+            bool: True if the entity is fall flying, False otherwise.
+        """
+    def isHolding(self, item: Item) -> bool:
+        """
+        Checks if the living entity is holding the specified item.
 
-    def setCurrentHand(self, hand: Hand) -> None: ...
+        Args:
+            item (Item): The item to check.
 
-    def setHealth(self, amount: Number) -> None: ...
+        Returns:
+            bool: True if the entity is holding the item, False otherwise.
+        """
+    def isHoldingOntoLadder(self) -> bool:
+        """
+        Checks if the living entity is holding onto a ladder.
 
-    def setJumping(self, jumping: bool) -> None: ...
+        Returns:
+            bool: True if the entity is holding onto a ladder, False otherwise.
+        """
+    def isHurtByWater(self) -> bool:
+        """
+        Checks if water hurts the living entity.
 
-    def setMovementSpeed(self, movementSpeed: Number) -> None: ...
+        Returns:
+            bool: True if water hurts the entity, False otherwise.
+        """
+    def isMobOrPlayer(self) -> bool:
+        """
+        Checks if the living entity is either a mob or a player.
 
-    def setStackInHand(self, hand: Hand, stack: ItemStack) -> None: ...
+        Returns:
+            bool: True if the entity is a mob or a player, False otherwise.
+        """
+    def isSleeping(self) -> bool:
+        """
+        Checks if the living entity is sleeping.
 
-    def setStingerCount(self, stingerCount: Number) -> None: ...
+        Returns:
+            bool: True if the entity is sleeping, False otherwise.
+        """
+    def isUndead(self) -> bool:
+        """
+        Checks if the living entity is undead.
 
-    def setStuckArrowCount(self, stuckArrowCount: Number) -> None: ...
+        Returns:
+            bool: True if the entity is undead, False otherwise.
+        """
+    def isUsingItem(self) -> bool:
+        """
+        Checks if the living entity is currently using an item.
 
-    def shouldDisplaySoulSpeedEffects(self) -> bool: ...
+        Returns:
+            bool: True if the entity is using an item, False otherwise.
+        """
+    def isUsingRiptide(self) -> bool:
+        """
+        Checks if the living entity is currently using the riptide enchantment.
 
-    def shouldDropXp(self) -> bool: ...
+        Returns:
+            bool: True if the entity is using riptide, False otherwise.
+        """
+    def removeStatusEffect(self, effect: StatusEffects) -> None:
+        """
+        Removes the specified status effect from the living entity.
 
-    def swingHand(self, hand: Hand) -> None: ...
+        Args:
+            effect (StatusEffects): The status effect to remove.
 
-    def takeKnockback(self, strength: Number, x: Number, z: Number) -> None: ...
+        Returns:
+            None
+        """
+    def setAbsorptionAmount(self, amount: Number) -> None:
+        """
+        Sets the absorption amount of the living entity.
 
-    def teleport(self, position: Vec3d) -> None: ...
+        Args:
+            amount (Number): The absorption amount to set.
 
-    def tiltScreen(self, deltaX: Number, deltaY: Number) -> None: ...
+        Returns:
+            None
+        """
+    def setAttacker(self, entity: LivingEntity) -> None:
+        """
+        Sets the entity that attacked this living entity.
 
+        Args:
+            entity (LivingEntity): The attacking entity.
+
+        Returns:
+            None
+        """
+    def setAttacking(self, entity: LivingEntity) -> None:
+        """
+        Sets the entity that this living entity is currently attacking.
+
+        Args:
+            entity (LivingEntity): The attacking entity.
+
+        Returns:
+            None
+        """
+    def setCurrentHand(self, hand: Hand) -> None:
+        """
+        Sets the current hand of the living entity.
+
+        Args:
+            hand (Hand): The hand to set as current.
+
+        Returns:
+            None
+        """
+    def setHealth(self, amount: Number) -> None:
+        """
+        Sets the current health of the living entity.
+
+        Args:
+            amount (Number): The amount to set as health.
+
+        Returns:
+            None
+        """
+    def setJumping(self, jumping: bool) -> None:
+        """
+        Sets whether the living entity is jumping.
+
+        Args:
+            jumping (bool): True if the entity is jumping, False otherwise.
+
+        Returns:
+            None
+        """
+    def setMovementSpeed(self, movementSpeed: Number) -> None:
+        """
+        Sets the movement speed of the living entity.
+
+        Args:
+            movementSpeed (Number): The movement speed to set.
+
+        Returns:
+            None
+        """
+    def setStackInHand(self, hand: Hand, stack: ItemStack) -> None:
+        """
+        Sets the item stack in the specified hand.
+
+        Args:
+            hand (Hand): The hand to set the item stack in.
+            stack (ItemStack): The item stack to set.
+
+        Returns:
+            None
+        """
+    def setStingerCount(self, stingerCount: Number) -> None:
+        """
+        Sets the stinger count of the living entity.
+
+        Args:
+            stingerCount (Number): The stinger count to set.
+
+        Returns:
+            None
+        """
+    def setStuckArrowCount(self, stuckArrowCount: Number) -> None:
+        """
+        Sets the number of arrows stuck in the living entity.
+
+        Args:
+            stuckArrowCount (Number): The stuck arrow count to set.
+
+        Returns:
+            None
+        """
+    def shouldDisplaySoulSpeedEffects(self) -> bool:
+        """
+        Checks if the living entity should display soul speed effects.
+
+        Returns:
+            bool: True if the entity should display soul speed effects, False otherwise.
+        """
+    def shouldDropXp(self) -> bool:
+        """
+        Checks if the living entity should drop experience points upon death.
+
+        Returns:
+            bool: True if the entity should drop experience points, False otherwise.
+        """
+    def swingHand(self, hand: Hand) -> None:
+        """
+        Swings the specified hand of the living entity.
+
+        Args:
+            hand (Hand): The hand to swing.
+
+        Returns:
+            None
+        """
+    def takeKnockback(self, strength: Number, x: Number, z: Number) -> None:
+        """
+        Applies knockback to the living entity.
+
+        Args:
+            strength (Number): The strength of the knockback.
+            x (Number): The x-direction of the knockback.
+            z (Number): The z-direction of the knockback.
+
+        Returns:
+            None
+        """
+    def teleport(self, position: Vec3d) -> None:
+        """
+        Teleports the living entity to the specified position.
+
+        Args:
+            position (Vec3d): The position to teleport to.
+
+        Returns:
+            None
+        """
+    def tiltScreen(self, deltaX: Number, deltaY: Number) -> None:
+        """
+        Tilts the screen of the living entity by the specified amount.
+
+        Args:
+            deltaX (Number): The amount to tilt the screen horizontally.
+            deltaY (Number): The amount to tilt the screen vertically.
+
+        Returns:
+            None
+        """
 
 class PlayerEntity(LivingEntity):
-    def addExhaustion(self, exhaustion: Number) -> None: ...
+    def addExhaustion(self, exhaustion: Number) -> None:
+        """
+        Increases the exhaustion level of the player.
 
-    def addExperience(self, experience: Number) -> None: ...
+        Args:
+            exhaustion (Number): The amount of exhaustion to add.
 
-    def addExperienceLevels(self, levels: Number) -> None: ...
+        Returns:
+            None
+        """
+    def addExperience(self, experience: Number) -> None:
+        """
+        Adds experience points to the player.
 
-    def addScore(self, score: Number) -> None: ...
+        Args:
+            experience (Number): The number of experience points to add.
 
-    def addShoulderEntity(self, entityNbt: dict[str, object]) -> None: ...
+        Returns:
+            None
+        """
+    def addExperienceLevels(self, levels: Number) -> None:
+        """
+        Adds experience levels to the player.
 
-    def attack(self, entity: Entity) -> None: ...
+        Args:
+            levels (Number): The number of levels to add.
 
-    def canConsume(self, ignoreHunger: bool) -> bool: ...
+        Returns:
+            None
+        """
+    def addScore(self, score: Number) -> None:
+        """
+        Adds a score value to the player.
 
-    def canFoodHeal(self) -> bool: ...
+        Args:
+            score (Number): The score value to add.
 
-    @overload
-    def canHarvest(self, block: Blocks) -> bool: ...
+        Returns:
+            None
+        """
+    def addShoulderEntity(self, entityNbt: dict[str, object]) -> None:
+        """
+        Adds an entity to the player's shoulder.
 
-    @overload
-    def canHarvest(self, block: BlockState) -> bool: ...
+        Args:
+            entityNbt (dict[str, object]): The NBT data of the entity to add.
 
-    def checkFallFlying(self) -> bool: ...
+        Returns:
+            None
+        """
+    def attack(self, entity: Entity) -> None:
+        """
+        Attacks the specified entity.
 
-    def disableShield(self, sprinting: bool) -> None: ...
+        Args:
+            entity (Entity): The entity to attack.
 
-    def getAttackCooldownProgress(self, baseTime: Number) -> float: ...
+        Returns:
+            None
+        """
+    def canConsume(self, ignoreHunger: bool) -> bool:
+        """
+        Checks if the player can consume items.
 
-    def getEnderChestInventory(self) -> EnderChestInventory: ...
+        Args:
+            ignoreHunger (bool): Whether to ignore hunger level when checking.
 
-    def getHungerManager(self) -> HungerManager: ...
+        Returns:
+            bool: True if the player can consume items, False otherwise.
+        """
+    def canFoodHeal(self) -> bool:
+        """
+        Checks if the player can heal using food.
 
-    def getInventory(self) -> PlayerInventory: ...
+        Returns:
+            bool: True if the player can heal with food, False otherwise.
+        """
+    def canHarvest(self, block: Blocks | BlockState) -> bool:
+        """
+        Checks if the player can harvest the specified block.
 
-    def getShoulderEntityLeft(self) -> dict[str, object]: ...
+        Args:
+            block (Union[Blocks, BlockState]): The block to check.
 
-    def getShoulderEntityRight(self) -> dict[str, object]: ...
+        Returns:
+            bool: True if the player can harvest the block, False otherwise.
+        """
+    def checkFallFlying(self) -> bool:
+        """
+        Checks if the player can use elytra to fall with reduced speed.
 
-    def isCreative(self) -> bool: ...
+        Returns:
+            bool: True if the player can fall flying, False otherwise.
+        """
+    def disableShield(self, sprinting: bool) -> None:
+        """
+        Disables the player's shield.
 
-    def isMainPlayer(self) -> bool: ...
+        Args:
+            sprinting (bool): Whether the player is sprinting.
 
-    def isUsingSglass(self) -> bool: ...
+        Returns:
+            None
+        """
+    def getAttackCooldownProgress(self, baseTime: Number) -> float:
+        """
+        Calculates the progress of the attack cooldown.
 
-    def requestRespawn(self) -> None: ...
+        Args:
+            baseTime (Number): The base time for the attack cooldown.
 
-    @overload
-    def sendMessage(self, message) -> None: ...
+        Returns:
+            float: The progress of the attack cooldown as a value between 0.0 and 1.0.
+        """
+    def getEnderChestInventory(self) -> EnderChestInventory:
+        """
+        Retrieves the ender chest inventory of the player.
 
-    @overload
-    def sendMessage(self, text: Text) -> None: ...
+        Returns:
+            EnderChestInventory: The ender chest inventory of the player.
+        """
+    def getHungerManager(self) -> HungerManager:
+        """
+        Retrieves the hunger manager of the player.
 
-    def setMainArm(self, arm: Arm) -> None: ...
+        Returns:
+            HungerManager: The hunger manager of the player.
+        """
+    def getInventory(self) -> PlayerInventory:
+        """
+        Retrieves the inventory of the player.
 
+        Returns:
+            PlayerInventory: The inventory of the player.
+        """
+    def getShoulderEntityLeft(self) -> dict[str, object]:
+        """
+        Retrieves the entity data on the player's left shoulder.
+
+        Returns:
+            dict[str, object]: The NBT data of the entity on the left shoulder.
+        """
+    def getShoulderEntityRight(self) -> dict[str, object]:
+        """
+        Retrieves the entity data on the player's right shoulder.
+
+        Returns:
+            dict[str, object]: The NBT data of the entity on the right shoulder.
+        """
+    def isCreative(self) -> bool:
+        """
+        Checks if the player is in creative mode.
+
+        Returns:
+            bool: True if the player is in creative mode, False otherwise.
+        """
+    def isMainPlayer(self) -> bool:
+        """
+        Checks if the player is the main player.
+
+        Returns:
+            bool: True if the player is the main player, False otherwise.
+        """
+    def isUsingSglass(self) -> bool:
+        """
+        Checks if the player is using a spyglass.
+
+        Returns:
+            bool: True if the player is using a spyglass, False otherwise.
+        """
+    def requestRespawn(self) -> None:
+        """
+        Requests the player to respawn.
+
+        Returns:
+            None
+        """
+    def sendMessage(self, message: str) -> None:
+        """
+        Sends a message to the player.
+
+        Args:
+            message: The message to send.
+
+        Returns:
+            None
+        """
+    def setMainArm(self, arm: Arm) -> None:
+        """
+        Sets the player's main arm.
+
+        Args:
+            arm (Arm): The main arm to set.
+
+        Returns:
+            None
+        """
 
 class PlayerInventory:
     main: list[ItemStack]
@@ -3030,116 +4185,386 @@ class PlayerInventory:
     offHand: list[ItemStack]
     selectedSlot: int
 
-    def clear(self) -> None: ...
+    def clear(self) -> None:
+        """
+        Clears the player's inventory.
 
-    def contains(self, stack: ItemStack) -> bool: ...
+        Returns:
+            None
+        """
+    def contains(self, stack: ItemStack) -> bool:
+        """
+        Checks if the inventory contains the specified item stack.
 
-    def dropAll(self) -> None: ...
+        Args:
+            stack (ItemStack): The item stack to check.
 
-    def dropSelectedItem(self, entireStack: bool) -> None: ...
+        Returns:
+            bool: True if the inventory contains the item stack, False otherwise.
+        """
+    def dropAll(self) -> None:
+        """
+        Drops all items from the inventory.
 
-    def getArmorStack(self, slot: Number) -> ItemStack: ...
+        Returns:
+            None
+        """
+    def dropSelectedItem(self, entireStack: bool) -> None:
+        """
+        Drops the selected item from the inventory.
 
-    def getEmptySlot(self) -> int: ...
+        Args:
+            entireStack (bool): Whether to drop the entire stack or just one item.
 
-    def getMainHandStack(self) -> ItemStack: ...
+        Returns:
+            None
+        """
+    def getArmorStack(self, slot: Number) -> ItemStack:
+        """
+        Retrieves the item stack in the specified armor slot.
 
-    def getSlotWithStack(self, stack: ItemStack) -> int: ...
+        Args:
+            slot (Number): The armor slot.
 
-    def getStack(self, slot: Number) -> ItemStack: ...
+        Returns:
+            ItemStack: The item stack in the specified armor slot.
+        """
+    def getEmptySlot(self) -> int:
+        """
+        Retrieves the index of an empty slot in the inventory.
 
-    def indexOf(self, stack: ItemStack) -> ItemStack: ...
+        Returns:
+            int: The index of an empty slot, or -1 if no empty slot is found.
+        """
+    def getMainHandStack(self) -> ItemStack:
+        """
+        Retrieves the item stack in the player's main hand.
 
-    @overload
-    def insertStack(self, slot: Number, stack: ItemStack) -> None: ...
+        Returns:
+            ItemStack: The item stack in the player's main hand.
+        """
+    def getSlotWithStack(self, stack: ItemStack) -> int:
+        """
+        Retrieves the index of the slot that contains the specified item stack.
 
-    @overload
-    def insertStack(self, stack: ItemStack) -> None: ...
+        Args:
+            stack (ItemStack): The item stack to search for.
 
-    def isEmpty(self) -> bool: ...
+        Returns:
+            int: The index of the slot that contains the item stack, or -1 if not found.
+        """
+    def getStack(self, slot: Number) -> ItemStack:
+        """
+        Retrieves the item stack in the specified slot.
 
-    def removeOne(self, stack: ItemStack) -> None: ...
+        Args:
+            slot (Number): The slot index.
 
-    @overload
-    def removeStack(self, slot: Number, amount: Number) -> None: ...
+        Returns:
+            ItemStack: The item stack in the specified slot.
+        """
+    def indexOf(self, stack: ItemStack) -> int:
+        """
+        Retrieves the index of the first occurrence of the specified item stack.
 
-    @overload
-    def removeStack(self, slot: Number) -> None: ...
+        Args:
+            stack (ItemStack): The item stack to search for.
 
-    def setStack(self, slot: Number, stack: ItemStack) -> None: ...
+        Returns:
+            int: The index of the first occurrence of the item stack, or -1 if not found.
+        """
+    def insertStack(self, slot: Number, stack: ItemStack) -> None:
+        """
+        Inserts the specified item stack into the specified slot.
 
+        Args:
+            slot (Number): The slot index.
+            stack (ItemStack): The item stack to insert.
+
+        Returns:
+            None
+        """
+    def insertStack(self, stack: ItemStack) -> None:
+        """
+        Inserts the specified item stack into the first available slot.
+
+        Args:
+            stack (ItemStack): The item stack to insert.
+
+        Returns:
+            None
+        """
+    def isEmpty(self) -> bool:
+        """
+        Checks if the inventory is empty.
+
+        Returns:
+            bool: True if the inventory is empty, False otherwise.
+        """
+    def removeOne(self, stack: ItemStack) -> None:
+        """
+        Removes one item from the specified item stack.
+
+        Args:
+            stack (ItemStack): The item stack to remove from.
+
+        Returns:
+            None
+        """
+    def removeStack(self, slot: Number, amount: Number) -> None:
+        """
+        Removes a specified number of items from the specified slot.
+
+        Args:
+            slot (Number): The slot index.
+            amount (Number): The number of items to remove.
+
+        Returns:
+            None
+        """
+    def removeStack(self, slot: Number) -> None:
+        """
+        Removes the item stack from the specified slot.
+
+        Args:
+            slot (Number): The slot index.
+
+        Returns:
+            None
+        """
+    def setStack(self, slot: Number, stack: ItemStack) -> None:
+        """
+        Sets the item stack in the specified slot.
+
+        Args:
+            slot (Number): The slot index.
+            stack (ItemStack): The item stack to set.
+
+        Returns:
+            None
+        """
 
 class RemovalReasons:
+    """
+    A list of reasons for an entity to be removed
+    """
+
     KILLED: object
     DISCARDED: object
     UNLOADED_TO_CHUNK: object
     UNLOADED_WITH_PLAYER: object
     CHANGED_DIMENSION: object
 
-
 class RenderTypes:
+    """
+    A list of render types for scoreboards
+    """
+
     INTEGER: object
     HEARTS: object
 
-
 class Scoreboard:
-    scoreboard: Scoreboard
+    def getTeams(self) -> list[Team]:
+        """
+        Retrieves a list of all teams on the scoreboard.
 
-    def __init__(self, scoreboard: Scoreboard):
-        self.scoreboard: object
+        Returns:
+            list[Team]: A list of all teams on the scoreboard.
+        """
+    def resetPlayerScore(self, playerName: str, objective: ScoreboardObjective) -> None:
+        """
+        Resets the score of a player for the specified objective.
 
-    def getTeams(self) -> list[Team]: ...
+        Args:
+            playerName (str): The name of the player.
+            objective (ScoreboardObjective): The objective to reset the player's score for.
 
-    def resetPlayerScore(
-            self, playerName: str, objective: ScoreboardObjective
-    ) -> None: ...
-
+        Returns:
+            None
+        """
     def getAllPlayerScores(
-            self, objective: ScoreboardObjective
-    ) -> list[ScoreboardPlayerScore]: ...
+        self, objective: ScoreboardObjective
+    ) -> list[ScoreboardPlayerScore]:
+        """
+        Retrieves a list of all player scores for the specified objective.
 
-    def removeTeam(self, team: Team) -> None: ...
+        Args:
+            objective (ScoreboardObjective): The objective to retrieve player scores for.
 
-    def containsObjective(self, name: str) -> bool: ...
+        Returns:
+            list[ScoreboardPlayerScore]: A list of all player scores for the objective.
+        """
+    def removeTeam(self, team: Team) -> None:
+        """
+        Removes the specified team from the scoreboard.
 
+        Args:
+            team (Team): The team to remove.
+
+        Returns:
+            None
+        """
+    def containsObjective(self, name: str) -> bool:
+        """
+        Checks if an objective with the specified name exists in the scoreboard.
+
+        Args:
+            name (str): The name of the objective.
+
+        Returns:
+            bool: True if the objective exists, False otherwise.
+        """
     def addObjective(
-            self,
-            name: str,
-            criterion: ScoreboardCriterions,
-            displayName: Text,
-            renderType: RenderTypes,
-    ) -> None: ...
+        self,
+        name: str,
+        criterion: ScoreboardCriterions,
+        displayName: Text,
+        renderType: RenderTypes,
+    ) -> None:
+        """
+        Adds a new objective to the scoreboard.
 
-    def removePlayerFromTeam(self, playerName: str, team: Team) -> None: ...
+        Args:
+            name (str): The name of the objective.
+            criterion (ScoreboardCriterions): The criterion type of the objective.
+            displayName (Text): The display name of the objective.
+            renderType (RenderTypes): The render type of the objective.
 
-    def getObjectives(self) -> list[ScoreboardObjective]: ...
+        Returns:
+            None
+        """
+    def removePlayerFromTeam(self, playerName: str, team: Team) -> None:
+        """
+        Removes a player from the specified team.
 
-    def addPlayerToTeam(self, playerName: str, team: Team) -> None: ...
+        Args:
+            playerName (str): The name of the player.
+            team (Team): The team to remove the player from.
 
-    def clearPlayerTeam(self, playerName: str) -> None: ...
+        Returns:
+            None
+        """
+    def getObjectives(self) -> list[ScoreboardObjective]:
+        """
+        Retrieves a list of all objectives on the scoreboard.
 
-    def getObjectiveNames(self) -> list[str]: ...
+        Returns:
+            list[ScoreboardObjective]: A list of all objectives on the scoreboard.
+        """
+    def addPlayerToTeam(self, playerName: str, team: Team) -> None:
+        """
+        Adds a player to the specified team.
 
-    def getTeam(self, name: str) -> Team: ...
+        Args:
+            playerName (str): The name of the player.
+            team (Team): The team to add the player to.
 
-    def resetEntityScore(self, entity: Entity) -> None: ...
+        Returns:
+            None
+        """
+    def clearPlayerTeam(self, playerName: str) -> None:
+        """
+        Clears the team association of a player.
 
-    def getObjective(self, name: str) -> ScoreboardObjective: ...
+        Args:
+            playerName (str): The name of the player.
 
-    def addTeam(self, name: str) -> None: ...
+        Returns:
+            None
+        """
+    def getObjectiveNames(self) -> list[str]:
+        """
+        Retrieves a list of names from all the objectives on the scoreboard.
 
-    def getTeamNames(self) -> list[str]: ...
+        Returns:
+            list[str]: A list of names from all the objectives on the scoreboard.
+        """
+    def getTeam(self, name: str) -> Team:
+        """
+        Retrieves the team with the specified name.
 
-    def removeObjective(self, objective: ScoreboardObjective) -> None: ...
+        Args:
+            name (str): The name of the team.
 
+        Returns:
+            Team: The team object.
+        """
+    def resetEntityScore(self, entity: Entity) -> None:
+        """
+        Resets the score of an entity on all objectives.
+
+        Args:
+            entity (Entity): The entity.
+
+        Returns:
+            None
+        """
+    def getObjective(self, name: str) -> ScoreboardObjective:
+        """
+        Retrieves the objective with the specified name.
+
+        Args:
+            name (str): The name of the objective.
+
+        Returns:
+            ScoreboardObjective: The objective object.
+        """
+    def addTeam(self, name: str) -> None:
+        """
+        Adds a new team to the scoreboard.
+
+        Args:
+            name (str): The name of the team.
+
+        Returns:
+            None
+        """
+    def getTeamNames(self) -> list[str]:
+        """
+        Retrieves a list of names from all the teams on the scoreboard.
+
+        Returns:
+            list[str]: A list of names from all the teams on the scoreboard.
+        """
+    def removeObjective(self, objective: ScoreboardObjective) -> None:
+        """
+        Removes the specified objective from the scoreboard.
+
+        Args:
+            objective (ScoreboardObjective): The objective to remove.
+
+        Returns:
+            None
+        """
     def getPlayerScore(
-            self, name: str, objective: ScoreboardObjective
-    ) -> ScoreboardPlayerScore: ...
+        self, name: str, objective: ScoreboardObjective
+    ) -> ScoreboardPlayerScore:
+        """
+        Retrieves the score of a player for the specified objective.
 
-    def getPlayerTeam(self, name: str) -> Team: ...
+        Args:
+            name (str): The name of the player.
+            objective (ScoreboardObjective): The objective to retrieve the player's score for.
 
+        Returns:
+            ScoreboardPlayerScore: The player's score for the objective.
+        """
+    def getPlayerTeam(self, name: str) -> Team:
+        """
+        Retrieves the team associated with the specified player.
+
+        Args:
+            name (str): The name of the player.
+
+        Returns:
+            Team: The associated team object.
+        """
 
 class ScoreboardCriterions:
+    """
+    A list of criterions for scoreboards
+    """
+
     DUMMY: object
     TRIGGER: object
     DEATH_COUNT: object
@@ -3184,91 +4609,299 @@ class ScoreboardCriterions:
     KILLED_BY_TEAM_YELLOW: object
     KILLED_BY_TEAM_WHITE: object
 
-
 class ScoreboardObjective:
-    def getCriterion(self) -> ScoreboardCriterions: ...
+    def getCriterion(self) -> ScoreboardCriterions:
+        """
+        Retrieves the criterion type of the scoreboard objective.
 
-    def getDisplayName(self) -> Text: ...
+        Returns:
+            ScoreboardCriterions: The criterion type of the objective.
+        """
+    def getDisplayName(self) -> Text:
+        """
+        Retrieves the display name of the scoreboard objective.
 
-    def getName(self) -> str: ...
+        Returns:
+            Text: The display name of the objective.
+        """
+    def getName(self) -> str:
+        """
+        Retrieves the name of the scoreboard objective.
 
-    def getRenderType(self) -> RenderTypes: ...
+        Returns:
+            str: The name of the objective.
+        """
+    def getRenderType(self) -> RenderTypes:
+        """
+        Retrieves the render type of the scoreboard objective.
 
-    def setDisplayName(self, displayName: Text) -> None: ...
+        Returns:
+            RenderTypes: The render type of the objective.
+        """
+    def setDisplayName(self, displayName: Text) -> None:
+        """
+        Sets the display name of the scoreboard objective.
 
-    def setRenderType(self, renderType: RenderTypes) -> None: ...
+        Args:
+            displayName (Text): The display name to set.
 
+        Returns:
+            None
+        """
+    def setRenderType(self, renderType: RenderTypes) -> None:
+        """
+        Sets the render type of the scoreboard objective.
+
+        Args:
+            renderType (RenderTypes): The render type to set.
+
+        Returns:
+            None
+        """
 
 class ScoreboardPlayerScore:
-    def clearScore(self) -> None: ...
+    def clearScore(self) -> None:
+        """
+        Clears the score of the player.
 
-    def getPlayerName(self) -> str: ...
+        Returns:
+            None
+        """
+    def getPlayerName(self) -> str:
+        """
+        Retrieves the name of the player associated with the score.
 
-    def getScore(self) -> int: ...
+        Returns:
+            str: The name of the player.
+        """
+    def getScore(self) -> int:
+        """
+        Retrieves the score value.
 
-    def getScoreboard(self) -> Scoreboard: ...
+        Returns:
+            int: The score value.
+        """
+    def getScoreboard(self) -> Scoreboard:
+        """
+        Retrieves the scoreboard associated with the score.
 
-    def incrementScore(self) -> None: ...
+        Returns:
+            Scoreboard: The associated scoreboard object.
+        """
+    def incrementScore(self) -> None:
+        """
+        Increments the score value by 1.
 
-    def incrementScore(self, amount: Number) -> None: ...
+        Returns:
+            None
+        """
+    def incrementScore(self, amount: Number) -> None:
+        """
+        Increments the score value by the specified amount.
 
-    def setScore(self, score: Number) -> None: ...
+        Args:
+            amount (Number): The amount to increment the score by.
 
+        Returns:
+            None
+        """
+    def setScore(self, score: Number) -> None:
+        """
+        Sets the score value.
+
+        Args:
+            score (Number): The score value to set.
+
+        Returns:
+            None
+        """
 
 class Server:
-    def getPlayerManager(self) -> PlayerManager: ...
+    def getPlayerManager(self) -> PlayerManager:
+        """
+        Retrieves the player manager for the server.
 
-    def getDefaultGameMode(self) -> GameMode: ...
+        Returns:
+            PlayerManager: The player manager object.
+        """
+    def getDefaultGameMode(self) -> GameMode:
+        """
+        Retrieves the default game mode for new players.
 
-    def getForcedGameMode(self) -> GameMode: ...
+        Returns:
+            GameMode: The default game mode.
+        """
+    def getForcedGameMode(self) -> GameMode:
+        """
+        Retrieves the forced game mode for all players.
 
-    def getScoreboard(self) -> Scoreboard: ...
+        Returns:
+            GameMode: The forced game mode.
+        """
+    def getScoreboard(self) -> Scoreboard:
+        """
+        Retrieves the scoreboard for the server.
 
-    def getMaxWorldBorderRadius(self) -> int: ...
+        Returns:
+            Scoreboard: The scoreboard object.
+        """
+    def getMaxWorldBorderRadius(self) -> int:
+        """
+        Retrieves the maximum radius of the world border.
 
-    def getServerIP(self) -> str: ...
+        Returns:
+            int: The maximum world border radius.
+        """
+    def getServerIP(self) -> str:
+        """
+        Retrieves the IP address of the server.
 
-    def getWorld(self, world: Worlds) -> World: ...
+        Returns:
+            str: The server IP address.
+        """
+    def getWorld(self, world: Worlds) -> World:
+        """
+        Retrieves the world object for the specified world type.
 
-    def getServerMOTD(self) -> str: ...
+        Args:
+            world (Worlds): The type of the world to retrieve.
 
-    def getServerPort(self) -> int: ...
+        Returns:
+            World: The world object.
+        """
+    def getServerMOTD(self) -> str:
+        """
+        Retrieves the MOTD (Message of the Day) of the server.
 
-    def getSpawnProtectionRadius(self) -> int: ...
+        Returns:
+            str: The server MOTD.
+        """
+    def getServerPort(self) -> int:
+        """
+        Retrieves the port number on which the server is running.
 
-    def getSpawnRadius(self, world: Worlds) -> int: ...
+        Returns:
+            int: The server port number.
+        """
+    def getSpawnProtectionRadius(self) -> int:
+        """
+        Retrieves the radius of spawn protection around the world spawn point.
 
-    def getVersion(self) -> str: ...
+        Returns:
+            int: The spawn protection radius.
+        """
+    def getSpawnRadius(self, world: Worlds) -> int:
+        """
+        Retrieves the spawn radius for the specified world type.
 
-    def isFlightEnabled(self) -> bool: ...
+        Args:
+            world (Worlds): The type of the world to retrieve the spawn radius for.
 
-    def isHardcore(self) -> bool: ...
+        Returns:
+            int: The spawn radius of the world.
+        """
+    def getVersion(self) -> str:
+        """
+        Retrieves the version of the server.
 
-    def isMonsterSpawningEnabled(self) -> bool: ...
+        Returns:
+            str: The server version.
+        """
+    def isFlightEnabled(self) -> bool:
+        """
+        Checks if flight is enabled on the server.
 
-    def isNetherAllowed(self) -> bool: ...
+        Returns:
+            bool: True if flight is enabled, False otherwise.
+        """
+    def isHardcore(self) -> bool:
+        """
+        Checks if the server is in hardcore mode.
 
-    def isPVPEnabled(self) -> bool: ...
+        Returns:
+            bool: True if the server is in hardcore mode, False otherwise.
+        """
+    def isMonsterSpawningEnabled(self) -> bool:
+        """
+        Checks if monster spawning is enabled on the server.
 
-    def isSingleplayer(self) -> bool: ...
+        Returns:
+            bool: True if monster spawning is enabled, False otherwise.
+        """
+    def isNetherAllowed(self) -> bool:
+        """
+        Checks if the Nether dimension is allowed on the server.
 
-    def openToLAN(
-            self, gameMode: GameModes, cheatsAllowed: bool, port: Number
-    ) -> None: ...
+        Returns:
+            bool: True if the Nether is allowed, False otherwise.
+        """
+    def isPVPEnabled(self) -> bool:
+        """
+        Checks if PVP (Player vs. Player) is enabled on the server.
 
-    def setDefaultGameMode(self, defaultGameMode: GameModes) -> None: ...
+        Returns:
+            bool: True if PVP is enabled, False otherwise.
+        """
+    def isSingleplayer(self) -> bool:
+        """
+        Checks if the server is running in singleplayer mode.
 
-    def setDifficulty(self, difficulty: Difficulties) -> None: ...
+        Returns:
+            bool: True if the server is in singleplayer mode, False otherwise.
+        """
+    def openToLAN(self, gameMode: GameModes, cheatsAllowed: bool, port: Number) -> None:
+        """
+        Opens the server to LAN (Local Area Network) with the specified settings.
 
-    def setDifficultyLocked(self, difficultyLocked: bool) -> None: ...
+        Args:
+            gameMode (GameModes): The game mode for LAN players.
+            cheatsAllowed (bool): Whether cheats are allowed for LAN players.
+            port (Number): The port number to use for LAN connections.
 
+        Returns:
+            None
+        """
+    def setDefaultGameMode(self, defaultGameMode: GameModes) -> None:
+        """
+        Sets the default game mode for new players.
+
+        Args:
+            defaultGameMode (GameModes): The default game mode to set.
+
+        Returns:
+            None
+        """
+    def setDifficulty(self, difficulty: Difficulties) -> None:
+        """
+        Sets the difficulty level of the server.
+
+        Args:
+            difficulty (Difficulties): The difficulty level to set.
+
+        Returns:
+            None
+        """
+    def setDifficultyLocked(self, difficultyLocked: bool) -> None:
+        """
+        Sets whether the difficulty level is locked on the server.
+
+        Args:
+            difficultyLocked (bool): True to lock the difficulty level, False otherwise.
+
+        Returns:
+            None
+        """
 
 class StatusEffectInstance:
     duration: int
     amplifier: int
 
-
 class StatusEffects:
+    """
+    Constants representing different status effects available in the game.
+    These objects can be used to identify specific status effects.
+    """
+
     SPEED: object
     SLOWNESS: object
     HASTE: object
@@ -3303,189 +4936,573 @@ class StatusEffects:
     HERO_OF_THE_VILLAGE: object
     DARKNESS: object
 
-
 class Team:
-    def setSuffix(self, suffix: Text) -> None: ...
+    def setSuffix(self, suffix: Text) -> None:
+        """
+        Sets the suffix of the team.
 
-    def setShowFriendlyInvisibles(self, showFriendlyInvisibles: bool) -> None: ...
+        Args:
+            suffix (Text): The suffix to set for the team.
 
-    def setPrefix(self, prefix: Text) -> None: ...
+        Returns:
+            None
+        """
+    def setShowFriendlyInvisibles(self, showFriendlyInvisibles: bool) -> None:
+        """
+        Sets whether to show friendly invisibles for the team.
 
-    def shouldShowFriendlyInvisibles(self) -> bool: ...
+        Args:
+            showFriendlyInvisibles (bool): A boolean value indicating whether to show friendly invisibles.
 
-    def setNameTagVisibilityRule(
-            self, nameTagVisibilityRule: VisibilityRules
-    ) -> None: ...
+        Returns:
+            None
+        """
+    def setPrefix(self, prefix: Text) -> None:
+        """
+        Sets the prefix of the team.
 
-    def setFriendlyFireAllowed(self, friendlyFireAllowed: bool) -> None: ...
+        Args:
+            prefix (Text): The prefix to set for the team.
 
-    def setDisplayName(self, displayName: Text) -> None: ...
+        Returns:
+            None
+        """
+    def shouldShowFriendlyInvisibles(self) -> bool:
+        """
+        Checks if friendly invisibles are shown for the team.
 
+        Returns:
+            bool: True if friendly invisibles are shown, False otherwise.
+        """
+    def setNameTagVisibilityRule(self, nameTagVisibilityRule: VisibilityRules) -> None:
+        """
+        Sets the name tag visibility rule for the team.
+
+        Args:
+            nameTagVisibilityRule (VisibilityRules): The name tag visibility rule to set for the team.
+
+        Returns:
+            None
+        """
+    def setFriendlyFireAllowed(self, friendlyFireAllowed: bool) -> None:
+        """
+        Sets whether friendly fire is allowed for the team.
+
+        Args:
+            friendlyFireAllowed (bool): A boolean value indicating whether friendly fire is allowed.
+
+        Returns:
+            None
+        """
+    def setDisplayName(self, displayName: Text) -> None:
+        """
+        Sets the display name of the team.
+
+        Args:
+            displayName (Text): The display name to set for the team.
+
+        Returns:
+            None
+        """
     def setDeathMessageVisibilityRule(
-            self, deathMessageVisibilityRule: VisibilityRules
-    ) -> None: ...
+        self, deathMessageVisibilityRule: VisibilityRules
+    ) -> None:
+        """
+        Sets the death message visibility rule for the team.
 
-    def setColor(self, formatting: Formatting) -> None: ...
+        Args:
+            deathMessageVisibilityRule (VisibilityRules): The death message visibility rule to set for the team.
 
-    def setCollisionRule(self, collisionRule: CollisionRules) -> None: ...
+        Returns:
+            None
+        """
+    def setColor(self, formatting: Formatting) -> None:
+        """
+        Sets the color of the team.
 
-    def isFriendlyFireAllowed(self) -> bool: ...
+        Args:
+            formatting (Formatting): The color formatting to set for the team.
 
-    def getSuffix(self) -> Text: ...
+        Returns:
+            None
+        """
+    def setCollisionRule(self, collisionRule: CollisionRules) -> None:
+        """
+        Sets the collision rule for the team.
 
-    def getPlayerList(self) -> list[str]: ...
+        Args:
+            collisionRule (CollisionRules): The collision rule to set for the team.
 
-    def getPrefix(self) -> Text: ...
+        Returns:
+            None
+        """
+    def isFriendlyFireAllowed(self) -> bool:
+        """
+        Checks if friendly fire is allowed for the team.
 
-    def getNameTagVisibilityRule(self) -> VisibilityRules: ...
+        Returns:
+            bool: True if friendly fire is allowed, False otherwise.
+        """
+    def getSuffix(self) -> Text:
+        """
+        Returns the suffix of the team.
 
-    def getName(self) -> str: ...
+        Returns:
+            Text: The suffix of the team.
+        """
+    def getPlayerList(self) -> list[str]:
+        """
+        Returns the list of players in the team.
 
-    def getDisplayName(self) -> Text: ...
+        Returns:
+            list[str]: The list of players in the team.
+        """
+    def getPrefix(self) -> Text:
+        """
+        Returns the prefix of the team.
 
-    def getDeathMessageVisibilityRule(self) -> VisibilityRules: ...
+        Returns:
+            Text: The prefix of the team.
+        """
+    def getNameTagVisibilityRule(self) -> VisibilityRules:
+        """
+        Returns the name tag visibility rule of the team.
 
-    def getColor(self) -> Formatting: ...
+        Returns:
+            VisibilityRules: The name tag visibility rule of the team.
+        """
+    def getName(self) -> str:
+        """
+        Returns the name of the team.
 
-    def getCollisionRule(self) -> CollisionRules: ...
+        Returns:
+            str: The name of the team.
+        """
+    def getDisplayName(self) -> Text:
+        """
+        Returns the display name of the team.
 
+        Returns:
+            Text: The display name of the team.
+        """
+    def getDeathMessageVisibilityRule(self) -> VisibilityRules:
+        """
+        Returns the death message visibility rule of the team.
+
+        Returns:
+            VisibilityRules: The death message visibility rule of the team.
+        """
+    def getColor(self) -> Formatting:
+        """
+        Returns the color of the team.
+
+        Returns:
+            Formatting: The color of the team.
+        """
+    def getCollisionRule(self) -> CollisionRules:
+        """
+        Returns the collision rule of the team.
+
+        Returns:
+            CollisionRules: The collision rule of the team.
+        """
 
 class Time:
+    """
+    Represents different time values.
+    """
+
     DAY: object
     MIDNIGHT: object
     NIGHT: object
     NOON: object
 
-
 class Vec2f:
+    """
+    Represents a two-dimensional vector.
+
+    Attributes:
+        x (float): The x-coordinate of the vector.
+        y (float): The y-coordinate of the vector.
+    """
+
     x: float
     y: float
 
-    def __init__(self, x: Number, y: Number) -> None: ...
+    def __init__(self, x: float, y: float) -> None:
+        """
+        Initializes a Vec2f instance with the given coordinates.
 
+        Args:
+            x (float): The x-coordinate of the vector.
+            y (float): The y-coordinate of the vector.
+        """
+        self.x = x
+        self.y = y
 
 class Vec3d:
+    """
+    Represents a three-dimensional vector.
+
+    Attributes:
+        x (float): The x-coordinate of the vector.
+        y (float): The y-coordinate of the vector.
+        z (float): The z-coordinate of the vector.
+    """
+
     x: float
     y: float
     z: float
 
-    def __init__(self, x: Number, y: Number, z: Number) -> None: ...
+    def __init__(self, x: float, y: float, z: float) -> None:
+        """
+        Initializes a Vec3d instance with the given coordinates.
 
+        Args:
+            x (float): The x-coordinate of the vector.
+            y (float): The y-coordinate of the vector.
+            z (float): The z-coordinate of the vector.
+        """
+        self.x = x
+        self.y = y
+        self.z = z
 
 class VisibilityRules:
+    """
+    Represents different visibility rules.
+    """
+
     ALWAYS: object
     NEVER: object
     HIDE_FOR_OTHER_TEAMS: object
     HIDE_FOR_OWN_TEAM: object
 
-
 class Weather:
+    """
+    Represents different weather conditions.
+    """
+
     CLEAR: object
     RAIN: object
     THUNDER: object
 
-
 class World:
-    @overload
-    def getBlock(self, x: Number, y: Number, z: Number) -> BlockState: ...
+    """
+    Represents a world.
+    """
 
     @overload
-    def getBlock(self, blockPos: BlockPos) -> BlockState: ...
+    def getBlock(self, x: Number, y: Number, z: Number) -> BlockState:
+        """
+        Retrieves the block state at the given coordinates.
 
-    def getDifficulty(self) -> Difficulty: ...
+        Args:
+            x (Number): The x-coordinate of the block.
+            y (Number): The y-coordinate of the block.
+            z (Number): The z-coordinate of the block.
 
-    def getSeed(self) -> int: ...
-
+        Returns:
+            BlockState: The block state at the given coordinates.
+        """
     @overload
-    def setBlock(self, x: Number, y: Number, z: Number, block: Blocks) -> None: ...
+    def getBlock(self, blockPos: BlockPos) -> BlockState:
+        """
+        Retrieves the block state at the given block position.
 
+        Args:
+            blockPos (BlockPos): The block position.
+
+        Returns:
+            BlockState: The block state at the given block position.
+        """
+    def getDifficulty(self) -> Difficulty:
+        """
+        Retrieves the difficulty level of the world.
+
+        Returns:
+            Difficulty: The difficulty level of the world.
+        """
+    def getSeed(self) -> int:
+        """
+        Retrieves the seed value of the world.
+
+        Returns:
+            int: The seed value of the world.
+        """
     @overload
-    def setBlock(self, x: Number, y: Number, z: Number, block: BlockState) -> None: ...
+    def setBlock(self, x: Number, y: Number, z: Number, block: Blocks) -> None:
+        """
+        Sets the block at the given coordinates.
 
+        Args:
+            x (Number): The x-coordinate of the block.
+            y (Number): The y-coordinate of the block.
+            z (Number): The z-coordinate of the block.
+            block (Blocks): The block to be set.
+        """
     @overload
-    def setBlock(self, blockPos: BlockPos, block: Blocks) -> None: ...
+    def setBlock(self, x: Number, y: Number, z: Number, block: BlockState) -> None:
+        """
+        Sets the block with the specified state at the given coordinates.
 
+        Args:
+            x (Number): The x-coordinate of the block.
+            y (Number): The y-coordinate of the block.
+            z (Number): The z-coordinate of the block.
+            block (BlockState): The block state to be set.
+        """
     @overload
-    def setBlock(self, blockPos: BlockPos, block: BlockState) -> None: ...
+    def setBlock(self, blockPos: BlockPos, block: Blocks) -> None:
+        """
+        Sets the block at the given block position.
 
+        Args:
+            blockPos (BlockPos): The block position.
+            block (Blocks): The block to be set.
+        """
     @overload
-    def setSpawnPos(self, x: Number, y: Number, z: Number) -> None: ...
+    def setBlock(self, blockPos: BlockPos, block: BlockState) -> None:
+        """
+        Sets the block with the specified state at the given block position.
 
+        Args:
+            blockPos (BlockPos): The block position.
+            block (BlockState): The block state to be set.
+        """
     @overload
-    def setSpawnPos(self, x: Number, y: Number, z: Number, angle: Number) -> None: ...
+    def setSpawnPos(self, x: Number, y: Number, z: Number) -> None:
+        """
+        Sets the spawn position of the world.
 
+        Args:
+            x (Number): The x-coordinate of the spawn position.
+            y (Number): The y-coordinate of the spawn position.
+            z (Number): The z-coordinate of the spawn position.
+        """
     @overload
-    def setSpawnPos(self, blockPos: BlockPos) -> None: ...
+    def setSpawnPos(self, x: Number, y: Number, z: Number, angle: Number) -> None:
+        """
+        Sets the spawn position and angle of the world.
 
+        Args:
+            x (Number): The x-coordinate of the spawn position.
+            y (Number): The y-coordinate of the spawn position.
+            z (Number): The z-coordinate of the spawn position.
+            angle (Number): The angle of the spawn position.
+        """
     @overload
-    def setSpawnPos(self, blockPos: BlockPos, angle: Number) -> None: ...
+    def setSpawnPos(self, blockPos: BlockPos) -> None:
+        """
+        Sets the spawn position of the world using block position.
 
-    def setTime(self, time: Time) -> None: ...
-
+        Args:
+            blockPos (BlockPos): The block position of the spawn position.
+        """
     @overload
-    def setWeather(self, weather: Weather) -> None: ...
+    def setSpawnPos(self, blockPos: BlockPos, angle: Number) -> None:
+        """
+        Sets the spawn position and angle of the world using block position.
 
+        Args:
+            blockPos (BlockPos): The block position of the spawn position.
+            angle (Number): The angle of the spawn position.
+        """
+    def setTime(self, time: Time) -> None:
+        """
+        Sets the current time of the world.
+
+        Args:
+            time (Time): The time value to be set.
+        """
     @overload
-    def setWeather(self, weather: Weather, duration: Number) -> None: ...
+    def setWeather(self, weather: Weather) -> None:
+        """
+        Sets the weather condition of the world.
 
+        Args:
+            weather (Weather): The weather condition to be set.
+        """
+    @overload
+    def setWeather(self, weather: Weather, duration: Number) -> None:
+        """
+        Sets the weather condition and duration of the world.
+
+        Args:
+            weather (Weather): The weather condition to be set.
+            duration (Number): The duration of the weather condition.
+        """
     @overload
     def spawnEntity(
-            self, entity: Entities, x: Number, y: Number, z: Number, nbt: dict[str, object]
-    ) -> None: ...
+        self, entity: Entities, x: Number, y: Number, z: Number, nbt: dict[str, object]
+    ) -> None:
+        """
+        Spawns an entity at the specified coordinates.
 
+        Args:
+            entity (Entities): The type of entity to be spawned.
+            x (Number): The x-coordinate of the entity's spawn location.
+            y (Number): The y-coordinate of the entity's spawn location.
+            z (Number): The z-coordinate of the entity's spawn location.
+            nbt (dict[str, object]): Additional data for the entity (if applicable).
+        """
     @overload
     def spawnEntity(
-            self, entity: Entities, blockPos: BlockPos, nbt: dict[str, object]
-    ) -> None: ...
+        self, entity: Entities, blockPos: BlockPos, nbt: dict[str, object]
+    ) -> None:
+        """
+        Spawns an entity at the specified block position.
 
+        Args:
+            entity (Entities): The type of entity to be spawned.
+            blockPos (BlockPos): The block position of the entity's spawn location.
+            nbt (dict[str, object]): Additional data for the entity (if applicable).
+        """
 
 class Worlds:
+    """
+    Represents different game worlds.
+    """
+
     OVERWORLD: object
     NETHER: object
     END: object
 
-
 class PlayerManager:
-    def areCheatsAllowed(self) -> bool: ...
+    """
+    Manages players in the game.
+    """
 
+    def areCheatsAllowed(self) -> bool:
+        """
+        Checks if cheats are allowed in the game.
+
+        Returns:
+            bool: True if cheats are allowed, False otherwise.
+        """
     @overload
-    def broadcast(self, message: str) -> None: ...
+    def broadcast(self, message: str) -> None:
+        """
+        Broadcasts a message to all players.
 
+        Args:
+            message (str): The message to broadcast.
+        """
     @overload
-    def broadcast(self, text: Text) -> None: ...
+    def broadcast(self, text: Text) -> None:
+        """
+        Broadcasts a text component to all players.
 
-    def disconnectAllPlayers(self) -> None: ...
+        Args:
+            text (Text): The text component to broadcast.
+        """
+    def disconnectAllPlayers(self) -> None:
+        """
+        Disconnects all players from the game.
+        """
+    def getCurrentPlayerCount(self) -> int:
+        """
+        Retrieves the current count of players in the game.
 
-    def getCurrentPlayerCount(self) -> int: ...
+        Returns:
+            int: The current count of players.
+        """
+    def getMaxPlayerCount(self) -> int:
+        """
+        Retrieves the maximum allowed count of players in the game.
 
-    def getMaxPlayerCount(self) -> int: ...
+        Returns:
+            int: The maximum allowed count of players.
+        """
+    def getOpNames(self) -> list[str]:
+        """
+        Retrieves the names of all operators (ops) in the game.
 
-    def getOpNames(self) -> list[str]: ...
+        Returns:
+            list[str]: The names of all operators.
+        """
+    def getPlayer(self, name: str) -> PlayerEntity:
+        """
+        Retrieves the player entity with the specified name.
 
-    def getPlayer(self, name: str) -> PlayerEntity: ...
+        Args:
+            name (str): The name of the player.
 
-    def getPlayerList(self) -> list[PlayerEntity]: ...
+        Returns:
+            PlayerEntity: The player entity.
+        """
+    def getPlayerList(self) -> list[PlayerEntity]:
+        """
+        Retrieves a list of all player entities in the game.
 
-    def getPlayerNames(self) -> list[str]: ...
+        Returns:
+            list[PlayerEntity]: A list of player entities.
+        """
+    def getPlayerNames(self) -> list[str]:
+        """
+        Retrieves the names of all players in the game.
 
-    def getViewDistance(self) -> int: ...
+        Returns:
+            list[str]: The names of all players.
+        """
+    def getViewDistance(self) -> int:
+        """
+        Retrieves the view distance setting of the game.
 
-    def getWhitelistedNames(self) -> list[str]: ...
+        Returns:
+            int: The view distance.
+        """
+    def getWhitelistedNames(self) -> list[str]:
+        """
+        Retrieves the names of all whitelisted players in the game.
 
-    def isWhitelistEnabled(self) -> bool: ...
+        Returns:
+            list[str]: The names of all whitelisted players.
+        """
+    def isWhitelistEnabled(self) -> bool:
+        """
+        Checks if the whitelist is enabled in the game.
 
-    def reloadWhitelist(self) -> None: ...
+        Returns:
+            bool: True if the whitelist is enabled, False otherwise.
+        """
+    def reloadWhitelist(self) -> None:
+        """
+        Reloads the whitelist configuration.
+        """
+    def setCheatsAllowed(self, cheatsAllowed: bool) -> None:
+        """
+        Sets whether cheats are allowed in the game.
 
-    def setCheatsAllowed(self, cheatsAllowed: bool) -> None: ...
+        Args:
+            cheatsAllowed (bool): True to allow cheats, False to disallow cheats.
+        """
+    def setSimulationDistance(self, simulationDistance: int) -> None:
+        """
+        Sets the simulation distance of the game.
 
-    def setSimulationDistance(self, simulationDistance: int) -> None: ...
+        Args:
+            simulationDistance (int): The simulation distance value.
+        """
+    def setViewDistance(self, viewDistance: int) -> None:
+        """
+        Sets the view distance of the game.
 
-    def setViewDistance(self, viewDistance: int) -> None: ...
+        Args:
+            viewDistance (int): The view distance value.
+        """
+    def setWhitelistEnabled(self, whitelistEnabled: bool) -> None:
+        """
+        Sets whether the whitelist is enabled in the game.
 
-    def setWhitelistEnabled(self, whitelistEnabled: bool) -> None: ...
-
+        Args:
+            whitelistEnabled (bool): True to enable the whitelist, False to disable the whitelist.
+        """
 
 class Formatting:
+    """
+    Text formatting
+    """
+
     BLACK: object
     DARK_BLUE: object
     DARK_GREEN: object
@@ -3509,20 +5526,17 @@ class Formatting:
     ITALIC: object
     RESET: object
 
-
 class Text:
     message: str
 
     def __init__(self, message: str) -> None: ...
-
     def withFormatting(self, formatting: Formatting): ...
-
 
 server: Server
 executor: Executor
-thonMCVersion: str
-thonMCMajor: int
-thonMCMinor: int
-thonMCPatch: int
+pythonMCVersion: str
+pythonMCMajor: int
+pythonMCMinor: int
+pythonMCPatch: int
 namespace: str
 path: str
