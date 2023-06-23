@@ -1,0 +1,2 @@
+class EnderChestInventory:
+	stacks = None

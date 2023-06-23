@@ -21,6 +21,3 @@ class Vec3d:
 			y (float): The y-coordinate of the vector.
 			z (float): The z-coordinate of the vector.
 		"""
-		self.x = x
-		self.y = y
-		self.z = z

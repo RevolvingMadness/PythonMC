@@ -6,7 +6,7 @@ from src.pythonmc.block.block_state import BlockState
 from src.pythonmc.block.blocks import Blocks
 from src.pythonmc.entity.entities import Entities
 from src.pythonmc.server.difficulty.difficulty import Difficulty
-from src.pythonmc.world.time import Time
+from src.pythonmc.world.time_ import Time
 from src.pythonmc.world.weather import Weather
 
 

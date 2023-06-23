@@ -1,3 +1,3 @@
 class StatusEffectInstance:
-    duration: int
-    amplifier: int
+	duration: int
+	amplifier: int

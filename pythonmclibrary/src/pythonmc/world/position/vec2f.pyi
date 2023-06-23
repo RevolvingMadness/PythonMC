@@ -18,5 +18,3 @@ class Vec2f:
 			x (float): The x-coordinate of the vector.
 			y (float): The y-coordinate of the vector.
 		"""
-		self.x = x
-		self.y = y

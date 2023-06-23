@@ -1,7 +1,7 @@
 class RenderTypes:
-    """
-    A list of render types for scoreboards
-    """
+	"""
+	A list of render types for scoreboards
+	"""
 
-    INTEGER: object
-    HEARTS: object
+	INTEGER: object
+	HEARTS: object

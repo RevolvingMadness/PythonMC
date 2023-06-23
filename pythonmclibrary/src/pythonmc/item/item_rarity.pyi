@@ -1,9 +1,9 @@
 class ItemRarity:
-    """
-    Represents the rarity of an item.
-    """
+	"""
+	Represents the rarity of an item.
+	"""
 
-    COMMON: object
-    UNCOMMON: object
-    RARE: object
-    EPIC: object
+	COMMON: object
+	UNCOMMON: object
+	RARE: object
+	EPIC: object

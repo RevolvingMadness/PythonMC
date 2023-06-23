@@ -10,288 +10,320 @@ from src.pythonmc.server.text.text import Text
 
 
 class ItemStack:
-    """
-    Represents an item stack in Minecraft.
-    """
+	"""
+	Represents an item stack in Minecraft.
+	"""
 
-    @overload
-    def __init__(self, item: Items, count: Number, nbt: dict[str, object]) -> None:
-        """
-        Initializes an ItemStack with the specified item, count, and NBT data.
+	@overload
+	def __init__(self, item: Items, count: Number, nbt: dict[str, object]) -> None:
+		"""
+		Initializes an ItemStack with the specified item, count, and NBT data.
 
-        Args:
-            item (Items): The item type.
-            count (Number): The number of items in the stack.
-            nbt (dict[str, object]): The NBT data associated with the item.
+		Args:
+			item (Items): The item type.
+			count (Number): The number of items in the stack.
+			nbt (dict[str, object]): The NBT data associated with the item.
 
-        Returns:
-            None
-        """
-    @overload
-    def __init__(self, item: Items, nbt: dict[str, object]) -> None:
-        """
-        Initializes an ItemStack with the specified item and NBT data.
+		Returns:
+			None
+		"""
 
-        Args:
-            item (Items): The item type.
-            nbt (dict[str, object]): The NBT data associated with the item.
+	@overload
+	def __init__(self, item: Items, nbt: dict[str, object]) -> None:
+		"""
+		Initializes an ItemStack with the specified item and NBT data.
 
-        Returns:
-            None
-        """
-    @overload
-    def __init__(self, item: Items, count: Number) -> None:
-        """
-        Initializes an ItemStack with the specified item and count.
+		Args:
+			item (Items): The item type.
+			nbt (dict[str, object]): The NBT data associated with the item.
 
-        Args:
-            item (Items): The item type.
-            count (Number): The number of items in the stack.
+		Returns:
+			None
+		"""
 
-        Returns:
-            None
-        """
-    @overload
-    def __init__(self, item: Items) -> None:
-        """
-        Initializes an ItemStack with the specified item.
+	@overload
+	def __init__(self, item: Items, count: Number) -> None:
+		"""
+		Initializes an ItemStack with the specified item and count.
 
-        Args:
-            item (Items): The item type.
+		Args:
+			item (Items): The item type.
+			count (Number): The number of items in the stack.
 
-        Returns:
-            None
-        """
-    def addEnchantment(self, enchantment: Enchantments, level: Number) -> None:
-        """
-        Adds an enchantment to the item stack.
+		Returns:
+			None
+		"""
 
-        Args:
-            enchantment (Enchantments): The enchantment to add.
-            level (Number): The level of enchantment.
+	@overload
+	def __init__(self, item: Items) -> None:
+		"""
+		Initializes an ItemStack with the specified item.
 
-        Returns:
-            None
-        """
-    def addHideFlag(self, hideFlag: HideFlags) -> None:
-        """
-        Adds a hide flag to the item stack.
+		Args:
+			item (Items): The item type.
 
-        Args:
-            hideFlag (HideFlags): The hide flag to add.
+		Returns:
+			None
+		"""
 
-        Returns:
-            None
-        """
-    def decrement(self, amount: Number) -> None:
-        """
-        Decrements the count of items in the stack by the specified amount.
+	def addEnchantment(self, enchantment: Enchantments, level: Number) -> None:
+		"""
+		Adds an enchantment to the item stack.
 
-        Args:
-            amount (Number): The amount to decrement.
+		Args:
+			enchantment (Enchantments): The enchantment to add.
+			level (Number): The level of enchantment.
 
-        Returns:
-            None
-        """
-    def getCount(self) -> int:
-        """
-        Returns the number of items in the stack.
+		Returns:
+			None
+		"""
 
-        Returns:
-            int: The count of items.
-        """
-    def getDamage(self) -> int:
-        """
-        Returns the damage value of the item stack.
+	def addHideFlag(self, hideFlag: HideFlags) -> None:
+		"""
+		Adds a hide flag to the item stack.
 
-        Returns:
-            int: The damage value.
-        """
-    def getEnchantments(self) -> list[Enchantment]:
-        """
-        Returns a list of enchantments applied to the item stack.
+		Args:
+			hideFlag (HideFlags): The hide flag to add.
 
-        Returns:
-            list[Enchantment]: The list of enchantments.
-        """
-    def getMaxCount(self) -> int:
-        """
-        Returns the maximum count of items allowed in the stack.
+		Returns:
+			None
+		"""
 
-        Returns:
-            int: The maximum count.
-        """
-    def getMaxDamage(self) -> int:
-        """
-        Returns the maximum damage value of the item stack.
+	def decrement(self, amount: Number) -> None:
+		"""
+		Decrements the count of items in the stack by the specified amount.
 
-        Returns:
-            int: The maximum damage value.
-        """
-    def getName(self) -> str:
-        """
-        Returns the name of the item.
+		Args:
+			amount (Number): The amount to decrement.
 
-        Returns:
-            str: The item name.
-        """
-    def getNbt(self) -> dict[str, object]:
-        """
-        Returns the NBT data associated with the item stack.
+		Returns:
+			None
+		"""
 
-        Returns:
-            dict[str, object]: The NBT data.
-        """
-    def getRarity(self) -> ItemRarity:
-        """
-        Returns the rarity of the item.
+	def getCount(self) -> int:
+		"""
+		Returns the number of items in the stack.
 
-        Returns:
-            ItemRarity: The item rarity.
-        """
-    def getRepairCost(self) -> int:
-        """
-        Returns the repair cost of the item.
+		Returns:
+			int: The count of items.
+		"""
 
-        Returns:
-            int: The repair cost.
-        """
-    def hasCustomName(self) -> bool:
-        """
-        Checks if the item has a custom name.
+	def getDamage(self) -> int:
+		"""
+		Returns the damage value of the item stack.
 
-        Returns:
-            bool: True if the item has a custom name, False otherwise.
-        """
-    def hasEnchantments(self) -> bool:
-        """
-        Checks if the item has any enchantments.
+		Returns:
+			int: The damage value.
+		"""
 
-        Returns:
-            bool: True if the item has enchantments, False otherwise.
-        """
-    def hasGlint(self) -> bool:
-        """
-        Checks if the item has a glint effect.
+	def getEnchantments(self) -> list[Enchantment]:
+		"""
+		Returns a list of enchantments applied to the item stack.
 
-        Returns:
-            bool: True if the item has a glint effect, False otherwise.
-        """
-    def hasNbt(self) -> bool:
-        """
-        Checks if the item has NBT data.
+		Returns:
+			list[Enchantment]: The list of enchantments.
+		"""
 
-        Returns:
-            bool: True if the item has NBT data, False otherwise.
-        """
-    def increment(self, amount: Number) -> None:
-        """
-        Increments the count of items in the stack by the specified amount.
+	def getMaxCount(self) -> int:
+		"""
+		Returns the maximum count of items allowed in the stack.
 
-        Args:
-            amount (Number): The amount to increment.
+		Returns:
+			int: The maximum count.
+		"""
 
-        Returns:
-            None
-        """
-    def isDamageable(self) -> bool:
-        """
-        Checks if the item is damageable.
+	def getMaxDamage(self) -> int:
+		"""
+		Returns the maximum damage value of the item stack.
 
-        Returns:
-            bool: True if the item is damageable, False otherwise.
-        """
-    def isDamaged(self) -> bool:
-        """
-        Checks if the item is damaged.
+		Returns:
+			int: The maximum damage value.
+		"""
 
-        Returns:
-            bool: True if the item is damaged, False otherwise.
-        """
-    def isEnchantable(self) -> bool:
-        """
-        Checks if the item is enchantable.
+	def getName(self) -> str:
+		"""
+		Returns the name of the item.
 
-        Returns:
-            bool: True if the item is enchantable, False otherwise.
-        """
-    def isFood(self) -> bool:
-        """
-        Checks if the item is a food item.
+		Returns:
+			str: The item name.
+		"""
 
-        Returns:
-            bool: True if the item is a food item, False otherwise.
-        """
-    def isItemBarVisible(self) -> bool:
-        """
-        Checks if the item bar is visible.
+	def getNbt(self) -> dict[str, object]:
+		"""
+		Returns the NBT data associated with the item stack.
 
-        Returns:
-            bool: True if the item bar is visible, False otherwise.
-        """
-    def isStackable(self) -> bool:
-        """
-        Checks if the item is stackable.
+		Returns:
+			dict[str, object]: The NBT data.
+		"""
 
-        Returns:
-            bool: True if the item is stackable, False otherwise.
-        """
-    def removeCustomName(self) -> None:
-        """
-        Removes the custom name of the item.
+	def getRarity(self) -> ItemRarity:
+		"""
+		Returns the rarity of the item.
 
-        Returns:
-            None
-        """
-    def setCount(self, count: Number) -> None:
-        """
-        Sets the count of items in the stack.
+		Returns:
+			ItemRarity: The item rarity.
+		"""
 
-        Args:
-            count (Number): The count of items.
+	def getRepairCost(self) -> int:
+		"""
+		Returns the repair cost of the item.
 
-        Returns:
-            None
-        """
-    @overload
-    def setCustomName(self, customName: str) -> None:
-        """
-        Sets the custom name of the item.
+		Returns:
+			int: The repair cost.
+		"""
 
-        Args:
-            customName (str): The custom name.
+	def hasCustomName(self) -> bool:
+		"""
+		Checks if the item has a custom name.
 
-        Returns:
-            None
-        """
-    @overload
-    def setCustomName(self, text: Text) -> None:
-        """
-        Sets the custom name of the item using a text object.
+		Returns:
+			bool: True if the item has a custom name, False otherwise.
+		"""
 
-        Args:
-            text (Text): The text object representing the custom name.
+	def hasEnchantments(self) -> bool:
+		"""
+		Checks if the item has any enchantments.
 
-        Returns:
-            None
-        """
-    def setDamage(self, damage: Number) -> None:
-        """
-        Sets the damage value of the item stack.
+		Returns:
+			bool: True if the item has enchantments, False otherwise.
+		"""
 
-        Args:
-            damage (Number): The damage value.
+	def hasGlint(self) -> bool:
+		"""
+		Checks if the item has a glint effect.
 
-        Returns:
-            None
-        """
-    def setRepairCost(self, repairCost: Number) -> None:
-        """
-        Sets the repair cost of the item.
+		Returns:
+			bool: True if the item has a glint effect, False otherwise.
+		"""
 
-        Args:
-            repairCost (Number): The repair cost.
+	def hasNbt(self) -> bool:
+		"""
+		Checks if the item has NBT data.
 
-        Returns:
-            None
-        """
+		Returns:
+			bool: True if the item has NBT data, False otherwise.
+		"""
+
+	def increment(self, amount: Number) -> None:
+		"""
+		Increments the count of items in the stack by the specified amount.
+
+		Args:
+			amount (Number): The amount to increment.
+
+		Returns:
+			None
+		"""
+
+	def isDamageable(self) -> bool:
+		"""
+		Checks if the item is damageable.
+
+		Returns:
+			bool: True if the item is damageable, False otherwise.
+		"""
+
+	def isDamaged(self) -> bool:
+		"""
+		Checks if the item is damaged.
+
+		Returns:
+			bool: True if the item is damaged, False otherwise.
+		"""
+
+	def isEnchantable(self) -> bool:
+		"""
+		Checks if the item is enchantable.
+
+		Returns:
+			bool: True if the item is enchantable, False otherwise.
+		"""
+
+	def isFood(self) -> bool:
+		"""
+		Checks if the item is a food item.
+
+		Returns:
+			bool: True if the item is a food item, False otherwise.
+		"""
+
+	def isItemBarVisible(self) -> bool:
+		"""
+		Checks if the item bar is visible.
+
+		Returns:
+			bool: True if the item bar is visible, False otherwise.
+		"""
+
+	def isStackable(self) -> bool:
+		"""
+		Checks if the item is stackable.
+
+		Returns:
+			bool: True if the item is stackable, False otherwise.
+		"""
+
+	def removeCustomName(self) -> None:
+		"""
+		Removes the custom name of the item.
+
+		Returns:
+			None
+		"""
+
+	def setCount(self, count: Number) -> None:
+		"""
+		Sets the count of items in the stack.
+
+		Args:
+			count (Number): The count of items.
+
+		Returns:
+			None
+		"""
+
+	@overload
+	def setCustomName(self, customName: str) -> None:
+		"""
+		Sets the custom name of the item.
+
+		Args:
+			customName (str): The custom name.
+
+		Returns:
+			None
+		"""
+
+	@overload
+	def setCustomName(self, text: Text) -> None:
+		"""
+		Sets the custom name of the item using a text object.
+
+		Args:
+			text (Text): The text object representing the custom name.
+
+		Returns:
+			None
+		"""
+
+	def setDamage(self, damage: Number) -> None:
+		"""
+		Sets the damage value of the item stack.
+
+		Args:
+			damage (Number): The damage value.
+
+		Returns:
+			None
+		"""
+
+	def setRepairCost(self, repairCost: Number) -> None:
+		"""
+		Sets the repair cost of the item.
+
+		Args:
+			repairCost (Number): The repair cost.
+
+		Returns:
+			None
+		"""
