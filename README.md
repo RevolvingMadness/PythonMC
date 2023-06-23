@@ -52,6 +52,14 @@ You need Python to use PythonMC, You can get it [here](https://www.python.org).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Usage
+
+If you want to know how to use PythonMC, refer to the **[documentation](https://RevolvingMadness.github.io/PythonMC)**
+
+For examples, please refer to the **[examples](https://RevolvingMadness.github.io/PythonMC/examples)**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Roadmap
 
 Whatever you suggest.

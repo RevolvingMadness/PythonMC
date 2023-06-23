@@ -33,17 +33,36 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Getting Started
+
+### Prerequisites
+
+You need Python to use PythonMC, You can get it [here](https://www.python.org).  
+**MAKE SURE TO CHECK THIS BOX OTHERWISE PYTHONMC WON'T WORK:**  
+![](https://raw.githubusercontent.com/RevolvingMadness/PythonMC/master/images/addtoenvironmentvariables.png)
+
+### Installation
+
+1. Install Python packages
+   ```sh
+   pip install jep pythonmc
+   ```
+    - We need `jep` because that is how the mod interacts with Python.
+    - We need `pythonmc` because that provides syntax highlighting.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Usage
 
-If you want to know how to use PythonMC refer to the [documentation](https://RevolvingMadness.github.io/PythonMC)
+If you want to know how to use PythonMC, refer to the **[documentation](https://RevolvingMadness.github.io/PythonMC)**
 
-_For more examples, please refer to the **[Documentation](https://example.com)**_
+For examples, please refer to the **[examples](https://RevolvingMadness.github.io/PythonMC/examples)**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Roadmap
 
-**???**
+Whatever you suggest.
 
 See the **[open issues](https://github.com/RevolvingMadness/PythonMC/issues)** for a full list of proposed features (and
 known issues).
@@ -107,6 +126,8 @@ Project Link: **[https://github.com/RevolvingMadness/PythonMC](https://github.co
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
 [linkedin-url]: https://linkedin.com/in/linkedin_username
+
+[product-screenshot]: ../images/screenshot.png
 
 [fabricmc.net]: https://img.shields.io/badge/Fabric%20-1.19.4%20-blue?style=for-the-badge
 
