@@ -7,6 +7,7 @@ import jep.SubInterpreter;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.util.crash.CrashReport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,9 +35,9 @@ public class Mod implements ModInitializer {
 
 
 		ServerLifecycleEvents.SERVER_STARTING.register(server -> {
-			Optional<Path> path = FabricLoader.getInstance().getModContainer(MOD_ID).get().findPath("pythonmclibrary");
+			Path path = FabricLoader.getInstance().getGameDir().resolve("pythonmclibrary");
 			JepConfig config = new JepConfig().redirectStdErr(PythonExecutor.outputStream).redirectStdErr(PythonExecutor.errorOutputStream);
-			path.ifPresent(value -> config.addIncludePaths(value.toString()));
+			config.addIncludePaths(path.toString());
 			PythonExecutor.interpreter = new SubInterpreter(config);
 		});
 
