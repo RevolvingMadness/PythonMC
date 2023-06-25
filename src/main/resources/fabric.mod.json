@@ -1,35 +1,35 @@
 {
-  "accessWidener": "pythonmc.accesswidener",
-  "schemaVersion": 1,
-  "id": "pythonmc",
-  "version": "${version}",
-  "name": "PythonMC",
-  "description": "This mod allows for datapacks to be written in the programming language Python",
-  "authors": [
-    "RevolvingMadness!"
-  ],
-  "contact": {
-    "homepage": "",
-    "sources": "https://github.com/RevolvingMadness/PythonMC"
-  },
-  "license": "MIT",
-  "icon": "",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "com.revolvingmadness.pythonmc.Mod"
-    ]
-  },
-  "mixins": [
-    "pythonmc.mixins.json"
-  ],
-  "depends": {
-    "fabricloader": ">=0.14.21",
-    "minecraft": "~1.20.1",
-    "java": ">=17",
-    "fabric-api": "*"
-  },
-  "suggests": {
-    "another-mod": "*"
-  }
+   "accessWidener": "pythonmc.accesswidener",
+   "schemaVersion": 1,
+   "id": "pythonmc",
+   "version": "${version}",
+   "name": "PythonMC",
+   "description": "This mod allows for datapacks to be written in the programming language Python",
+   "authors": [
+      "RevolvingMadness!"
+   ],
+   "contact": {
+      "homepage": "",
+      "sources": "https://github.com/RevolvingMadness/PythonMC"
+   },
+   "license": "MIT",
+   "icon": "",
+   "environment": "*",
+   "entrypoints": {
+      "main": [
+         "com.revolvingmadness.pythonmc.Mod"
+      ]
+   },
+   "mixins": [
+      "pythonmc.mixins.json"
+   ],
+   "depends": {
+      "fabricloader": ">=0.14.21",
+      "minecraft": "~1.20.1",
+      "java": ">=17",
+      "fabric-api": "*"
+   },
+   "suggests": {
+      "another-mod": "*"
+   }
 }

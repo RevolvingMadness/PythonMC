@@ -1,2 +1,2 @@
-from collision_rules import CollisionRules
-from visibility_rules import VisibilityRules
+from .collision_rules import CollisionRules
+from .visibility_rules import VisibilityRules

@@ -1,2 +1,2 @@
-from game_mode import GameMode
-from game_modes import GameModes
+from .game_mode import GameMode
+from .game_modes import GameModes

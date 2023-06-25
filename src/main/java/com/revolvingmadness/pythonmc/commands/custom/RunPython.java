@@ -10,16 +10,16 @@ import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 
 public class RunPython {
-	public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess ignoredAccess, CommandManager.RegistrationEnvironment ignoredEnvironment) {
-		dispatcher.register(CommandManager.literal("runpython").then(CommandManager.literal("code").then(CommandManager.argument("code", MessageArgumentType.message()).executes(RunPython::runCode))));
-	}
-	
-	@SuppressWarnings("SameReturnValue")
-	private static int runCode(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
-		String code = MessageArgumentType.getMessage(context, "code").getString();
-		
-		PythonExecutor.execute(context.getSource(), null, null, code, PythonExecutor.interpreter);
-		
-		return 1;
-	}
+    public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess ignoredAccess, CommandManager.RegistrationEnvironment ignoredEnvironment) {
+        dispatcher.register(CommandManager.literal("runpython").then(CommandManager.literal("code").then(CommandManager.argument("code", MessageArgumentType.message()).executes(RunPython::runCode))));
+    }
+
+    @SuppressWarnings("SameReturnValue")
+    private static int runCode(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
+        String code = MessageArgumentType.getMessage(context, "code").getString();
+
+        PythonExecutor.execute(context.getSource(), null, null, code, PythonExecutor.interpreter);
+
+        return 1;
+    }
 }

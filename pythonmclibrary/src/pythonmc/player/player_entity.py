@@ -1,4 +1,4 @@
-from src.pythonmc.entity.living_entity import LivingEntity
+from ..entity.living_entity import LivingEntity
 
 
 class PlayerEntity(LivingEntity):
@@ -59,7 +59,7 @@ class PlayerEntity(LivingEntity):
     def isMainPlayer(self):
         ...
 
-    def isUsingSglass(self):
+    def isUsingSpyglass(self):
         ...
 
     def requestRespawn(self):

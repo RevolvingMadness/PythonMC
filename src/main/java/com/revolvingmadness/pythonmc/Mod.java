@@ -13,32 +13,32 @@ import org.slf4j.LoggerFactory;
 import java.nio.file.Path;
 
 public class Mod implements ModInitializer {
-	public static final String MOD_ID = "pythonmc";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static final Integer major = 1;
-	public static final Integer minor = 0;
-	public static final Integer patch = 0;
-	public static String pythonMCVersion;
-	
-	@Override
-	public void onInitialize() {
-		if (System.getenv("PYTHONHOME") == null) {
-			throw new RuntimeException("Environment variable 'PYTHONHOME' is not set.");
-		}
-		System.setProperty("java.library.path", "");
-		
-		pythonMCVersion = major + "." + minor + "." + patch;
-		
-		ModCommands.registerCommands();
-		
-		
-		ServerLifecycleEvents.SERVER_STARTING.register(server -> {
-			Path path = FabricLoader.getInstance().getGameDir().resolve("pythonmclibrary");
-			JepConfig config = new JepConfig().redirectStdErr(PythonExecutor.outputStream).redirectStdErr(PythonExecutor.errorOutputStream);
-			config.addIncludePaths(path.toString());
-			PythonExecutor.interpreter = new SubInterpreter(config);
-		});
-		
-		ServerLifecycleEvents.SERVER_STOPPING.register(server -> PythonExecutor.interpreter.close());
-	}
+    public static final String MOD_ID = "pythonmc";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final Integer major = 1;
+    public static final Integer minor = 0;
+    public static final Integer patch = 0;
+    public static String pythonMCVersion;
+
+    @Override
+    public void onInitialize() {
+        if (System.getenv("PYTHONHOME") == null) {
+            throw new RuntimeException("Environment variable 'PYTHONHOME' is not set.");
+        }
+        System.setProperty("java.library.path", "");
+
+        pythonMCVersion = major + "." + minor + "." + patch;
+
+        ModCommands.registerCommands();
+
+
+        ServerLifecycleEvents.SERVER_STARTING.register(server -> {
+            Path path = FabricLoader.getInstance().getGameDir().resolve("pythonmclibrary");
+            JepConfig config = new JepConfig().redirectStdErr(PythonExecutor.outputStream).redirectStdErr(PythonExecutor.errorOutputStream);
+            config.addIncludePaths(path.toString());
+            PythonExecutor.interpreter = new SubInterpreter(config);
+        });
+
+        ServerLifecycleEvents.SERVER_STOPPING.register(server -> PythonExecutor.interpreter.close());
+    }
 }

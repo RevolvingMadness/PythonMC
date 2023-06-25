@@ -1,5 +1,6 @@
 from numbers import Number
 
+
 class BlockPos:
     """
     Represents a position in the world.

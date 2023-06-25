@@ -1,4 +1,5 @@
-from src.pythonmc.server.text.formatting import Formatting
+from pythonmc.server.text.formatting import Formatting
+
 
 class Text:
     message: str

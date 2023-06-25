@@ -1,7 +1,8 @@
-from src.pythonmc.scoreboard.rules.collision_rules import CollisionRules
-from src.pythonmc.scoreboard.rules.visibility_rules import VisibilityRules
-from src.pythonmc.server.text.formatting import Formatting
-from src.pythonmc.server.text.text import Text
+from pythonmc.scoreboard.rules.collision_rules import CollisionRules
+from pythonmc.scoreboard.rules.visibility_rules import VisibilityRules
+from pythonmc.server.text.formatting import Formatting
+from pythonmc.server.text.text import Text
+
 
 class Team:
     def setSuffix(self, suffix: Text) -> None:

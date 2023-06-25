@@ -1,3 +1,6 @@
+from typing import overload
+
+
 class ScoreboardPlayerScore:
     def clearScore(self):
         ...
@@ -11,9 +14,11 @@ class ScoreboardPlayerScore:
     def getScoreboard(self):
         ...
 
+    @overload
     def incrementScore(self):
         ...
 
+    @overload
     def incrementScore(self, amount):
         ...
 

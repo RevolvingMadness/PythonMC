@@ -1,13 +1,12 @@
 from numbers import Number
+from pythonmc.block.block_pos import BlockPos
+from pythonmc.block.block_state import BlockState
+from pythonmc.block.blocks import Blocks
+from pythonmc.entity.entities import Entities
+from pythonmc.server.difficulty.difficulty import Difficulty
+from pythonmc.world.time_ import Time
+from pythonmc.world.weather import Weather
 from typing import overload
-
-from src.pythonmc.block.block_pos import BlockPos
-from src.pythonmc.block.block_state import BlockState
-from src.pythonmc.block.blocks import Blocks
-from src.pythonmc.entity.entities import Entities
-from src.pythonmc.server.difficulty.difficulty import Difficulty
-from src.pythonmc.world.time_ import Time
-from src.pythonmc.world.weather import Weather
 
 
 class World:

@@ -1,2 +1,2 @@
-from difficulties import Difficulties
-from difficulty import Difficulty
+from .difficulties import Difficulties
+from .difficulty import Difficulty

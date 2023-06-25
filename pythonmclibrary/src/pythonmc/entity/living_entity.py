@@ -1,4 +1,4 @@
-from src.pythonmc.entity.entity import Entity
+from .entity import Entity
 
 
 class LivingEntity(Entity):

@@ -1,4 +1,4 @@
-site_name: PythonMC Docs
+site_name: PythonMC
 theme:
   name: material
   features:
@@ -33,7 +33,6 @@ plugins:
     handlers:
       python:
         options:
-          show_root_full_path: false
           show_source: false
   autorefs:
 

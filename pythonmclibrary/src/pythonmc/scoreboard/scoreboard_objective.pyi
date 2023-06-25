@@ -1,6 +1,7 @@
-from src.pythonmc.scoreboard.render_types import RenderTypes
-from src.pythonmc.scoreboard.scoreboard_criterions import ScoreboardCriterions
-from src.pythonmc.server.text.text import Text
+from pythonmc.scoreboard.render_types import RenderTypes
+from pythonmc.scoreboard.scoreboard_criterions import ScoreboardCriterions
+from pythonmc.server.text.text import Text
+
 
 class ScoreboardObjective:
     def getCriterion(self) -> ScoreboardCriterions:

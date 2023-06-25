@@ -98,11 +98,6 @@ Project Link: **[https://github.com/RevolvingMadness/PythonMC](https://github.co
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
 [contributors-shield]: https://img.shields.io/github/contributors/RevolvingMadness/PythonMC.svg?style=for-the-badge
 
 [contributors-url]: https://github.com/RevolvingMadness/PythonMC/graphs/contributors
@@ -122,12 +117,6 @@ Project Link: **[https://github.com/RevolvingMadness/PythonMC](https://github.co
 [license-shield]: https://img.shields.io/github/license/RevolvingMadness/PythonMC.svg?style=for-the-badge
 
 [license-url]: https://github.com/RevolvingMadness/PythonMC/blob/master/LICENSE.txt
-
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-
-[product-screenshot]: images/screenshot.png
 
 [fabricmc.net]: https://img.shields.io/badge/Fabric%20-1.19.4%20-blue?style=for-the-badge
 

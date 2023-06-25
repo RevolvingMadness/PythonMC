@@ -1,10 +1,11 @@
-from src.pythonmc.entity.entity import Entity
-from src.pythonmc.scoreboard.render_types import RenderTypes
-from src.pythonmc.scoreboard.scoreboard_criterions import ScoreboardCriterions
-from src.pythonmc.scoreboard.scoreboard_objective import ScoreboardObjective
-from src.pythonmc.scoreboard.scoreboard_player_score import ScoreboardPlayerScore
-from src.pythonmc.scoreboard.team import Team
-from src.pythonmc.server.text.text import Text
+from pythonmc.entity.entity import Entity
+from pythonmc.scoreboard.render_types import RenderTypes
+from pythonmc.scoreboard.scoreboard_criterions import ScoreboardCriterions
+from pythonmc.scoreboard.scoreboard_objective import ScoreboardObjective
+from pythonmc.scoreboard.scoreboard_player_score import ScoreboardPlayerScore
+from pythonmc.scoreboard.team import Team
+from pythonmc.server.text.text import Text
+
 
 class Scoreboard:
     def getTeams(self) -> list[Team]:

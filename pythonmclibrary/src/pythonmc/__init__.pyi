@@ -1,7 +1,5 @@
-from __future__ import annotations
-
-from server.server import Server
-from world.executor import Executor
+from .server.server import Server
+from .world.executor import Executor
 
 server: Server
 executor: Executor

@@ -1,4 +1,5 @@
-from src.pythonmc.item.items import Items
+from pythonmc.item.items import Items
+
 
 class Item:
     """

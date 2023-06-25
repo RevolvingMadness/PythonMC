@@ -24,39 +24,34 @@ import java.util.List;
 
 @Mixin(DataPackContents.class)
 public abstract class DatapackContentsMixin implements DatapackContentsAccessor {
-	@Shadow
-	@Final
-	private TagManagerLoader registryTagManager;
-	
-	@Shadow
-	@Final
-	private LootManager lootManager;
-	
-	@Shadow
-	@Final
-	private RecipeManager recipeManager;
-	
-	@Shadow
-	@Final
-	private FunctionLoader functionLoader;
-	
-	@Shadow
-	@Final
-	private ServerAdvancementLoader serverAdvancementLoader;
-	
-	PythonScriptLoader pythonScriptLoader;
-	
-	public PythonScriptLoader getPythonScriptLoader() {
-		return this.pythonScriptLoader;
-	}
-	
-	@Inject(at = @At("TAIL"), method = "<init>")
-	public void injectInit(DynamicRegistryManager.Immutable dynamicRegistryManager, FeatureSet enabledFeatures, CommandManager.RegistrationEnvironment environment, int functionPermissionLevel, CallbackInfo ci) {
-		this.pythonScriptLoader = new PythonScriptLoader();
-	}
-	
-	@Inject(at = @At("HEAD"), method = "getContents", cancellable = true)
-	public void injectGetContents(CallbackInfoReturnable<List<ResourceReloader>> cir) {
-		cir.setReturnValue(List.of(this.registryTagManager, this.lootManager, this.recipeManager, this.functionLoader, this.pythonScriptLoader, this.serverAdvancementLoader));
-	}
+    PythonScriptLoader pythonScriptLoader;
+    @Shadow
+    @Final
+    private TagManagerLoader registryTagManager;
+    @Shadow
+    @Final
+    private LootManager lootManager;
+    @Shadow
+    @Final
+    private RecipeManager recipeManager;
+    @Shadow
+    @Final
+    private FunctionLoader functionLoader;
+    @Shadow
+    @Final
+    private ServerAdvancementLoader serverAdvancementLoader;
+
+    public PythonScriptLoader getPythonScriptLoader() {
+        return this.pythonScriptLoader;
+    }
+
+    @Inject(at = @At("TAIL"), method = "<init>")
+    public void injectInit(DynamicRegistryManager.Immutable dynamicRegistryManager, FeatureSet enabledFeatures, CommandManager.RegistrationEnvironment environment, int functionPermissionLevel, CallbackInfo ci) {
+        this.pythonScriptLoader = new PythonScriptLoader();
+    }
+
+    @Inject(at = @At("HEAD"), method = "getContents", cancellable = true)
+    public void injectGetContents(CallbackInfoReturnable<List<ResourceReloader>> cir) {
+        cir.setReturnValue(List.of(this.registryTagManager, this.lootManager, this.recipeManager, this.functionLoader, this.pythonScriptLoader, this.serverAdvancementLoader));
+    }
 }

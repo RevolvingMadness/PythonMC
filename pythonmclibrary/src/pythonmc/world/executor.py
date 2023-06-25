@@ -1,21 +1,28 @@
+from typing import overload
+
+
 class Executor:
-	name = None
-	displayName = None
-	position = None
-	player = None
-	world = None
-	entity = None
-	isExecutedByPlayer = None
-	rotation = None
+    name = None
+    displayName = None
+    position = None
+    player = None
+    world = None
+    entity = None
+    isExecutedByPlayer = None
+    rotation = None
 
-	def sendMessage(self, message):
-		...
+    @overload
+    def sendMessage(self, message):
+        ...
 
-	def sendError(self, error):
-		...
+    @overload
+    def sendError(self, error):
+        ...
 
-	def sendMessage(self, text):
-		...
+    @overload
+    def sendMessage(self, text):
+        ...
 
-	def sendError(self, text):
-		...
+    @overload
+    def sendError(self, text):
+        ...

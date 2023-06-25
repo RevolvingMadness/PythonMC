@@ -1,4 +1,5 @@
-from src.pythonmc.item.item_stack import ItemStack
+from pythonmc.item.item_stack import ItemStack
+
 
 class EnderChestInventory:
     """

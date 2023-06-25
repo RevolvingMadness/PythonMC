@@ -1,15 +1,14 @@
+from pythonmc.entity.entity import Entity
+from pythonmc.player.player_entity import PlayerEntity
+from pythonmc.server.text.text import Text
+from pythonmc.world.position.vec2f import Vec2f
+from pythonmc.world.position.vec3d import Vec3d
+from pythonmc.world.world import World
 from typing import overload
-
-from src.pythonmc.entity.entity import Entity
-from src.pythonmc.player.player_entity import PlayerEntity
-from src.pythonmc.server.text.text import Text
-from src.pythonmc.world.position.vec2f import Vec2f
-from src.pythonmc.world.position.vec3d import Vec3d
-from src.pythonmc.world.world import World
 
 
 class Executor:
-	"""
+    """
     Attributes:
             name (str): The name of the executor.
             displayName (str): The display name of the executor.
@@ -21,43 +20,45 @@ class Executor:
             rotation (Vec2f): The rotation of the executor.
     """
 
-	name: str
-	displayName: str
-	position: Vec3d
-	player: PlayerEntity
-	world: World
-	entity: Entity
-	isExecutedByPlayer: bool
-	rotation: Vec2f
+    name: str
+    displayName: str
+    position: Vec3d
+    player: PlayerEntity
+    world: World
+    entity: Entity
+    isExecutedByPlayer: bool
+    rotation: Vec2f
 
-	def sendMessage(self, message) -> None:
-		"""
+    @overload
+    def sendMessage(self, message) -> None:
+        """
         Sends a message to the executor.
 
         Args:
                 message: The message to send.
         """
 
-	@overload
-	def sendError(self, error) -> None:
-		"""
+    @overload
+    def sendError(self, error) -> None:
+        """
         Sends an error message to the executor.
 
         Args:
                 error: The error message to send.
         """
 
-	def sendMessage(self, text: Text) -> None:
-		"""
+    @overload
+    def sendMessage(self, text: Text) -> None:
+        """
         Sends a text message to the executor.
 
         Args:
                 text (Text): The text message to send.
         """
 
-	@overload
-	def sendError(self, text: Text) -> None:
-		"""
+    @overload
+    def sendError(self, text: Text) -> None:
+        """
         Sends an error text message to the executor.
 
         Args:
