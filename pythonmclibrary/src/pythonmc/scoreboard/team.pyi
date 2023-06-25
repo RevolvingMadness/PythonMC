@@ -11,9 +11,6 @@ class Team:
 
 		Args:
 			suffix (Text): The suffix to set for the team.
-
-		Returns:
-			None
 		"""
 
 	def setShowFriendlyInvisibles(self, showFriendlyInvisibles: bool) -> None:
@@ -22,9 +19,6 @@ class Team:
 
 		Args:
 			showFriendlyInvisibles (bool): A boolean value indicating whether to show friendly invisibles.
-
-		Returns:
-			None
 		"""
 
 	def setPrefix(self, prefix: Text) -> None:
@@ -33,9 +27,6 @@ class Team:
 
 		Args:
 			prefix (Text): The prefix to set for the team.
-
-		Returns:
-			None
 		"""
 
 	def shouldShowFriendlyInvisibles(self) -> bool:
@@ -52,9 +43,6 @@ class Team:
 
 		Args:
 			nameTagVisibilityRule (VisibilityRules): The name tag visibility rule to set for the team.
-
-		Returns:
-			None
 		"""
 
 	def setFriendlyFireAllowed(self, friendlyFireAllowed: bool) -> None:
@@ -63,9 +51,6 @@ class Team:
 
 		Args:
 			friendlyFireAllowed (bool): A boolean value indicating whether friendly fire is allowed.
-
-		Returns:
-			None
 		"""
 
 	def setDisplayName(self, displayName: Text) -> None:
@@ -74,9 +59,6 @@ class Team:
 
 		Args:
 			displayName (Text): The display name to set for the team.
-
-		Returns:
-			None
 		"""
 
 	def setDeathMessageVisibilityRule(
@@ -87,9 +69,6 @@ class Team:
 
 		Args:
 			deathMessageVisibilityRule (VisibilityRules): The death message visibility rule to set for the team.
-
-		Returns:
-			None
 		"""
 
 	def setColor(self, formatting: Formatting) -> None:
@@ -98,9 +77,6 @@ class Team:
 
 		Args:
 			formatting (Formatting): The color formatting to set for the team.
-
-		Returns:
-			None
 		"""
 
 	def setCollisionRule(self, collisionRule: CollisionRules) -> None:
@@ -109,9 +85,6 @@ class Team:
 
 		Args:
 			collisionRule (CollisionRules): The collision rule to set for the team.
-
-		Returns:
-			None
 		"""
 
 	def isFriendlyFireAllowed(self) -> bool:

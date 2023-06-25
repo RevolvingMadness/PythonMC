@@ -9,7 +9,7 @@ import java.util.List;
 public class PyEnderChestInventory {
 	final EnderChestInventory enderChestInventory;
 	public final List<PyItemStack> stacks;
-
+	
 	public PyEnderChestInventory(EnderChestInventory enderChestInventory) {
 		this.enderChestInventory = enderChestInventory;
 		this.stacks = new ArrayList<>();

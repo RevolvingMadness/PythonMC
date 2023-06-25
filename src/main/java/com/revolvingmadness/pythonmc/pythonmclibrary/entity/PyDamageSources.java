@@ -6,10 +6,10 @@ import net.minecraft.world.World;
 
 public enum PyDamageSources {
 	IN_FIRE, LIGHTNING_BOLT, ON_FIRE, LAVA, HOT_FLOOR, IN_WALL, CRAMMING, DROWN, STARVE, CACTUS, FALL, FLY_INTO_WALL, OUT_OF_WORLD, GENERIC, MAGIC, WITHER, DRAGON_BREATH, DRY_OUT, SWEET_BERRY_BUSH, FREEZE, STALAGMITE, OUTSIDE_BORDER, GENERIC_KILL;
-
+	
 	public DamageSource toDamageSource(World world) {
 		DamageSources damageSources = world.getDamageSources();
-
+		
 		return switch (this) {
 			case IN_FIRE -> damageSources.inFire();
 			case LIGHTNING_BOLT -> damageSources.lightningBolt();

@@ -3,7 +3,7 @@ from src.pythonmc.item.items import Items
 
 class Item:
 	"""
-	Represents an item in the game.
+	Represents an item.
 
 	Attributes:
 		name (str): The name of the item.

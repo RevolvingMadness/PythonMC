@@ -4,7 +4,7 @@ import net.minecraft.item.ItemStack;
 
 public enum PyHideFlags {
 	ENCHANTMENTS, MODIFIERS, UNBREAKABLE, CAN_DESTROY, CAN_PLACE, ADDITIONAL, DYE, UPGRADES;
-
+	
 	public ItemStack.TooltipSection toHideFlag() {
 		return switch (this) {
 			case ENCHANTMENTS -> ItemStack.TooltipSection.ENCHANTMENTS;

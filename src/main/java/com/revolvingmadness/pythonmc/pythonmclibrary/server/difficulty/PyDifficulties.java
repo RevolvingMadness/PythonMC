@@ -4,7 +4,7 @@ import net.minecraft.world.Difficulty;
 
 public enum PyDifficulties {
 	EASY, HARD, NORMAL, PEACEFUL;
-
+	
 	public PyDifficulty toDifficulty() {
 		return switch (this) {
 			case EASY -> new PyDifficulty(Difficulty.EASY);

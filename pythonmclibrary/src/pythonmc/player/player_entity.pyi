@@ -17,9 +17,6 @@ class PlayerEntity(LivingEntity):
 
 		Args:
 			exhaustion (Number): The amount of exhaustion to add.
-
-		Returns:
-			None
 		"""
 
 	def addExperience(self, experience: Number) -> None:
@@ -28,9 +25,6 @@ class PlayerEntity(LivingEntity):
 
 		Args:
 			experience (Number): The number of experience points to add.
-
-		Returns:
-			None
 		"""
 
 	def addExperienceLevels(self, levels: Number) -> None:
@@ -39,9 +33,6 @@ class PlayerEntity(LivingEntity):
 
 		Args:
 			levels (Number): The number of levels to add.
-
-		Returns:
-			None
 		"""
 
 	def addScore(self, score: Number) -> None:
@@ -50,9 +41,6 @@ class PlayerEntity(LivingEntity):
 
 		Args:
 			score (Number): The score value to add.
-
-		Returns:
-			None
 		"""
 
 	def addShoulderEntity(self, entityNbt: dict[str, object]) -> None:
@@ -61,9 +49,6 @@ class PlayerEntity(LivingEntity):
 
 		Args:
 			entityNbt (dict[str, object]): The NBT data of the entity to add.
-
-		Returns:
-			None
 		"""
 
 	def attack(self, entity: Entity) -> None:
@@ -72,9 +57,6 @@ class PlayerEntity(LivingEntity):
 
 		Args:
 			entity (Entity): The entity to attack.
-
-		Returns:
-			None
 		"""
 
 	def canConsume(self, ignoreHunger: bool) -> bool:
@@ -121,9 +103,6 @@ class PlayerEntity(LivingEntity):
 
 		Args:
 			sprinting (bool): Whether the player is sprinting.
-
-		Returns:
-			None
 		"""
 
 	def getAttackCooldownProgress(self, baseTime: Number) -> float:
@@ -204,9 +183,6 @@ class PlayerEntity(LivingEntity):
 	def requestRespawn(self) -> None:
 		"""
 		Requests the player to respawn.
-
-		Returns:
-			None
 		"""
 
 	def sendMessage(self, message: str) -> None:
@@ -215,9 +191,6 @@ class PlayerEntity(LivingEntity):
 
 		Args:
 			message: The message to send.
-
-		Returns:
-			None
 		"""
 
 	def setMainArm(self, arm: Arm) -> None:
@@ -226,7 +199,4 @@ class PlayerEntity(LivingEntity):
 
 		Args:
 			arm (Arm): The main arm to set.
-
-		Returns:
-			None
 		"""

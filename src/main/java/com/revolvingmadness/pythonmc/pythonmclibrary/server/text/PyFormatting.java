@@ -4,7 +4,7 @@ import net.minecraft.util.Formatting;
 
 public enum PyFormatting {
 	BLACK, DARK_BLUE, DARK_GREEN, DARK_AQUA, DARK_RED, DARK_PURPLE, GOLD, GRAY, DARK_GRAY, BLUE, GREEN, AQUA, RED, LIGHT_PURPLE, YELLOW, WHITE, OBFUSCATED, BOLD, STRIKETHROUGH, UNDERLINE, ITALIC, RESET;
-
+	
 	public static PyFormatting fromFormatting(Formatting formatting) {
 		return switch (formatting) {
 			case BLACK -> BLACK;
@@ -31,7 +31,7 @@ public enum PyFormatting {
 			case RESET -> RESET;
 		};
 	}
-
+	
 	public Formatting toFormatting() {
 		return switch (this) {
 			case BLACK -> Formatting.BLACK;

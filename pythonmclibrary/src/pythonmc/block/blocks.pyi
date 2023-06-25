@@ -1,6 +1,6 @@
 class Blocks:
 	"""
-	The Blocks class represents a collection of block objects in Minecraft game.
+	Represents various blocks.
 	"""
 
 	AIR: object

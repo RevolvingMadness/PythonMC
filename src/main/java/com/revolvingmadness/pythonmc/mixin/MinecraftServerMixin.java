@@ -25,23 +25,23 @@ import java.util.function.BooleanSupplier;
 public abstract class MinecraftServerMixin {
 	@Shadow
 	private MinecraftServer.ResourceManagerHolder resourceManagerHolder;
-
+	
 	PythonScriptManager pythonScriptManager;
-
+	
 	@Inject(at = @At("TAIL"), method = "<init>")
 	public void injectInit(Thread serverThread, LevelStorage.Session session, ResourcePackManager dataPackManager, SaveLoader saveLoader, Proxy proxy, DataFixer dataFixer, ApiServices apiServices, WorldGenerationProgressListenerFactory worldGenerationProgressListenerFactory, CallbackInfo ci) {
 		this.pythonScriptManager = new PythonScriptManager((MinecraftServer) (Object) this, ((DatapackContentsAccessor) this.resourceManagerHolder.dataPackContents()).getPythonScriptLoader());
 	}
-
+	
 	public PythonScriptManager getPythonScriptManager() {
 		return this.pythonScriptManager;
 	}
-
+	
 	@Inject(at = @At("HEAD"), method = "tickWorlds")
 	public void injectTickWorlds(BooleanSupplier shouldKeepTicking, CallbackInfo ci) {
 		this.getPythonScriptManager().tick();
 	}
-
+	
 	@Inject(at = @At("TAIL"), method = "reloadResources")
 	public void injectReloadResources(Collection<String> dataPacks, CallbackInfoReturnable<CompletableFuture<Void>> cir) {
 		this.pythonScriptManager.setScripts(((DatapackContentsAccessor) this.resourceManagerHolder.dataPackContents()).getPythonScriptLoader());

@@ -4,7 +4,7 @@ import net.minecraft.scoreboard.AbstractTeam;
 
 public enum PyVisibilityRules {
 	ALWAYS, NEVER, HIDE_FOR_OTHER_TEAMS, HIDE_FOR_OWN_TEAM;
-
+	
 	public static PyVisibilityRules fromVisibilityRule(AbstractTeam.VisibilityRule visibilityRule) {
 		return switch (visibilityRule) {
 			case ALWAYS -> ALWAYS;
@@ -13,7 +13,7 @@ public enum PyVisibilityRules {
 			case HIDE_FOR_OWN_TEAM -> HIDE_FOR_OWN_TEAM;
 		};
 	}
-
+	
 	public AbstractTeam.VisibilityRule toVisibilityRule() {
 		return switch (this) {
 			case ALWAYS -> AbstractTeam.VisibilityRule.ALWAYS;

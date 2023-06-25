@@ -43,7 +43,7 @@ public class PythonExecutor {
 	public static ByteArrayOutputStream errorOutputStream = new ByteArrayOutputStream();
 	public static SubInterpreter interpreter;
 	private static boolean initialized;
-
+	
 	public static void execute(ServerCommandSource source, String namespace, String path, String code, Interpreter interpreter) {
 		try {
 			ServerWorld world = source.getWorld();
@@ -87,7 +87,7 @@ public class PythonExecutor {
 			interpreter.set("Weather", PyWeather.class);
 			interpreter.set("World", PyWorld.class);
 			interpreter.set("Worlds", PyWorlds.class);
-
+			
 			interpreter.set("server", new PyServer(source.getServer()));
 			interpreter.set("executor", new PyExecutor(source));
 			interpreter.set("pythonMCVersion", Mod.pythonMCVersion);
@@ -96,13 +96,13 @@ public class PythonExecutor {
 			interpreter.set("pythonMCPatch", Mod.patch);
 			interpreter.set("namespace", namespace);
 			interpreter.set("path", path);
-
+			
 			interpreter.exec(code);
-
+			
 			String output = outputStream.toString().trim();
 			String errorOutput = errorOutputStream.toString().trim();
 			PlayerManager playerManager = source.getServer().getPlayerManager();
-
+			
 			if (!output.equals("")) {
 				StringBuilder outputBuilder = new StringBuilder();
 				for (String line : output.split("\n")) {
@@ -116,10 +116,10 @@ public class PythonExecutor {
 			if (!errorOutput.equals("")) {
 				playerManager.broadcast(Text.empty().append(errorOutput).formatted(Formatting.RED), false);
 			}
-
+			
 			outputStream.reset();
 			errorOutputStream.reset();
-
+			
 		} catch (JepException e) {
 			source.getServer().getPlayerManager().broadcast(Text.empty().append(e.getMessage()).formatted(Formatting.RED), false);
 		}

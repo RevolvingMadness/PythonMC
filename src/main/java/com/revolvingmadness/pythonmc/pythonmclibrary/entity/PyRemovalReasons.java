@@ -4,7 +4,7 @@ import net.minecraft.entity.Entity;
 
 public enum PyRemovalReasons {
 	KILLED, DISCARDED, UNLOADED_TO_CHUNK, UNLOADED_WITH_PLAYER, CHANGED_DIMENSION;
-
+	
 	public Entity.RemovalReason toRemovalReason() {
 		return switch (this) {
 			case KILLED -> Entity.RemovalReason.KILLED;

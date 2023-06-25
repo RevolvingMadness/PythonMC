@@ -4,7 +4,7 @@ import net.minecraft.util.Rarity;
 
 public enum PyItemRarity {
 	COMMON, UNCOMMON, RARE, EPIC;
-
+	
 	public static PyItemRarity fromRarity(Rarity rarity) {
 		return switch (rarity) {
 			case COMMON -> COMMON;

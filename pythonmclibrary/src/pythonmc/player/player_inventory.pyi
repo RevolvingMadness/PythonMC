@@ -13,9 +13,6 @@ class PlayerInventory:
 	def clear(self) -> None:
 		"""
 		Clears the player's inventory.
-
-		Returns:
-			None
 		"""
 
 	def contains(self, stack: ItemStack) -> bool:
@@ -32,9 +29,6 @@ class PlayerInventory:
 	def dropAll(self) -> None:
 		"""
 		Drops all items from the inventory.
-
-		Returns:
-			None
 		"""
 
 	def dropSelectedItem(self, entireStack: bool) -> None:
@@ -43,9 +37,6 @@ class PlayerInventory:
 
 		Args:
 			entireStack (bool): Whether to drop the entire stack or just one item.
-
-		Returns:
-			None
 		"""
 
 	def getArmorStack(self, slot: Number) -> ItemStack:
@@ -116,9 +107,6 @@ class PlayerInventory:
 		Args:
 			slot (Number): The slot index.
 			stack (ItemStack): The item stack to insert.
-
-		Returns:
-			None
 		"""
 
 	@overload
@@ -128,9 +116,6 @@ class PlayerInventory:
 
 		Args:
 			stack (ItemStack): The item stack to insert.
-
-		Returns:
-			None
 		"""
 
 	def isEmpty(self) -> bool:
@@ -147,9 +132,6 @@ class PlayerInventory:
 
 		Args:
 			stack (ItemStack): The item stack to remove from.
-
-		Returns:
-			None
 		"""
 
 	@overload
@@ -160,9 +142,6 @@ class PlayerInventory:
 		Args:
 			slot (Number): The slot index.
 			amount (Number): The number of items to remove.
-
-		Returns:
-			None
 		"""
 
 	@overload
@@ -172,9 +151,6 @@ class PlayerInventory:
 
 		Args:
 			slot (Number): The slot index.
-
-		Returns:
-			None
 		"""
 
 	def setStack(self, slot: Number, stack: ItemStack) -> None:
@@ -184,7 +160,4 @@ class PlayerInventory:
 		Args:
 			slot (Number): The slot index.
 			stack (ItemStack): The item stack to set.
-
-		Returns:
-			None
 		"""

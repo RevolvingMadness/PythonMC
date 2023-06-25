@@ -12,11 +12,11 @@ public class PyBlock {
 	public final float jumpVelocityMultiplier;
 	public final float slipperiness;
 	final Block block;
-
+	
 	public PyBlock(PyBlocks block) {
 		this(block.toBlock());
 	}
-
+	
 	public PyBlock(Block block) {
 		this.block = block;
 		this.item = new PyItem(block.asItem());
@@ -26,7 +26,7 @@ public class PyBlock {
 		this.jumpVelocityMultiplier = block.getJumpVelocityMultiplier();
 		this.slipperiness = block.getSlipperiness();
 	}
-
+	
 	@Override
 	public String toString() {
 		return this.block.toString();

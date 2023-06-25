@@ -1,6 +1,6 @@
 class StatusEffects:
 	"""
-	Constants representing different status effects available in the game.
+	Constants representing different status effects available.
 	These objects can be used to identify specific status effects.
 	"""
 

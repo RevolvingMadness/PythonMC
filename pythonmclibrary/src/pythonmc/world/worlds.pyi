@@ -1,6 +1,6 @@
 class Worlds:
 	"""
-	Represents different game worlds.
+	Represents different dimensions.
 	"""
 
 	OVERWORLD: object

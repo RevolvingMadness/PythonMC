@@ -5,31 +5,31 @@ import net.minecraft.scoreboard.ScoreboardObjective;
 
 public class PyScoreboardObjective {
 	ScoreboardObjective objective;
-
+	
 	public PyScoreboardObjective(ScoreboardObjective objective) {
 		this.objective = objective;
 	}
-
+	
 	public PyScoreboardCriterions getCriterion() {
 		return PyScoreboardCriterions.fromScoreboardCriterion(this.objective.getCriterion());
 	}
-
+	
 	public PyText getDisplayName() {
 		return new PyText(this.objective.getDisplayName());
 	}
-
+	
 	public String getName() {
 		return this.objective.getName();
 	}
-
+	
 	public PyRenderTypes getRenderType() {
 		return PyRenderTypes.fromRenderType(this.objective.getRenderType());
 	}
-
+	
 	public void setDisplayName(PyText displayName) {
 		this.objective.setDisplayName(displayName.text);
 	}
-
+	
 	public void setRenderType(PyRenderTypes renderType) {
 		this.objective.setRenderType(renderType.toRenderType());
 	}

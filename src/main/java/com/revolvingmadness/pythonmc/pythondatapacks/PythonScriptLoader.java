@@ -17,29 +17,29 @@ import java.util.concurrent.Executor;
 
 public class PythonScriptLoader implements ResourceReloader {
 	private static final ResourceFinder FINDER = new ResourceFinder("python", ".py");
-
+	
 	private Map<Identifier, PythonScript> scripts = ImmutableMap.of();
-
+	
 	private final TagGroupLoader<PythonScript> tagLoader = new TagGroupLoader<>(this::get, "tags/python");
-
+	
 	private Map<Identifier, Collection<PythonScript>> tags = Map.of();
-
+	
 	public Optional<PythonScript> get(Identifier id) {
 		return Optional.ofNullable(this.scripts.get(id));
 	}
-
+	
 	public Map<Identifier, PythonScript> getScripts() {
 		return this.scripts;
 	}
-
+	
 	public Collection<PythonScript> getTagOrEmpty(Identifier id) {
 		return this.tags.getOrDefault(id, List.of());
 	}
-
+	
 	public Iterable<Identifier> getTags() {
 		return this.tags.keySet();
 	}
-
+	
 	@Override
 	public CompletableFuture<Void> reload(Synchronizer synchronizer, ResourceManager manager, Profiler prepareProfiler, Profiler applyProfiler, Executor prepareExecutor, Executor applyExecutor) {
 		CompletableFuture<Map<Identifier, List<TagGroupLoader.TrackedEntry>>> completableFuture = CompletableFuture.supplyAsync(() -> this.tagLoader.loadTags(manager), prepareExecutor);

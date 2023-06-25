@@ -13,7 +13,7 @@ from src.pythonmc.world.position.vec3d import Vec3d
 
 class LivingEntity(Entity):
 	"""
-	Represents a living entity in the game.
+	Represents a living entity.
 	Inherits from Entity.
 	"""
 
@@ -28,9 +28,6 @@ class LivingEntity(Entity):
 			duration (Number): The duration of the effect.
 			amplifier (Number): The amplifier level of the effect.
 			visible (bool): Whether the effect is visible.
-
-		Returns:
-			None
 		"""
 
 	def canBreatheInWater(self) -> bool:
@@ -74,9 +71,6 @@ class LivingEntity(Entity):
 	def clearStatusEffects(self) -> None:
 		"""
 		Clears all status effects from the living entity.
-
-		Returns:
-			None
 		"""
 
 	def damageArmor(self, damageSource: DamageSources, amount: Number) -> None:
@@ -86,9 +80,6 @@ class LivingEntity(Entity):
 		Args:
 			damageSource (DamageSources): The source of the damage.
 			amount (Number): The amount of damage to apply.
-
-		Returns:
-			None
 		"""
 
 	def damageHelmet(self, damageSource: DamageSources, amount: Number) -> None:
@@ -98,9 +89,6 @@ class LivingEntity(Entity):
 		Args:
 			damageSource (DamageSources): The source of the damage.
 			amount (Number): The amount of damage to apply.
-
-		Returns:
-			None
 		"""
 
 	def damageShield(self, amount: Number) -> None:
@@ -109,9 +97,6 @@ class LivingEntity(Entity):
 
 		Args:
 			amount (Number): The amount of damage to apply.
-
-		Returns:
-			None
 		"""
 
 	def eatFood(self, stack: ItemStack) -> None:
@@ -120,9 +105,6 @@ class LivingEntity(Entity):
 
 		Args:
 			stack (ItemStack): The food item stack to eat.
-
-		Returns:
-			None
 		"""
 
 	def getAbsorptionAmount(self) -> float:
@@ -268,9 +250,6 @@ class LivingEntity(Entity):
 
 		Args:
 			amount (Number): The amount to heal.
-
-		Returns:
-			None
 		"""
 
 	def getHealth(self) -> float:
@@ -402,9 +381,6 @@ class LivingEntity(Entity):
 
 		Args:
 			effect (StatusEffects): The status effect to remove.
-
-		Returns:
-			None
 		"""
 
 	def setAbsorptionAmount(self, amount: Number) -> None:
@@ -413,9 +389,6 @@ class LivingEntity(Entity):
 
 		Args:
 			amount (Number): The absorption amount to set.
-
-		Returns:
-			None
 		"""
 
 	def setAttacker(self, entity: LivingEntity) -> None:
@@ -424,9 +397,6 @@ class LivingEntity(Entity):
 
 		Args:
 			entity (LivingEntity): The attacking entity.
-
-		Returns:
-			None
 		"""
 
 	def setAttacking(self, entity: LivingEntity) -> None:
@@ -435,9 +405,6 @@ class LivingEntity(Entity):
 
 		Args:
 			entity (LivingEntity): The attacking entity.
-
-		Returns:
-			None
 		"""
 
 	def setCurrentHand(self, hand: Hand) -> None:
@@ -446,9 +413,6 @@ class LivingEntity(Entity):
 
 		Args:
 			hand (Hand): The hand to set as current.
-
-		Returns:
-			None
 		"""
 
 	def setHealth(self, amount: Number) -> None:
@@ -457,9 +421,6 @@ class LivingEntity(Entity):
 
 		Args:
 			amount (Number): The amount to set as health.
-
-		Returns:
-			None
 		"""
 
 	def setJumping(self, jumping: bool) -> None:
@@ -468,9 +429,6 @@ class LivingEntity(Entity):
 
 		Args:
 			jumping (bool): True if the entity is jumping, False otherwise.
-
-		Returns:
-			None
 		"""
 
 	def setMovementSpeed(self, movementSpeed: Number) -> None:
@@ -479,9 +437,6 @@ class LivingEntity(Entity):
 
 		Args:
 			movementSpeed (Number): The movement speed to set.
-
-		Returns:
-			None
 		"""
 
 	def setStackInHand(self, hand: Hand, stack: ItemStack) -> None:
@@ -491,9 +446,6 @@ class LivingEntity(Entity):
 		Args:
 			hand (Hand): The hand to set the item stack in.
 			stack (ItemStack): The item stack to set.
-
-		Returns:
-			None
 		"""
 
 	def setStingerCount(self, stingerCount: Number) -> None:
@@ -502,9 +454,6 @@ class LivingEntity(Entity):
 
 		Args:
 			stingerCount (Number): The stinger count to set.
-
-		Returns:
-			None
 		"""
 
 	def setStuckArrowCount(self, stuckArrowCount: Number) -> None:
@@ -513,9 +462,6 @@ class LivingEntity(Entity):
 
 		Args:
 			stuckArrowCount (Number): The stuck arrow count to set.
-
-		Returns:
-			None
 		"""
 
 	def shouldDisplaySoulSpeedEffects(self) -> bool:
@@ -540,9 +486,6 @@ class LivingEntity(Entity):
 
 		Args:
 			hand (Hand): The hand to swing.
-
-		Returns:
-			None
 		"""
 
 	def takeKnockback(self, strength: Number, x: Number, z: Number) -> None:
@@ -553,9 +496,6 @@ class LivingEntity(Entity):
 			strength (Number): The strength of the knockback.
 			x (Number): The x-direction of the knockback.
 			z (Number): The z-direction of the knockback.
-
-		Returns:
-			None
 		"""
 
 	def teleport(self, position: Vec3d) -> None:
@@ -564,9 +504,6 @@ class LivingEntity(Entity):
 
 		Args:
 			position (Vec3d): The position to teleport to.
-
-		Returns:
-			None
 		"""
 
 	def tiltScreen(self, deltaX: Number, deltaY: Number) -> None:
@@ -576,7 +513,4 @@ class LivingEntity(Entity):
 		Args:
 			deltaX (Number): The amount to tilt the screen horizontally.
 			deltaY (Number): The amount to tilt the screen vertically.
-
-		Returns:
-			None
 		"""

@@ -8,9 +8,6 @@ class ScoreboardPlayerScore:
 	def clearScore(self) -> None:
 		"""
 		Clears the score of the player.
-
-		Returns:
-			None
 		"""
 
 	def getPlayerName(self) -> str:
@@ -41,9 +38,6 @@ class ScoreboardPlayerScore:
 	def incrementScore(self) -> None:
 		"""
 		Increments the score value by 1.
-
-		Returns:
-			None
 		"""
 
 	@overload
@@ -53,9 +47,6 @@ class ScoreboardPlayerScore:
 
 		Args:
 			amount (Number): The amount to increment the score by.
-
-		Returns:
-			None
 		"""
 
 	def setScore(self, score: Number) -> None:
@@ -64,7 +55,4 @@ class ScoreboardPlayerScore:
 
 		Args:
 			score (Number): The score value to set.
-
-		Returns:
-			None
 		"""

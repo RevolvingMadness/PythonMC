@@ -4,7 +4,7 @@ import net.minecraft.world.GameMode;
 
 public enum PyGameModes {
 	ADVENTURE, CREATIVE, SPECTATOR, SURVIVAL;
-
+	
 	public GameMode toGameMode() {
 		return switch (this) {
 			case ADVENTURE -> GameMode.ADVENTURE;

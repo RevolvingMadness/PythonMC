@@ -23,9 +23,6 @@ class Scoreboard:
 		Args:
 			playerName (str): The name of the player.
 			objective (ScoreboardObjective): The objective to reset the player's score for.
-
-		Returns:
-			None
 		"""
 
 	def getAllPlayerScores(
@@ -47,9 +44,6 @@ class Scoreboard:
 
 		Args:
 			team (Team): The team to remove.
-
-		Returns:
-			None
 		"""
 
 	def containsObjective(self, name: str) -> bool:
@@ -78,9 +72,6 @@ class Scoreboard:
 			criterion (ScoreboardCriterions): The criterion type of the objective.
 			displayName (Text): The display name of the objective.
 			renderType (RenderTypes): The render type of the objective.
-
-		Returns:
-			None
 		"""
 
 	def removePlayerFromTeam(self, playerName: str, team: Team) -> None:
@@ -90,9 +81,6 @@ class Scoreboard:
 		Args:
 			playerName (str): The name of the player.
 			team (Team): The team to remove the player from.
-
-		Returns:
-			None
 		"""
 
 	def getObjectives(self) -> list[ScoreboardObjective]:
@@ -110,9 +98,6 @@ class Scoreboard:
 		Args:
 			playerName (str): The name of the player.
 			team (Team): The team to add the player to.
-
-		Returns:
-			None
 		"""
 
 	def clearPlayerTeam(self, playerName: str) -> None:
@@ -121,9 +106,6 @@ class Scoreboard:
 
 		Args:
 			playerName (str): The name of the player.
-
-		Returns:
-			None
 		"""
 
 	def getObjectiveNames(self) -> list[str]:
@@ -151,9 +133,6 @@ class Scoreboard:
 
 		Args:
 			entity (Entity): The entity.
-
-		Returns:
-			None
 		"""
 
 	def getObjective(self, name: str) -> ScoreboardObjective:
@@ -173,9 +152,6 @@ class Scoreboard:
 
 		Args:
 			name (str): The name of the team.
-
-		Returns:
-			None
 		"""
 
 	def getTeamNames(self) -> list[str]:
@@ -192,9 +168,6 @@ class Scoreboard:
 
 		Args:
 			objective (ScoreboardObjective): The objective to remove.
-
-		Returns:
-			None
 		"""
 
 	def getPlayerScore(

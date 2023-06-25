@@ -1,6 +1,6 @@
 class Items:
 	"""
-	Represents various items in the game.
+	Represents various items.
 	"""
 
 	AIR: object

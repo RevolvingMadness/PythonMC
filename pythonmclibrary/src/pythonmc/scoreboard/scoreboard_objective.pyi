@@ -42,9 +42,6 @@ class ScoreboardObjective:
 
 		Args:
 			displayName (Text): The display name to set.
-
-		Returns:
-			None
 		"""
 
 	def setRenderType(self, renderType: RenderTypes) -> None:
@@ -53,7 +50,4 @@ class ScoreboardObjective:
 
 		Args:
 			renderType (RenderTypes): The render type to set.
-
-		Returns:
-			None
 		"""

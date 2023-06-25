@@ -16,7 +16,4 @@ class Block:
 
 		Args:
 			block (Blocks): The block object representing the block.
-
-		Returns:
-			None
 		"""

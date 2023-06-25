@@ -5,7 +5,7 @@ import net.minecraft.world.World;
 
 public enum PyWorlds {
 	OVERWORLD, NETHER, END;
-
+	
 	public RegistryKey<World> toWorldRegistryKey() {
 		return switch (this) {
 			case OVERWORLD -> World.OVERWORLD;

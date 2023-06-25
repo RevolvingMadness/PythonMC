@@ -6,12 +6,12 @@ from src.pythonmc.server.text.text import Text
 
 class PlayerManager:
 	"""
-	Manages players in the game.
+	Manages players.
 	"""
 
 	def areCheatsAllowed(self) -> bool:
 		"""
-		Checks if cheats are allowed in the game.
+		Checks if cheats are allowed.
 
 		Returns:
 			bool: True if cheats are allowed, False otherwise.
@@ -37,12 +37,12 @@ class PlayerManager:
 
 	def disconnectAllPlayers(self) -> None:
 		"""
-		Disconnects all players from the game.
+		Disconnects all players.
 		"""
 
 	def getCurrentPlayerCount(self) -> int:
 		"""
-		Retrieves the current count of players in the game.
+		Retrieves the current count of players.
 
 		Returns:
 			int: The current count of players.
@@ -50,7 +50,7 @@ class PlayerManager:
 
 	def getMaxPlayerCount(self) -> int:
 		"""
-		Retrieves the maximum allowed count of players in the game.
+		Retrieves the maximum allowed count of players.
 
 		Returns:
 			int: The maximum allowed count of players.
@@ -58,7 +58,7 @@ class PlayerManager:
 
 	def getOpNames(self) -> list[str]:
 		"""
-		Retrieves the names of all operators (ops) in the game.
+		Retrieves the names of all operators.
 
 		Returns:
 			list[str]: The names of all operators.
@@ -77,7 +77,7 @@ class PlayerManager:
 
 	def getPlayerList(self) -> list[PlayerEntity]:
 		"""
-		Retrieves a list of all player entities in the game.
+		Retrieves a list of all player entities.
 
 		Returns:
 			list[PlayerEntity]: A list of player entities.
@@ -85,7 +85,7 @@ class PlayerManager:
 
 	def getPlayerNames(self) -> list[str]:
 		"""
-		Retrieves the names of all players in the game.
+		Retrieves the names of all players.
 
 		Returns:
 			list[str]: The names of all players.
@@ -93,7 +93,7 @@ class PlayerManager:
 
 	def getViewDistance(self) -> int:
 		"""
-		Retrieves the view distance setting of the game.
+		Retrieves the view distance setting.
 
 		Returns:
 			int: The view distance.
@@ -101,7 +101,7 @@ class PlayerManager:
 
 	def getWhitelistedNames(self) -> list[str]:
 		"""
-		Retrieves the names of all whitelisted players in the game.
+		Retrieves the names of all whitelisted players.
 
 		Returns:
 			list[str]: The names of all whitelisted players.
@@ -109,7 +109,7 @@ class PlayerManager:
 
 	def isWhitelistEnabled(self) -> bool:
 		"""
-		Checks if the whitelist is enabled in the game.
+		Checks if the whitelist is enabled.
 
 		Returns:
 			bool: True if the whitelist is enabled, False otherwise.
@@ -122,7 +122,7 @@ class PlayerManager:
 
 	def setCheatsAllowed(self, cheatsAllowed: bool) -> None:
 		"""
-		Sets whether cheats are allowed in the game.
+		Sets whether cheats are allowed.
 
 		Args:
 			cheatsAllowed (bool): True to allow cheats, False to disallow cheats.
@@ -130,7 +130,7 @@ class PlayerManager:
 
 	def setSimulationDistance(self, simulationDistance: int) -> None:
 		"""
-		Sets the simulation distance of the game.
+		Sets the simulation distance.
 
 		Args:
 			simulationDistance (int): The simulation distance value.
@@ -138,7 +138,7 @@ class PlayerManager:
 
 	def setViewDistance(self, viewDistance: int) -> None:
 		"""
-		Sets the view distance of the game.
+		Sets the view distance.
 
 		Args:
 			viewDistance (int): The view distance value.
@@ -146,7 +146,7 @@ class PlayerManager:
 
 	def setWhitelistEnabled(self, whitelistEnabled: bool) -> None:
 		"""
-		Sets whether the whitelist is enabled in the game.
+		Sets whether the whitelist is enabled.
 
 		Args:
 			whitelistEnabled (bool): True to enable the whitelist, False to disable the whitelist.

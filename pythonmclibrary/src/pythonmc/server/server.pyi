@@ -168,9 +168,6 @@ class Server:
 			gameMode (GameModes): The game mode for LAN players.
 			cheatsAllowed (bool): Whether cheats are allowed for LAN players.
 			port (Number): The port number to use for LAN connections.
-
-		Returns:
-			None
 		"""
 
 	def setDefaultGameMode(self, defaultGameMode: GameModes) -> None:
@@ -179,9 +176,6 @@ class Server:
 
 		Args:
 			defaultGameMode (GameModes): The default game mode to set.
-
-		Returns:
-			None
 		"""
 
 	def setDifficulty(self, difficulty: Difficulties) -> None:
@@ -190,9 +184,6 @@ class Server:
 
 		Args:
 			difficulty (Difficulties): The difficulty level to set.
-
-		Returns:
-			None
 		"""
 
 	def setDifficultyLocked(self, difficultyLocked: bool) -> None:
@@ -201,7 +192,4 @@ class Server:
 
 		Args:
 			difficultyLocked (bool): True to lock the difficulty level, False otherwise.
-
-		Returns:
-			None
 		"""

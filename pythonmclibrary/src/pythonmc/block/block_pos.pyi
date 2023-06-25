@@ -23,7 +23,4 @@ class BlockPos:
 			x (Number): The x-coordinate of the position.
 			y (Number): The y-coordinate of the position.
 			z (Number): The z-coordinate of the position.
-
-		Returns:
-			None
 		"""

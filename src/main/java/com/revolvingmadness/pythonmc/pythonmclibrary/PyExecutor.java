@@ -19,7 +19,7 @@ public class PyExecutor {
 	public final PyEntity entity;
 	public final boolean isExecutedByPlayer;
 	public final Vec2f rotation;
-
+	
 	public PyExecutor(ServerCommandSource source) {
 		this.source = source;
 		this.name = source.getName();
@@ -31,23 +31,23 @@ public class PyExecutor {
 		this.isExecutedByPlayer = source.isExecutedByPlayer();
 		this.rotation = source.getRotation();
 	}
-
+	
 	public void sendMessage(Object message) {
 		this.source.sendMessage(Text.of(String.valueOf(message)));
 	}
-
+	
 	public void sendMessage(PyText text) {
 		this.source.sendMessage(text.text);
 	}
-
+	
 	public void sendError(Object error) {
 		this.source.sendError(Text.of(String.valueOf(error)));
 	}
-
+	
 	public void sendError(PyText text) {
 		this.source.sendError(text.text);
 	}
-
+	
 	@Override
 	public String toString() {
 		return this.name;

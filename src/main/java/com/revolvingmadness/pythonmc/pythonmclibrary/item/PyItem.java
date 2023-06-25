@@ -8,17 +8,17 @@ public class PyItem {
 	public final Item item;
 	public final String name;
 	final ItemStack itemStack;
-
+	
 	public PyItem(Item item) {
 		this.item = item;
 		this.itemStack = item.getDefaultStack();
 		this.name = Text.translatable(item.getTranslationKey()).getString();
 	}
-
+	
 	public PyItem(PyItems item) {
 		this(item.toItem());
 	}
-
+	
 	@Override
 	public String toString() {
 		return this.name;

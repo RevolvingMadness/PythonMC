@@ -10,13 +10,13 @@ public class PyGameMode {
 	public static PyGameMode CREATIVE = new PyGameMode(GameMode.CREATIVE);
 	public static PyGameMode ADVENTURE = new PyGameMode(GameMode.ADVENTURE);
 	public static PyGameMode SPECTATOR = new PyGameMode(GameMode.SPECTATOR);
-
+	
 	public PyGameMode(GameMode gameMode) {
 		this.gameMode = gameMode;
 		this.id = gameMode.getId();
 		this.name = gameMode.getName();
 	}
-
+	
 	@Override
 	public String toString() {
 		return this.name;

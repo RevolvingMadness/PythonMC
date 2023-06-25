@@ -23,9 +23,6 @@ class ItemStack:
 			item (Items): The item type.
 			count (Number): The number of items in the stack.
 			nbt (dict[str, object]): The NBT data associated with the item.
-
-		Returns:
-			None
 		"""
 
 	@overload
@@ -36,9 +33,6 @@ class ItemStack:
 		Args:
 			item (Items): The item type.
 			nbt (dict[str, object]): The NBT data associated with the item.
-
-		Returns:
-			None
 		"""
 
 	@overload
@@ -49,9 +43,6 @@ class ItemStack:
 		Args:
 			item (Items): The item type.
 			count (Number): The number of items in the stack.
-
-		Returns:
-			None
 		"""
 
 	@overload
@@ -61,9 +52,6 @@ class ItemStack:
 
 		Args:
 			item (Items): The item type.
-
-		Returns:
-			None
 		"""
 
 	def addEnchantment(self, enchantment: Enchantments, level: Number) -> None:
@@ -73,9 +61,6 @@ class ItemStack:
 		Args:
 			enchantment (Enchantments): The enchantment to add.
 			level (Number): The level of enchantment.
-
-		Returns:
-			None
 		"""
 
 	def addHideFlag(self, hideFlag: HideFlags) -> None:
@@ -84,9 +69,6 @@ class ItemStack:
 
 		Args:
 			hideFlag (HideFlags): The hide flag to add.
-
-		Returns:
-			None
 		"""
 
 	def decrement(self, amount: Number) -> None:
@@ -95,9 +77,6 @@ class ItemStack:
 
 		Args:
 			amount (Number): The amount to decrement.
-
-		Returns:
-			None
 		"""
 
 	def getCount(self) -> int:
@@ -210,9 +189,6 @@ class ItemStack:
 
 		Args:
 			amount (Number): The amount to increment.
-
-		Returns:
-			None
 		"""
 
 	def isDamageable(self) -> bool:
@@ -266,9 +242,6 @@ class ItemStack:
 	def removeCustomName(self) -> None:
 		"""
 		Removes the custom name of the item.
-
-		Returns:
-			None
 		"""
 
 	def setCount(self, count: Number) -> None:
@@ -277,9 +250,6 @@ class ItemStack:
 
 		Args:
 			count (Number): The count of items.
-
-		Returns:
-			None
 		"""
 
 	@overload
@@ -289,9 +259,6 @@ class ItemStack:
 
 		Args:
 			customName (str): The custom name.
-
-		Returns:
-			None
 		"""
 
 	@overload
@@ -301,9 +268,6 @@ class ItemStack:
 
 		Args:
 			text (Text): The text object representing the custom name.
-
-		Returns:
-			None
 		"""
 
 	def setDamage(self, damage: Number) -> None:
@@ -312,9 +276,6 @@ class ItemStack:
 
 		Args:
 			damage (Number): The damage value.
-
-		Returns:
-			None
 		"""
 
 	def setRepairCost(self, repairCost: Number) -> None:
@@ -323,7 +284,4 @@ class ItemStack:
 
 		Args:
 			repairCost (Number): The repair cost.
-
-		Returns:
-			None
 		"""

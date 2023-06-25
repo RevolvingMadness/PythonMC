@@ -2,7 +2,7 @@ package com.revolvingmadness.pythonmc.pythonmclibrary.world;
 
 public enum PyTime {
 	DAY, MIDNIGHT, NIGHT, NOON;
-
+	
 	public long toTimeLong() {
 		return switch (this) {
 			case DAY -> 1000;

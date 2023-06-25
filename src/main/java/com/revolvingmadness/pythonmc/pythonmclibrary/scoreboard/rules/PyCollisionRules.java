@@ -4,7 +4,7 @@ import net.minecraft.scoreboard.AbstractTeam;
 
 public enum PyCollisionRules {
 	ALWAYS, NEVER, PUSH_OTHER_TEAMS, PUSH_OWN_TEAM;
-
+	
 	public static PyCollisionRules fromCollisionRule(AbstractTeam.CollisionRule collisionRule) {
 		return switch (collisionRule) {
 			case ALWAYS -> ALWAYS;
@@ -13,7 +13,7 @@ public enum PyCollisionRules {
 			case PUSH_OWN_TEAM -> PUSH_OWN_TEAM;
 		};
 	}
-
+	
 	public AbstractTeam.CollisionRule toCollisionRule() {
 		return switch (this) {
 			case ALWAYS -> AbstractTeam.CollisionRule.ALWAYS;
