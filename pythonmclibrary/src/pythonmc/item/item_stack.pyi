@@ -1,11 +1,12 @@
 from numbers import Number
-from pythonmc.item.enchantment.enchantment import Enchantment
-from pythonmc.item.enchantment.enchantments import Enchantments
-from pythonmc.item.hide_flags import HideFlags
-from pythonmc.item.item_rarity import ItemRarity
-from pythonmc.item.items import Items
-from pythonmc.server.text.text import Text
 from typing import overload
+
+from .enchantment.enchantment import Enchantment
+from .enchantment.enchantments import Enchantments
+from .hide_flags import HideFlags
+from .item_rarity import ItemRarity
+from .items import Items
+from ..server.text.text import Text
 
 
 class ItemStack:

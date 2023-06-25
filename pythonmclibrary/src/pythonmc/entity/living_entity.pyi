@@ -1,14 +1,14 @@
 from numbers import Number
 
-from pythonmc.entity.arm import Arm
-from pythonmc.entity.damage_sources import DamageSources
-from pythonmc.entity.effects.status_effect_instance import StatusEffectInstance
-from pythonmc.entity.effects.status_effects import StatusEffects
-from pythonmc.entity.entity import Entity
-from pythonmc.entity.hand import Hand
-from pythonmc.item.item import Item
-from pythonmc.item.item_stack import ItemStack
-from pythonmc.world.position.vec3d import Vec3d
+from .arm import Arm
+from .damage_sources import DamageSources
+from .effects.status_effect_instance import StatusEffectInstance
+from .effects.status_effects import StatusEffects
+from .entity import Entity
+from .hand import Hand
+from ..item.item import Item
+from ..item.item_stack import ItemStack
+from ..world.position.vec3d import Vec3d
 
 
 class LivingEntity(Entity):

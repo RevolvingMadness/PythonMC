@@ -1,7 +1,7 @@
-from pythonmc.scoreboard.rules.collision_rules import CollisionRules
-from pythonmc.scoreboard.rules.visibility_rules import VisibilityRules
-from pythonmc.server.text.formatting import Formatting
-from pythonmc.server.text.text import Text
+from .rules.collision_rules import CollisionRules
+from .rules.visibility_rules import VisibilityRules
+from ..server.text.formatting import Formatting
+from ..server.text.text import Text
 
 
 class Team:

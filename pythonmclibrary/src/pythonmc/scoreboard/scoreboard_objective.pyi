@@ -1,6 +1,6 @@
-from pythonmc.scoreboard.render_types import RenderTypes
-from pythonmc.scoreboard.scoreboard_criterions import ScoreboardCriterions
-from pythonmc.server.text.text import Text
+from .render_types import RenderTypes
+from .scoreboard_criterions import ScoreboardCriterions
+from ..server.text.text import Text
 
 
 class ScoreboardObjective:

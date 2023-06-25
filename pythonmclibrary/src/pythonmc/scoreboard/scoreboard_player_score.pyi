@@ -1,6 +1,7 @@
 from numbers import Number
-from pythonmc.scoreboard.scoreboard import Scoreboard
 from typing import overload
+
+from .scoreboard import Scoreboard
 
 
 class ScoreboardPlayerScore:

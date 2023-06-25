@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pythonmc",
-    version="1.0.4",
+    version="1.0.5",
     author="RevolvingMadness",
     author_email="revolvingmad@gmail.com",
     description="The python library for PythonMC",

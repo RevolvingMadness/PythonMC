@@ -1,10 +1,11 @@
-from pythonmc.entity.entity import Entity
-from pythonmc.player.player_entity import PlayerEntity
-from pythonmc.server.text.text import Text
-from pythonmc.world.position.vec2f import Vec2f
-from pythonmc.world.position.vec3d import Vec3d
-from pythonmc.world.world import World
 from typing import overload
+
+from .position.vec2f import Vec2f
+from .position.vec3d import Vec3d
+from .world import World
+from ..entity.entity import Entity
+from ..player.player_entity import PlayerEntity
+from ..server.text.text import Text
 
 
 class Executor:

@@ -1,10 +1,10 @@
-from pythonmc.entity.entity import Entity
-from pythonmc.scoreboard.render_types import RenderTypes
-from pythonmc.scoreboard.scoreboard_criterions import ScoreboardCriterions
-from pythonmc.scoreboard.scoreboard_objective import ScoreboardObjective
-from pythonmc.scoreboard.scoreboard_player_score import ScoreboardPlayerScore
-from pythonmc.scoreboard.team import Team
-from pythonmc.server.text.text import Text
+from .render_types import RenderTypes
+from .scoreboard_criterions import ScoreboardCriterions
+from .scoreboard_objective import ScoreboardObjective
+from .scoreboard_player_score import ScoreboardPlayerScore
+from .team import Team
+from ..entity.entity import Entity
+from ..server.text.text import Text
 
 
 class Scoreboard:

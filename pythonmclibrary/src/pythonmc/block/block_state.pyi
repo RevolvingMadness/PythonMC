@@ -1,5 +1,5 @@
-from pythonmc.block.block import Block
-from pythonmc.block.blocks import Blocks
+from .block import Block
+from .blocks import Blocks
 
 
 class BlockState:

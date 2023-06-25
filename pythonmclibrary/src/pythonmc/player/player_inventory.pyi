@@ -1,6 +1,7 @@
 from numbers import Number
-from pythonmc.item.item_stack import ItemStack
 from typing import overload
+
+from ..item.item_stack import ItemStack
 
 
 class PlayerInventory:

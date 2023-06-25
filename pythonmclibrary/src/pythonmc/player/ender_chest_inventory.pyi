@@ -1,4 +1,4 @@
-from pythonmc.item.item_stack import ItemStack
+from ..item.item_stack import ItemStack
 
 
 class EnderChestInventory:

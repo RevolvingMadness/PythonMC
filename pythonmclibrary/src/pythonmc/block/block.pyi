@@ -1,5 +1,5 @@
-from pythonmc.block.blocks import Blocks
-from pythonmc.item.item import Item
+from .blocks import Blocks
+from ..item.item import Item
 
 
 class Block:

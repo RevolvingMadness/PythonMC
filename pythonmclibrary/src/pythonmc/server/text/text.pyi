@@ -1,4 +1,4 @@
-from pythonmc.server.text.formatting import Formatting
+from .formatting import Formatting
 
 
 class Text:

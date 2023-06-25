@@ -1,6 +1,7 @@
-from pythonmc.player.player_entity import PlayerEntity
-from pythonmc.server.text.text import Text
 from typing import overload
+
+from .player_entity import PlayerEntity
+from ..server.text.text import Text
 
 
 class PlayerManager:

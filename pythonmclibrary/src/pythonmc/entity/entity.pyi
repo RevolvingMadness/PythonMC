@@ -1,11 +1,11 @@
 from numbers import Number
 
-from pythonmc.block.block_pos import BlockPos
-from pythonmc.entity.damage_sources import DamageSources
-from pythonmc.entity.entities import Entities
-from pythonmc.item.item_stack import ItemStack
-from pythonmc.world.position.vec3d import Vec3d
-from pythonmc.world.world import World
+from .damage_sources import DamageSources
+from .entities import Entities
+from ..block.block_pos import BlockPos
+from ..item.item_stack import ItemStack
+from ..world.position.vec3d import Vec3d
+from ..world.world import World
 
 
 class Entity:

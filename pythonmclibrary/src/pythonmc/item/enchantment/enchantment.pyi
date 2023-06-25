@@ -1,4 +1,4 @@
-from pythonmc.item.enchantment.enchantment_rarity import EnchantmentRarity
+from .enchantment_rarity import EnchantmentRarity
 
 
 class Enchantment:

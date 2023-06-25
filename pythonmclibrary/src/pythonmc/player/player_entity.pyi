@@ -1,13 +1,13 @@
 from numbers import Number
 
-from pythonmc.block.block_state import BlockState
-from pythonmc.block.blocks import Blocks
-from pythonmc.entity.arm import Arm
-from pythonmc.entity.entity import Entity
-from pythonmc.entity.living_entity import LivingEntity
-from pythonmc.player.ender_chest_inventory import EnderChestInventory
-from pythonmc.player.hunger_manager import HungerManager
-from pythonmc.player.player_inventory import PlayerInventory
+from .ender_chest_inventory import EnderChestInventory
+from .hunger_manager import HungerManager
+from .player_inventory import PlayerInventory
+from ..block.block_state import BlockState
+from ..block.blocks import Blocks
+from ..entity.arm import Arm
+from ..entity.entity import Entity
+from ..entity.living_entity import LivingEntity
 
 
 class PlayerEntity(LivingEntity):

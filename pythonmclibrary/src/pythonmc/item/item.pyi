@@ -1,4 +1,4 @@
-from pythonmc.item.items import Items
+from .items import Items
 
 
 class Item:

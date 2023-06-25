@@ -1,12 +1,12 @@
 from numbers import Number
 
-from pythonmc.player.player_manager import PlayerManager
-from pythonmc.scoreboard.scoreboard import Scoreboard
-from pythonmc.server.difficulty.difficulties import Difficulties
-from pythonmc.server.gamemode.game_mode import GameMode
-from pythonmc.server.gamemode.game_modes import GameModes
-from pythonmc.world.world import World
-from pythonmc.world.worlds import Worlds
+from .difficulty.difficulties import Difficulties
+from .gamemode.game_mode import GameMode
+from .gamemode.game_modes import GameModes
+from ..player.player_manager import PlayerManager
+from ..scoreboard import Scoreboard
+from ..world import World
+from ..world.worlds import Worlds
 
 
 class Server:
