@@ -10,186 +10,186 @@ from src.pythonmc.world.worlds import Worlds
 
 
 class Server:
-	def getPlayerManager(self) -> PlayerManager:
-		"""
-		Retrieves the player manager for the server.
+    def getPlayerManager(self) -> PlayerManager:
+        """
+        Retrieves the player manager for the server.
 
-		Returns:
-			PlayerManager: The player manager object.
-		"""
+        Returns:
+                PlayerManager: The player manager object.
+        """
 
-	def getDefaultGameMode(self) -> GameMode:
-		"""
-		Retrieves the default game mode for new players.
+    def getDefaultGameMode(self) -> GameMode:
+        """
+        Retrieves the default game mode for new players.
 
-		Returns:
-			GameMode: The default game mode.
-		"""
+        Returns:
+                GameMode: The default game mode.
+        """
 
-	def getForcedGameMode(self) -> GameMode:
-		"""
-		Retrieves the forced game mode for all players.
+    def getForcedGameMode(self) -> GameMode:
+        """
+        Retrieves the forced game mode for all players.
 
-		Returns:
-			GameMode: The forced game mode.
-		"""
+        Returns:
+                GameMode: The forced game mode.
+        """
 
-	def getScoreboard(self) -> Scoreboard:
-		"""
-		Retrieves the scoreboard for the server.
+    def getScoreboard(self) -> Scoreboard:
+        """
+        Retrieves the scoreboard for the server.
 
-		Returns:
-			Scoreboard: The scoreboard object.
-		"""
+        Returns:
+                Scoreboard: The scoreboard object.
+        """
 
-	def getMaxWorldBorderRadius(self) -> int:
-		"""
-		Retrieves the maximum radius of the world border.
+    def getMaxWorldBorderRadius(self) -> int:
+        """
+        Retrieves the maximum radius of the world border.
 
-		Returns:
-			int: The maximum world border radius.
-		"""
+        Returns:
+                int: The maximum world border radius.
+        """
 
-	def getServerIP(self) -> str:
-		"""
-		Retrieves the IP address of the server.
+    def getServerIP(self) -> str:
+        """
+        Retrieves the IP address of the server.
 
-		Returns:
-			str: The server IP address.
-		"""
+        Returns:
+                str: The server IP address.
+        """
 
-	def getWorld(self, world: Worlds) -> World:
-		"""
-		Retrieves the world object for the specified world type.
+    def getWorld(self, world: Worlds) -> World:
+        """
+        Retrieves the world object for the specified world type.
 
-		Args:
-			world (Worlds): The type of the world to retrieve.
+        Args:
+                world (Worlds): The type of the world to retrieve.
 
-		Returns:
-			World: The world object.
-		"""
+        Returns:
+                World: The world object.
+        """
 
-	def getServerMOTD(self) -> str:
-		"""
-		Retrieves the MOTD (Message of the Day) of the server.
+    def getServerMOTD(self) -> str:
+        """
+        Retrieves the MOTD (Message of the Day) of the server.
 
-		Returns:
-			str: The server MOTD.
-		"""
+        Returns:
+                str: The server MOTD.
+        """
 
-	def getServerPort(self) -> int:
-		"""
-		Retrieves the port number on which the server is running.
+    def getServerPort(self) -> int:
+        """
+        Retrieves the port number on which the server is running.
 
-		Returns:
-			int: The server port number.
-		"""
+        Returns:
+                int: The server port number.
+        """
 
-	def getSpawnProtectionRadius(self) -> int:
-		"""
-		Retrieves the radius of spawn protection around the world spawn point.
+    def getSpawnProtectionRadius(self) -> int:
+        """
+        Retrieves the radius of spawn protection around the world spawn point.
 
-		Returns:
-			int: The spawn protection radius.
-		"""
+        Returns:
+                int: The spawn protection radius.
+        """
 
-	def getSpawnRadius(self, world: Worlds) -> int:
-		"""
-		Retrieves the spawn radius for the specified world type.
+    def getSpawnRadius(self, world: Worlds) -> int:
+        """
+        Retrieves the spawn radius for the specified world type.
 
-		Args:
-			world (Worlds): The type of the world to retrieve the spawn radius for.
+        Args:
+                world (Worlds): The type of the world to retrieve the spawn radius for.
 
-		Returns:
-			int: The spawn radius of the world.
-		"""
+        Returns:
+                int: The spawn radius of the world.
+        """
 
-	def getVersion(self) -> str:
-		"""
-		Retrieves the version of the server.
+    def getVersion(self) -> str:
+        """
+        Retrieves the version of the server.
 
-		Returns:
-			str: The server version.
-		"""
+        Returns:
+                str: The server version.
+        """
 
-	def isFlightEnabled(self) -> bool:
-		"""
-		Checks if flight is enabled on the server.
+    def isFlightEnabled(self) -> bool:
+        """
+        Checks if flight is enabled on the server.
 
-		Returns:
-			bool: True if flight is enabled, False otherwise.
-		"""
+        Returns:
+                bool: True if flight is enabled, False otherwise.
+        """
 
-	def isHardcore(self) -> bool:
-		"""
-		Checks if the server is in hardcore mode.
+    def isHardcore(self) -> bool:
+        """
+        Checks if the server is in hardcore mode.
 
-		Returns:
-			bool: True if the server is in hardcore mode, False otherwise.
-		"""
+        Returns:
+                bool: True if the server is in hardcore mode, False otherwise.
+        """
 
-	def isMonsterSpawningEnabled(self) -> bool:
-		"""
-		Checks if monster spawning is enabled on the server.
+    def isMonsterSpawningEnabled(self) -> bool:
+        """
+        Checks if monster spawning is enabled on the server.
 
-		Returns:
-			bool: True if monster spawning is enabled, False otherwise.
-		"""
+        Returns:
+                bool: True if monster spawning is enabled, False otherwise.
+        """
 
-	def isNetherAllowed(self) -> bool:
-		"""
-		Checks if the Nether dimension is allowed on the server.
+    def isNetherAllowed(self) -> bool:
+        """
+        Checks if the Nether dimension is allowed on the server.
 
-		Returns:
-			bool: True if the Nether is allowed, False otherwise.
-		"""
+        Returns:
+                bool: True if the Nether is allowed, False otherwise.
+        """
 
-	def isPVPEnabled(self) -> bool:
-		"""
-		Checks if PVP (Player vs. Player) is enabled on the server.
+    def isPVPEnabled(self) -> bool:
+        """
+        Checks if PVP (Player vs. Player) is enabled on the server.
 
-		Returns:
-			bool: True if PVP is enabled, False otherwise.
-		"""
+        Returns:
+                bool: True if PVP is enabled, False otherwise.
+        """
 
-	def isSingleplayer(self) -> bool:
-		"""
-		Checks if the server is running in singleplayer mode.
+    def isSingleplayer(self) -> bool:
+        """
+        Checks if the server is running in singleplayer mode.
 
-		Returns:
-			bool: True if the server is in singleplayer mode, False otherwise.
-		"""
+        Returns:
+                bool: True if the server is in singleplayer mode, False otherwise.
+        """
 
-	def openToLAN(self, gameMode: GameModes, cheatsAllowed: bool, port: Number) -> None:
-		"""
-		Opens the server to LAN (Local Area Network) with the specified settings.
+    def openToLAN(self, gameMode: GameModes, cheatsAllowed: bool, port: Number) -> None:
+        """
+        Opens the server to LAN (Local Area Network) with the specified settings.
 
-		Args:
-			gameMode (GameModes): The game mode for LAN players.
-			cheatsAllowed (bool): Whether cheats are allowed for LAN players.
-			port (Number): The port number to use for LAN connections.
-		"""
+        Args:
+                gameMode (GameModes): The game mode for LAN players.
+                cheatsAllowed (bool): Whether cheats are allowed for LAN players.
+                port (Number): The port number to use for LAN connections.
+        """
 
-	def setDefaultGameMode(self, defaultGameMode: GameModes) -> None:
-		"""
-		Sets the default game mode for new players.
+    def setDefaultGameMode(self, defaultGameMode: GameModes) -> None:
+        """
+        Sets the default game mode for new players.
 
-		Args:
-			defaultGameMode (GameModes): The default game mode to set.
-		"""
+        Args:
+                defaultGameMode (GameModes): The default game mode to set.
+        """
 
-	def setDifficulty(self, difficulty: Difficulties) -> None:
-		"""
-		Sets the difficulty level of the server.
+    def setDifficulty(self, difficulty: Difficulties) -> None:
+        """
+        Sets the difficulty level of the server.
 
-		Args:
-			difficulty (Difficulties): The difficulty level to set.
-		"""
+        Args:
+                difficulty (Difficulties): The difficulty level to set.
+        """
 
-	def setDifficultyLocked(self, difficultyLocked: bool) -> None:
-		"""
-		Sets whether the difficulty level is locked on the server.
+    def setDifficultyLocked(self, difficultyLocked: bool) -> None:
+        """
+        Sets whether the difficulty level is locked on the server.
 
-		Args:
-			difficultyLocked (bool): True to lock the difficulty level, False otherwise.
-		"""
+        Args:
+                difficultyLocked (bool): True to lock the difficulty level, False otherwise.
+        """

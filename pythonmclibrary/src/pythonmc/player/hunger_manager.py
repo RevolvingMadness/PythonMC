@@ -1,4 +1,4 @@
 class HungerManager:
-	exhaustion = None
-	foodLevel = None
-	saturationLevel = None
+    exhaustion = None
+    foodLevel = None
+    saturationLevel = None

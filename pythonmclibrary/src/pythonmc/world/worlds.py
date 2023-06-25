@@ -1,4 +1,4 @@
 class Worlds:
-	OVERWORLD = None
-	NETHER = None
-	END = None
+    OVERWORLD = None
+    NETHER = None
+    END = None

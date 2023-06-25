@@ -1,4 +1,4 @@
 class Difficulty:
-	name = None
-	id = None
-	info = None
+    name = None
+    id = None
+    info = None

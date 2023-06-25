@@ -1,3 +1,3 @@
 class Hand:
-	MAIN_HAND = None
-	OFF_HAND = None
+    MAIN_HAND = None
+    OFF_HAND = None

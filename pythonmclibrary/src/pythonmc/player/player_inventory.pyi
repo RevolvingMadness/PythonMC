@@ -12,152 +12,152 @@ class PlayerInventory:
 
 	def clear(self) -> None:
 		"""
-		Clears the player's inventory.
-		"""
+        Clears the player's inventory.
+        """
 
 	def contains(self, stack: ItemStack) -> bool:
 		"""
-		Checks if the inventory contains the specified item stack.
+        Checks if the inventory contains the specified item stack.
 
-		Args:
-			stack (ItemStack): The item stack to check.
+        Args:
+                stack (ItemStack): The item stack to check.
 
-		Returns:
-			bool: True if the inventory contains the item stack, False otherwise.
-		"""
+        Returns:
+                bool: True if the inventory contains the item stack, False otherwise.
+        """
 
 	def dropAll(self) -> None:
 		"""
-		Drops all items from the inventory.
-		"""
+        Drops all items from the inventory.
+        """
 
 	def dropSelectedItem(self, entireStack: bool) -> None:
 		"""
-		Drops the selected item from the inventory.
+        Drops the selected item from the inventory.
 
-		Args:
-			entireStack (bool): Whether to drop the entire stack or just one item.
-		"""
+        Args:
+                entireStack (bool): Whether to drop the entire stack or just one item.
+        """
 
 	def getArmorStack(self, slot: Number) -> ItemStack:
 		"""
-		Retrieves the item stack in the specified armor slot.
+        Retrieves the item stack in the specified armor slot.
 
-		Args:
-			slot (Number): The armor slot.
+        Args:
+                slot (Number): The armor slot.
 
-		Returns:
-			ItemStack: The item stack in the specified armor slot.
-		"""
+        Returns:
+                ItemStack: The item stack in the specified armor slot.
+        """
 
 	def getEmptySlot(self) -> int:
 		"""
-		Retrieves the index of an empty slot in the inventory.
+        Retrieves the index of an empty slot in the inventory.
 
-		Returns:
-			int: The index of an empty slot, or -1 if no empty slot is found.
-		"""
+        Returns:
+                int: The index of an empty slot, or -1 if no empty slot is found.
+        """
 
 	def getMainHandStack(self) -> ItemStack:
 		"""
-		Retrieves the item stack in the player's main hand.
+        Retrieves the item stack in the player's main hand.
 
-		Returns:
-			ItemStack: The item stack in the player's main hand.
-		"""
+        Returns:
+                ItemStack: The item stack in the player's main hand.
+        """
 
 	def getSlotWithStack(self, stack: ItemStack) -> int:
 		"""
-		Retrieves the index of the slot that contains the specified item stack.
+        Retrieves the index of the slot that contains the specified item stack.
 
-		Args:
-			stack (ItemStack): The item stack to search for.
+        Args:
+                stack (ItemStack): The item stack to search for.
 
-		Returns:
-			int: The index of the slot that contains the item stack, or -1 if not found.
-		"""
+        Returns:
+                int: The index of the slot that contains the item stack, or -1 if not found.
+        """
 
 	def getStack(self, slot: Number) -> ItemStack:
 		"""
-		Retrieves the item stack in the specified slot.
+        Retrieves the item stack in the specified slot.
 
-		Args:
-			slot (Number): The slot index.
+        Args:
+                slot (Number): The slot index.
 
-		Returns:
-			ItemStack: The item stack in the specified slot.
-		"""
+        Returns:
+                ItemStack: The item stack in the specified slot.
+        """
 
 	def indexOf(self, stack: ItemStack) -> int:
 		"""
-		Retrieves the index of the first occurrence of the specified item stack.
+        Retrieves the index of the first occurrence of the specified item stack.
 
-		Args:
-			stack (ItemStack): The item stack to search for.
+        Args:
+                stack (ItemStack): The item stack to search for.
 
-		Returns:
-			int: The index of the first occurrence of the item stack, or -1 if not found.
-		"""
+        Returns:
+                int: The index of the first occurrence of the item stack, or -1 if not found.
+        """
 
 	@overload
 	def insertStack(self, slot: Number, stack: ItemStack) -> None:
 		"""
-		Inserts the specified item stack into the specified slot.
+        Inserts the specified item stack into the specified slot.
 
-		Args:
-			slot (Number): The slot index.
-			stack (ItemStack): The item stack to insert.
-		"""
+        Args:
+                slot (Number): The slot index.
+                stack (ItemStack): The item stack to insert.
+        """
 
 	@overload
 	def insertStack(self, stack: ItemStack) -> None:
 		"""
-		Inserts the specified item stack into the first available slot.
+        Inserts the specified item stack into the first available slot.
 
-		Args:
-			stack (ItemStack): The item stack to insert.
-		"""
+        Args:
+                stack (ItemStack): The item stack to insert.
+        """
 
 	def isEmpty(self) -> bool:
 		"""
-		Checks if the inventory is empty.
+        Checks if the inventory is empty.
 
-		Returns:
-			bool: True if the inventory is empty, False otherwise.
-		"""
+        Returns:
+                bool: True if the inventory is empty, False otherwise.
+        """
 
 	def removeOne(self, stack: ItemStack) -> None:
 		"""
-		Removes one item from the specified item stack.
+        Removes one item from the specified item stack.
 
-		Args:
-			stack (ItemStack): The item stack to remove from.
-		"""
+        Args:
+                stack (ItemStack): The item stack to remove from.
+        """
 
 	@overload
 	def removeStack(self, slot: Number, amount: Number) -> None:
 		"""
-		Removes a specified number of items from the specified slot.
+        Removes a specified number of items from the specified slot.
 
-		Args:
-			slot (Number): The slot index.
-			amount (Number): The number of items to remove.
-		"""
+        Args:
+                slot (Number): The slot index.
+                amount (Number): The number of items to remove.
+        """
 
 	@overload
 	def removeStack(self, slot: Number) -> None:
 		"""
-		Removes the item stack from the specified slot.
+        Removes the item stack from the specified slot.
 
-		Args:
-			slot (Number): The slot index.
-		"""
+        Args:
+                slot (Number): The slot index.
+        """
 
 	def setStack(self, slot: Number, stack: ItemStack) -> None:
 		"""
-		Sets the item stack in the specified slot.
+        Sets the item stack in the specified slot.
 
-		Args:
-			slot (Number): The slot index.
-			stack (ItemStack): The item stack to set.
-		"""
+        Args:
+                slot (Number): The slot index.
+                stack (ItemStack): The item stack to set.
+        """

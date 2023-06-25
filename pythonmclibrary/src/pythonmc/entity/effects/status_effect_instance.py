@@ -1,3 +1,3 @@
 class StatusEffectInstance:
-	duration = None
-	amplifier = None
+    duration = None
+    amplifier = None

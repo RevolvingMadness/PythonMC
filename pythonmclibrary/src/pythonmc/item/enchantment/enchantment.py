@@ -1,3 +1,3 @@
 class Enchantment:
-	level = None
-	rarity = None
+    level = None
+    rarity = None

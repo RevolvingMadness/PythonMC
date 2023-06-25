@@ -1,6 +1,6 @@
 class Vec2f:
-	x = None
-	y = None
+    x = None
+    y = None
 
-	def __init__(self, x, y):
-		...
+    def __init__(self, x, y):
+        ...

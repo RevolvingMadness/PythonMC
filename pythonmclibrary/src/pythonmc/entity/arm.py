@@ -1,3 +1,3 @@
 class Arm:
-	LEFT = None
-	RIGHT = None
+    LEFT = None
+    RIGHT = None

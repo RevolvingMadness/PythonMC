@@ -1,7 +1,9 @@
 class BlockState:
-	block = None
+    block = None
 
-	def __init__(self, block): ...
+    def __init__(self, block):
+        ...
 
-	@staticmethod
-	def isOf(block): ...
+    @staticmethod
+    def isOf(block):
+        ...

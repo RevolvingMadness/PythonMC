@@ -1,3 +1,3 @@
 class RenderTypes:
-	INTEGER = None
-	HEARTS = None
+    INTEGER = None
+    HEARTS = None

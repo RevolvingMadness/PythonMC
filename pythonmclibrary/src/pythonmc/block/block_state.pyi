@@ -1,18 +1,17 @@
 from src.pythonmc.block.block import Block
 from src.pythonmc.block.blocks import Blocks
 
-
 class BlockState:
-	"""
-	The BlockState class represents the state of a block in Minecraft.
+    """
+    The BlockState class represents the state of a block in Minecraft.
 
-	Attributes:
-		block (Block): The block associated with this state.
-	"""
+    Attributes:
+            block (Block): The block associated with this state.
+    """
 
-	block: Block
+    block: Block
 
-	def __init__(self, block: Blocks) -> None: ...
+    def __init__(self, block: Blocks) -> None: ...
 
-	@staticmethod
-	def isOf(block: Block) -> bool: ...
+    @staticmethod
+    def isOf(block: Block) -> bool: ...

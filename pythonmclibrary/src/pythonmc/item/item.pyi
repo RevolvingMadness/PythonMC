@@ -1,14 +1,13 @@
 from src.pythonmc.item.items import Items
 
-
 class Item:
-	"""
-	Represents an item.
+    """
+    Represents an item.
 
-	Attributes:
-		name (str): The name of the item.
-	"""
+    Attributes:
+            name (str): The name of the item.
+    """
 
-	name: str
+    name: str
 
-	def __init__(self, item: Items) -> None: ...
+    def __init__(self, item: Items) -> None: ...

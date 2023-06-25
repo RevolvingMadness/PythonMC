@@ -1,4 +1,4 @@
 class Weather:
-	CLEAR = None
-	RAIN = None
-	THUNDER = None
+    CLEAR = None
+    RAIN = None
+    THUNDER = None

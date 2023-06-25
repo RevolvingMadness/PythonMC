@@ -1,8 +1,8 @@
 class Worlds:
-	"""
-	Represents different dimensions.
-	"""
+    """
+    Represents different dimensions.
+    """
 
-	OVERWORLD: object
-	NETHER: object
-	END: object
+    OVERWORLD: object
+    NETHER: object
+    END: object

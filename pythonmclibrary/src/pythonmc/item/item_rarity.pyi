@@ -1,7 +1,7 @@
 class ItemRarity:
 	"""
-	Represents the rarity of an item.
-	"""
+    Represents the rarity of an item.
+    """
 
 	COMMON: object
 	UNCOMMON: object

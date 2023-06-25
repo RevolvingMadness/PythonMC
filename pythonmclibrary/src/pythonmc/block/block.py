@@ -1,10 +1,10 @@
 class Block:
-	item = None
-	name = None
-	blastResistance = None
-	velocityMultiplier = None
-	jumpVelocityMultiplier = None
-	slipperiness = None
+    item = None
+    name = None
+    blastResistance = None
+    velocityMultiplier = None
+    jumpVelocityMultiplier = None
+    slipperiness = None
 
-	def __init__(self, block):
-		...
+    def __init__(self, block):
+        ...
