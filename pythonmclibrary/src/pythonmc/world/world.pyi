@@ -7,7 +7,9 @@ from ..block.block_pos import BlockPos
 from ..block.block_state import BlockState
 from ..block.blocks import Blocks
 from ..entity.entities import Entities
-from ..server.difficulty.difficulty import Difficulty
+from ..player.player_entity import PlayerEntity
+from ..server_.difficulty.difficulty import Difficulty
+from ..world.position import Vec3d
 
 
 class World:
@@ -39,6 +41,53 @@ class World:
 
         Returns:
                 BlockState: The block state at the given block position.
+        """
+
+    @overload
+    def getBlock(self, vec3d: Vec3d) -> BlockState:
+        """
+        Retrieves the block state at the given vector.
+
+        Args:
+                vec3d (Vec3d): The block position.
+
+        Returns:
+                BlockState: The block state at the given block position.
+        """
+
+    def getAllPlayers(self) -> list[PlayerEntity]:
+        """
+        Retrieves a list of all player entities in the game.
+
+        Returns:
+            A list of PlayerEntity objects representing all players in the game.
+        """
+
+    def getAllEntities(self) -> list[PlayerEntity]:
+        """
+        Retrieves a list of all entities in the game, including players and non-players.
+
+        Returns:
+            A list of PlayerEntity objects representing all entities in the game.
+        """
+
+    def getNearestPlayer(self, position: Vec3d) -> PlayerEntity:
+        """
+        Finds the nearest player entity to the specified position.
+
+        Args:
+            position (Vec3d): The position from which to search for the nearest player.
+
+        Returns:
+            The PlayerEntity object representing the nearest player to the specified position.
+        """
+
+    def getRandomPlayer(self) -> PlayerEntity:
+        """
+        Selects a random player entity from the game.
+
+        Returns:
+            A randomly chosen PlayerEntity object from the available players in the game.
         """
 
     def getDifficulty(self) -> Difficulty:

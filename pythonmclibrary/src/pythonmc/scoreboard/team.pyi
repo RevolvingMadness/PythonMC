@@ -1,7 +1,7 @@
 from .rules.collision_rules import CollisionRules
 from .rules.visibility_rules import VisibilityRules
-from ..server.text.formatting import Formatting
-from ..server.text.text import Text
+from ..server_.text.formatting import Formatting
+from ..server_.text.text import Text
 
 
 class Team:

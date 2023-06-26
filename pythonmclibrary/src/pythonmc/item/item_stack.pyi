@@ -6,7 +6,7 @@ from .enchantment.enchantments import Enchantments
 from .hide_flags import HideFlags
 from .item_rarity import ItemRarity
 from .items import Items
-from ..server.text.text import Text
+from ..server_.text.text import Text
 
 
 class ItemStack:

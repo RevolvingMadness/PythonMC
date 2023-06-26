@@ -3,19 +3,19 @@ from typing import overload
 
 class ItemStack:
     @overload
-    def __init__(self, item, count, nbt):
+    def __init__(self, item, count, nbt) -> None:
         ...
 
     @overload
-    def __init__(self, item, nbt):
+    def __init__(self, item, nbt) -> None:
         ...
 
     @overload
-    def __init__(self, item, count):
+    def __init__(self, item, count) -> None:
         ...
 
     @overload
-    def __init__(self, item):
+    def __init__(self, item) -> None:
         ...
 
     def addEnchantment(self, enchantment, level):

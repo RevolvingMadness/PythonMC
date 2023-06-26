@@ -4,7 +4,7 @@ from .scoreboard_objective import ScoreboardObjective
 from .scoreboard_player_score import ScoreboardPlayerScore
 from .team import Team
 from ..entity.entity import Entity
-from ..server.text.text import Text
+from ..server_.text.text import Text
 
 
 class Scoreboard:

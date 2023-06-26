@@ -5,7 +5,7 @@ from .position.vec3d import Vec3d
 from .world import World
 from ..entity.entity import Entity
 from ..player.player_entity import PlayerEntity
-from ..server.text.text import Text
+from ..server_.text.text import Text
 
 
 class Executor:

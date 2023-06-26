@@ -1,14 +1,19 @@
 package com.revolvingmadness.pythonmc.pythonmclibrary.player;
 
+import com.revolvingmadness.pythonmc.pythonmclibrary.advancement.PyOperation;
+import com.revolvingmadness.pythonmc.pythonmclibrary.advancement.PySelection;
 import com.revolvingmadness.pythonmc.pythonmclibrary.block.PyBlockState;
 import com.revolvingmadness.pythonmc.pythonmclibrary.block.PyBlocks;
 import com.revolvingmadness.pythonmc.pythonmclibrary.entity.PyArm;
 import com.revolvingmadness.pythonmc.pythonmclibrary.entity.PyEntity;
 import com.revolvingmadness.pythonmc.pythonmclibrary.entity.PyLivingEntity;
+import com.revolvingmadness.pythonmc.pythonmclibrary.other.PyIdentifier;
 import com.revolvingmadness.pythonmc.pythonmclibrary.server.text.PyText;
 import com.revolvingmadness.pythonmc.util.NbtCompoundUtil;
 import com.revolvingmadness.pythonmc.util.NbtElementUtil;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.command.AdvancementCommand;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 
 import java.util.Map;
@@ -19,6 +24,10 @@ public class PyPlayerEntity extends PyLivingEntity {
     public PyPlayerEntity(PlayerEntity playerEntity) {
         super(playerEntity);
         this.playerEntity = playerEntity;
+    }
+
+    public void processAdvancement(PyOperation operation, PySelection selection, PyIdentifier advancement) {
+        operation.toOperation().processAll((ServerPlayerEntity) this.playerEntity, AdvancementCommand.select(this.playerEntity.getServer().getAdvancementLoader().get(advancement.identifier), selection.toSelection()));
     }
 
     public boolean isMainPlayer() {

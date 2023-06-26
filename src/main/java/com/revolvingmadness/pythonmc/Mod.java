@@ -36,6 +36,9 @@ public class Mod implements ModInitializer {
             Path path = FabricLoader.getInstance().getGameDir().resolve("pythonmclibrary");
             JepConfig config = new JepConfig().redirectStdErr(PythonExecutor.outputStream).redirectStdErr(PythonExecutor.errorOutputStream);
             config.addIncludePaths(path.toString());
+            if (FabricLoader.getInstance().isDevelopmentEnvironment()) {
+                config.addIncludePaths(FabricLoader.getInstance().getGameDir() + "\\..\\pythonmclibrary\\src\\pythonmc");
+            }
             PythonExecutor.interpreter = new SubInterpreter(config);
         });
 

@@ -1,7 +1,7 @@
 class BlockState:
     block = None
 
-    def __init__(self, block):
+    def __init__(self, block) -> None:
         ...
 
     @staticmethod

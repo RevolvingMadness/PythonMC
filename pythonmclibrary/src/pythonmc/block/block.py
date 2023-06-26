@@ -6,5 +6,5 @@ class Block:
     jumpVelocityMultiplier = None
     slipperiness = None
 
-    def __init__(self, block):
+    def __init__(self, block) -> None:
         ...

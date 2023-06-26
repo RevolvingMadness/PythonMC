@@ -1,5 +1,5 @@
 class Entity:
-    def __init__(self, entity, world):
+    def __init__(self, entity, world) -> None:
         ...
 
     def addVelocity(self, velocity):

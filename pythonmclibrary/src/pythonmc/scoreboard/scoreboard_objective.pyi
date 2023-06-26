@@ -1,6 +1,6 @@
 from .render_types import RenderTypes
 from .scoreboard_criterions import ScoreboardCriterions
-from ..server.text.text import Text
+from ..server_.text.text import Text
 
 
 class ScoreboardObjective:

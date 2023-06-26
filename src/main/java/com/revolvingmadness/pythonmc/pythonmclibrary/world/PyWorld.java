@@ -4,15 +4,23 @@ import com.revolvingmadness.pythonmc.pythonmclibrary.block.PyBlockPos;
 import com.revolvingmadness.pythonmc.pythonmclibrary.block.PyBlockState;
 import com.revolvingmadness.pythonmc.pythonmclibrary.block.PyBlocks;
 import com.revolvingmadness.pythonmc.pythonmclibrary.entity.PyEntities;
+import com.revolvingmadness.pythonmc.pythonmclibrary.entity.PyEntity;
+import com.revolvingmadness.pythonmc.pythonmclibrary.player.PyPlayerEntity;
 import com.revolvingmadness.pythonmc.pythonmclibrary.server.difficulty.PyDifficulty;
+import com.revolvingmadness.pythonmc.pythonmclibrary.world.position.PyVec3d;
 import com.revolvingmadness.pythonmc.util.NbtCompoundUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.Registries;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.TypeFilter;
 import net.minecraft.util.math.intprovider.IntProvider;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class PyWorld {
@@ -36,6 +44,33 @@ public class PyWorld {
 
     public PyBlockState getBlock(PyBlockPos blockPos) {
         return new PyBlockState(this.world.getBlockState(blockPos.blockPos));
+    }
+
+    public PyBlockState getBlock(PyVec3d vec3d) {
+        return this.getBlock(new PyBlockPos(vec3d.x, vec3d.y, vec3d.z));
+    }
+
+    public List<PyPlayerEntity> getAllPlayers() {
+        List<PyPlayerEntity> players = new ArrayList<>();
+        this.world.getPlayers().forEach(player -> players.add(new PyPlayerEntity(player)));
+        return players;
+    }
+
+    public List<PyEntity> getAllEntities() {
+        List<PyEntity> result = new ArrayList<>();
+        List<? extends Entity> entities = this.world.getEntitiesByType(TypeFilter.instanceOf(Entity.class), Entity::isAlive);
+        entities.forEach(entity -> result.add(new PyEntity(entity)));
+        return result;
+    }
+
+    public PyEntity getNearestPlayer(PyVec3d position) {
+        return new PyEntity(this.world.getClosestPlayer(TargetPredicate.DEFAULT, EntityType.PLAYER.create(this.world), position.x, position.y, position.z));
+    }
+
+    public PyEntity getRandomPlayer() {
+        List<PyEntity> result = new ArrayList<>();
+        List<ServerPlayerEntity> players = this.world.getPlayers();
+        return new PyEntity(players.get(this.world.random.nextInt(players.size())));
     }
 
     public void setBlock(Number x, Number y, Number z, PyBlockState block) {

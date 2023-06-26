@@ -1,4 +1,4 @@
-from .server.server import Server
+from .server_.server import Server
 from .world.executor import Executor
 
 server: Server

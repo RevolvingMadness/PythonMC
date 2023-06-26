@@ -1,3 +1,8 @@
 accessWidener v2 named
 
 accessible class net/minecraft/server/MinecraftServer$ResourceManagerHolder
+accessible field net/minecraft/advancement/AdvancementRewards experience I
+accessible field net/minecraft/advancement/AdvancementRewards loot [Lnet/minecraft/util/Identifier;
+accessible class net/minecraft/server/command/AdvancementCommand$Selection
+accessible class net/minecraft/server/command/AdvancementCommand$Operation
+accessible method net/minecraft/server/command/AdvancementCommand select (Lnet/minecraft/advancement/Advancement;Lnet/minecraft/server/command/AdvancementCommand$Selection;)Ljava/util/List;

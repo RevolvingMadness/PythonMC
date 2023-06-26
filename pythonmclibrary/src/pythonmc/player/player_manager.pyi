@@ -1,7 +1,7 @@
 from typing import overload
 
 from .player_entity import PlayerEntity
-from ..server.text.text import Text
+from ..server_.text.text import Text
 
 
 class PlayerManager:

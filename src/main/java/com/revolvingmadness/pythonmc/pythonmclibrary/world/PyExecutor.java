@@ -1,9 +1,8 @@
-package com.revolvingmadness.pythonmc.pythonmclibrary;
+package com.revolvingmadness.pythonmc.pythonmclibrary.world;
 
 import com.revolvingmadness.pythonmc.pythonmclibrary.entity.PyEntity;
 import com.revolvingmadness.pythonmc.pythonmclibrary.player.PyPlayerEntity;
 import com.revolvingmadness.pythonmc.pythonmclibrary.server.text.PyText;
-import com.revolvingmadness.pythonmc.pythonmclibrary.world.PyWorld;
 import com.revolvingmadness.pythonmc.pythonmclibrary.world.position.PyVec3d;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;

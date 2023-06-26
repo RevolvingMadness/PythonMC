@@ -12,7 +12,7 @@ from ..world.worlds import Worlds
 class Server:
     def getPlayerManager(self) -> PlayerManager:
         """
-        Retrieves the player manager for the server.
+        Retrieves the player manager for the server_.
 
         Returns:
                 PlayerManager: The player manager object.
@@ -36,7 +36,7 @@ class Server:
 
     def getScoreboard(self) -> Scoreboard:
         """
-        Retrieves the scoreboard for the server.
+        Retrieves the scoreboard for the server_.
 
         Returns:
                 Scoreboard: The scoreboard object.
@@ -52,10 +52,10 @@ class Server:
 
     def getServerIP(self) -> str:
         """
-        Retrieves the IP address of the server.
+        Retrieves the IP address of the server_.
 
         Returns:
-                str: The server IP address.
+                str: The server_ IP address.
         """
 
     def getWorld(self, world: Worlds) -> World:
@@ -71,18 +71,18 @@ class Server:
 
     def getServerMOTD(self) -> str:
         """
-        Retrieves the MOTD (Message of the Day) of the server.
+        Retrieves the MOTD (Message of the Day) of the server_.
 
         Returns:
-                str: The server MOTD.
+                str: The server_ MOTD.
         """
 
     def getServerPort(self) -> int:
         """
-        Retrieves the port number on which the server is running.
+        Retrieves the port number on which the server_ is running.
 
         Returns:
-                int: The server port number.
+                int: The server_ port number.
         """
 
     def getSpawnProtectionRadius(self) -> int:
@@ -106,15 +106,15 @@ class Server:
 
     def getVersion(self) -> str:
         """
-        Retrieves the version of the server.
+        Retrieves the version of the server_.
 
         Returns:
-                str: The server version.
+                str: The server_ version.
         """
 
     def isFlightEnabled(self) -> bool:
         """
-        Checks if flight is enabled on the server.
+        Checks if flight is enabled on the server_.
 
         Returns:
                 bool: True if flight is enabled, False otherwise.
@@ -122,15 +122,15 @@ class Server:
 
     def isHardcore(self) -> bool:
         """
-        Checks if the server is in hardcore mode.
+        Checks if the server_ is in hardcore mode.
 
         Returns:
-                bool: True if the server is in hardcore mode, False otherwise.
+                bool: True if the server_ is in hardcore mode, False otherwise.
         """
 
     def isMonsterSpawningEnabled(self) -> bool:
         """
-        Checks if monster spawning is enabled on the server.
+        Checks if monster spawning is enabled on the server_.
 
         Returns:
                 bool: True if monster spawning is enabled, False otherwise.
@@ -138,7 +138,7 @@ class Server:
 
     def isNetherAllowed(self) -> bool:
         """
-        Checks if the Nether dimension is allowed on the server.
+        Checks if the Nether dimension is allowed on the server_.
 
         Returns:
                 bool: True if the Nether is allowed, False otherwise.
@@ -146,7 +146,7 @@ class Server:
 
     def isPVPEnabled(self) -> bool:
         """
-        Checks if PVP (Player vs. Player) is enabled on the server.
+        Checks if PVP (Player vs. Player) is enabled on the server_.
 
         Returns:
                 bool: True if PVP is enabled, False otherwise.
@@ -154,15 +154,15 @@ class Server:
 
     def isSingleplayer(self) -> bool:
         """
-        Checks if the server is running in singleplayer mode.
+        Checks if the server_ is running in singleplayer mode.
 
         Returns:
-                bool: True if the server is in singleplayer mode, False otherwise.
+                bool: True if the server_ is in singleplayer mode, False otherwise.
         """
 
     def openToLAN(self, gameMode: GameModes, cheatsAllowed: bool, port: Number) -> None:
         """
-        Opens the server to LAN (Local Area Network) with the specified settings.
+        Opens the server_ to LAN (Local Area Network) with the specified settings.
 
         Args:
                 gameMode (GameModes): The game mode for LAN players.
@@ -180,7 +180,7 @@ class Server:
 
     def setDifficulty(self, difficulty: Difficulties) -> None:
         """
-        Sets the difficulty level of the server.
+        Sets the difficulty level of the server_.
 
         Args:
                 difficulty (Difficulties): The difficulty level to set.
@@ -188,7 +188,7 @@ class Server:
 
     def setDifficultyLocked(self, difficultyLocked: bool) -> None:
         """
-        Sets whether the difficulty level is locked on the server.
+        Sets whether the difficulty level is locked on the server_.
 
         Args:
                 difficultyLocked (bool): True to lock the difficulty level, False otherwise.

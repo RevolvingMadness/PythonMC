@@ -1,7 +1,7 @@
 package com.revolvingmadness.pythonmc.pythonrunner;
 
 import com.revolvingmadness.pythonmc.Mod;
-import com.revolvingmadness.pythonmc.pythonmclibrary.PyExecutor;
+import com.revolvingmadness.pythonmc.pythonmclibrary.advancement.*;
 import com.revolvingmadness.pythonmc.pythonmclibrary.block.PyBlock;
 import com.revolvingmadness.pythonmc.pythonmclibrary.block.PyBlockPos;
 import com.revolvingmadness.pythonmc.pythonmclibrary.block.PyBlockState;
@@ -16,6 +16,7 @@ import com.revolvingmadness.pythonmc.pythonmclibrary.item.PyItems;
 import com.revolvingmadness.pythonmc.pythonmclibrary.item.enchantment.PyEnchantment;
 import com.revolvingmadness.pythonmc.pythonmclibrary.item.enchantment.PyEnchantmentRarity;
 import com.revolvingmadness.pythonmc.pythonmclibrary.item.enchantment.PyEnchantments;
+import com.revolvingmadness.pythonmc.pythonmclibrary.other.PyIdentifier;
 import com.revolvingmadness.pythonmc.pythonmclibrary.player.*;
 import com.revolvingmadness.pythonmc.pythonmclibrary.server.PyServer;
 import com.revolvingmadness.pythonmc.pythonmclibrary.server.difficulty.PyDifficulties;
@@ -47,6 +48,12 @@ public class PythonExecutor {
     public static void execute(ServerCommandSource source, String namespace, String path, String code, Interpreter interpreter) {
         try {
             ServerWorld world = source.getWorld();
+            interpreter.set("Advancement", PyAdvancement.class);
+            interpreter.set("AdvancementDisplay", PyAdvancementDisplay.class);
+            interpreter.set("AdvancementFrame", PyAdvancementFrame.class);
+            interpreter.set("AdvancementRewards", PyAdvancementRewards.class);
+            interpreter.set("Operation", PyOperation.class);
+            interpreter.set("Selection", PySelection.class);
             interpreter.set("Arm", PyArm.class);
             interpreter.set("Block", PyBlock.class);
             interpreter.set("BlockPos", PyBlockPos.class);
@@ -87,6 +94,7 @@ public class PythonExecutor {
             interpreter.set("Weather", PyWeather.class);
             interpreter.set("World", PyWorld.class);
             interpreter.set("Worlds", PyWorlds.class);
+            interpreter.set("Identifier", PyIdentifier.class);
 
             interpreter.set("server", new PyServer(source.getServer()));
             interpreter.set("executor", new PyExecutor(source));

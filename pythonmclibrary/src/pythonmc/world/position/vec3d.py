@@ -3,5 +3,5 @@ class Vec3d:
     y = None
     z = None
 
-    def __init__(self, x, y, z):
+    def __init__(self, x, y, z) -> None:
         ...
