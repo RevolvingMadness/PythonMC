@@ -1,5 +1,8 @@
 # Documentation
 
+::: pythonmclibrary.src.pythonmc.advancement.advancement
+::: pythonmclibrary.src.pythonmc.advancement.advancement_display
+::: pythonmclibrary.src.pythonmc.advancement.advancement_rewards
 ::: pythonmclibrary.src.pythonmc.block.block
 ::: pythonmclibrary.src.pythonmc.block.block_pos
 ::: pythonmclibrary.src.pythonmc.block.block_state
@@ -21,5 +24,5 @@
 ::: pythonmclibrary.src.pythonmc.world.position.vec3d
 ::: pythonmclibrary.src.pythonmc.world.executor
 ::: pythonmclibrary.src.pythonmc.world.world
-::: pythonmclibrary.src.pythonmc.server.server
+::: pythonmclibrary.src.pythonmc.server_.server
 
