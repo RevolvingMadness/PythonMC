@@ -43,12 +43,14 @@ You need Python to use PythonMC, You can get it [here](https://www.python.org).
 
 ### Installation
 
-1. Install Python packages
-   ```sh
-   pip install jep pythonmc
-   ```
-    - We need `jep` because that is how the mod interacts with Python.
-    - We need `pythonmc` because that provides syntax highlighting.
+  1. Run this command in your terminal
+  ```sh
+  pip install jep
+  ```
+  We need `jep` because that is how the mod interacts with Python.
+
+  2. Go to the [releases page](https://github.com/RevolvingMadness/PythonMC/releases) and download the latest .whl file.
+  3. Open a terminal and navigate to your downloads directory and type `pip install pythonmc-X.X.X-py3-none-any.whl` but replace the X's with the `pythonmc` version
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
